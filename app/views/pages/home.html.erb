@@ -1,20 +1,14 @@
 <div class="container py-3">
   <h1>Search Your Group by Location</h1>
-  <div class="card px-5 py-2">
+  <div class="card pl-5 py-2">
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
       <div class="search-form-control form-group row">
-        <%= text_field_tag :query, params[:query], class: "form-control col-lg-11 col-sm-12", placeholder: "Where do you want to meet?" %>
+        <%= number_field(:range, in: 1..200, step: 1, class: "col-lg-1" ) %>
+        <%= text_field_tag :query, params[:query], class: "form-control col-lg-10", placeholder: "Where do you want to meet?" %>
        <!--  <input class="form-control string required col-lg-11 col-sm-12" type="text" name="search[query]" id="search_query" /> -->
-        <button name="button" type="submit" class="btn btn-flat col-lg-1 col-sm-12">
+        <button name="button" type="submit" class="btn btn-flat col-lg-1">
           <i class="fas fa-search"></i>GO!
         </button>
-        <div class="d-flex justify-content-center my-4">
-        <span class="font-weight-bold purple-text mr-2 mt-1">0</span>
-        <form class="range-field w-75", remote="true">
-          <input class="border-0 custom-range" type="range" min="0" max="100" />
-        </form>
-        <span class="font-weight-bold purple-text ml-2 mt-1">100</span>
-        </div>
       </div>
     <% end %>
   </div>
