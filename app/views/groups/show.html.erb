@@ -5,8 +5,3 @@
 <p>Description: <%= @group.book.description %></p>
 <p>Host message: <%= @group.host_message %></p>
 
-<%= @group.memberships.each do |member| %>
-  <li> <%= member.user_id.name %> </li>
-<% end %>
-
-
