@@ -1,10 +1,10 @@
 
-Book.destroy_all
 Group.destroy_all
-User.destroy_all
-Language.destroy_all
 Membership.destroy_all
 Comment.destroy_all
+Book.destroy_all
+User.destroy_all
+Language.destroy_all
 
 puts "Destroyed all records of users, books and groups!"
 
