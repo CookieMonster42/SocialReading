@@ -5,6 +5,8 @@
 <p>Description: <%= @group.book.description %></p>
 <p>Host message: <%= @group.host_message %></p>
 
+<%= render 'comments/form', group: @group, comment: @comment %>
+
 <div id="comments">
   <% if @group.comments.blank? %>
   Be the first to leave a comment for <%= group.name %>
@@ -15,4 +17,3 @@
   <% end %>
 </div>
 
-<%= render 'comments/form', group: @group, comment: @comment %>

@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :groups, only: [:show] do
-    resources :comments, only: [:show, :new, :create]
+    resources :comments, only: :create
   end
 end

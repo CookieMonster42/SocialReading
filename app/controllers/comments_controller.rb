@@ -1,13 +1,12 @@
 class CommentsController < ApplicationController
+  # def show
+  #   @comment = Comment.find(params[:id])
+  # end
 
-  def show
-    @comment = Comment.find(params[:id])
-  end
-
-  def new
-    @group = Group.find(params[:group_id])
-    @comment = Comment.new
-  end
+  # def new
+  #   @group = Group.find(params[:group_id])
+  #   @comment = Comment.new
+  # end
 
   def create
     @group = Group.find(params[:group_id])
@@ -16,11 +15,16 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save!
-      redirect_to group_comment_path(@group, @comment.reload)
+      respond_to do |format|
+        format.html { redirect_to group_path(@group) }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'groups/show' }
+        format.js
+      end
     end
-    # if/else statement
   end
 
   private
