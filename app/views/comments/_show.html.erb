@@ -1,7 +1,5 @@
 <div class="card m-3">
   <p><%= comment.user.name %></p>
   <p><%= comment.content %></p>
-  <p><%= comment.created_at.strftime("%y-%m-%d") %></p>
+  <p><%= comment.created_at.to_s.slice(0,20) %></p>
 </div>
-
-to_s.slice(0,20)
