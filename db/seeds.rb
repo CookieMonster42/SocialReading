@@ -1,10 +1,10 @@
 
-Book.destroy_all
+Comment.destroy_all
+Membership.destroy_all
 Group.destroy_all
+Book.destroy_all
 User.destroy_all
 Language.destroy_all
-Membership.destroy_all
-Comment.destroy_all
 
 puts "Destroyed all records of users, books and groups!"
 
@@ -46,7 +46,7 @@ book = Book.create({
 ###########
 group = Group.new({
   name: "Book Beasts",
-  location: "Ankerklause, Kottbusser Damm 104",
+  location: "Kottbusser Damm 104, Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Friday, January 21 2020, 8pm'
 })
@@ -54,6 +54,17 @@ group.user_id = host.id
 group.book = book
 group.language = language
 group.save!
+
+group_moskau = Group.new({
+  name: "Book Beasts in Moskau",
+  location: "moskau",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
+  date: 'Friday, January 21 2020, 8pm'
+})
+group_moskau.user_id = host.id
+group_moskau.book = book
+group_moskau.language = language
+group_moskau.save!
 
 ###########
 # Membership seed

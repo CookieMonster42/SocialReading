@@ -3,5 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @groups = Group.all
+    if params[:query].present?
+      @groups = Group.near(" #{params[:query]}", 10)
+    else
+      @groups = Group.all
+    end
   end
 end
