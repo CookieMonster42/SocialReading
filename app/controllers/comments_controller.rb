@@ -1,13 +1,26 @@
 class CommentsController < ApplicationController
+
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
+  def new
+    @group = Group.find(params[:group_id])
+    @comment = Comment.new
+  end
+
   def create
     @group = Group.find(params[:group_id])
     @comment = Comment.new(comment_params)
-    @comment.group = @comment
-    if @comment.save
-      redirect_to group_path(@group)
+    @comment.group = @group
+    @comment.user = current_user
+
+    if @comment.save!
+      redirect_to group_comment_path(@group, @comment.reload)
     else
-      render "???"
+      render :new
     end
+    # if/else statement
   end
 
   private
