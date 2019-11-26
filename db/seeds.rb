@@ -53,7 +53,7 @@ group = Group.new({
 group.user_id = host.id
 group.book = book
 group.language = language
-group.save!
+group.save
 
 group_moskau = Group.new({
   name: "Book Beasts in Moskau",
@@ -64,15 +64,15 @@ group_moskau = Group.new({
 group_moskau.user_id = host.id
 group_moskau.book = book
 group_moskau.language = language
-group_moskau.save!
+group_moskau.save
 
 ###########
 # Membership seed
 ###########
 membership_user1 = Membership.new()
-membership_user1.group = group
-membership_user1.user = user1
-membership_user1.save!
+membrship_user1.group = group
+membrship_user1.user = user1
+membrship_user1.save
 
 ###########
 # comment seed
@@ -82,7 +82,7 @@ comment = Comment.new({
 })
 comment.group = group
 comment.user = user1
-comment.save!
+comment.save
 
 
 puts "sample book, user and group created"
