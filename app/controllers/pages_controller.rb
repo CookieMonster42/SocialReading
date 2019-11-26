@@ -3,10 +3,5 @@ class PagesController < ApplicationController
 
   def home
     @groups = Group.all
-    @memberships = Membership.all
-    @comments = Comment.all
-    @books = Book.all
-    @languages = Language.all
-    @users = User.all
   end
 end
