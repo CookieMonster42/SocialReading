@@ -1,15 +1,15 @@
-<div class="d-flex flex-row col-md-4", style="width:400;">
+<div class="row">
   <% @groups.each do |g| %>
-    <div>
-      <%= image_tag "bookcover.jpg", width: 150 %>
+  <div class="col-md-4" id="card-item">
+    <%= image_tag "bookcover.jpg", class: 'book-image' %>
+    <div class="detail">
+      <p class="title"><strong><%= g.name %></strong></p>
+      <p class="title">are meeting on</p>
+      <p class="date"><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
+      <p class="date"><%= g.date.strftime("%H:%M") %></p>
+      <p class="location"><%= g.location.split(",").first.capitalize %></p>
+      <p class="location"><%= g.location.split(",")[1..-1].join %></p>
+      </div>
     </div>
-    <div class="d-flex flex-column text-left pl-3">
-        <p><%= g.name %></p>
-        <p>are meeting on</p>
-        <p><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
-        <p><%= g.date.strftime("%H:%M") %></p>
-        <p><%= g.location.split(",").first %></p>
-        <p><%= g.location.split(",")[1..-1].join %></p>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
