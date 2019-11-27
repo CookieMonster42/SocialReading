@@ -10,7 +10,7 @@ class PagesController < ApplicationController
       #   range = params[:range].values.first.to_i
       # end
       @groups = Group.near(" #{params[:query]}", 50)
-      redirect_to groups_path
+      redirect_to groups_path(params[:query])
     end
   end
 end
