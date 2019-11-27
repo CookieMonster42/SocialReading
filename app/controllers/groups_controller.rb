@@ -8,9 +8,15 @@ class GroupsController < ApplicationController
 
   def index
     skip_policy_scope
-    @location = params[:query]
-    # search_groups(@location)
-    @groups = Group.near(@location, 50)
+    if params[:query]
+      @location = params[:query]
+      @groups = Group.near(@location, 50)
+    elsif params[:format]
+      @location = params[:format]
+      @groups = Group.near(@location, 50)
+    else
+      @groups = Group.all
+    end
     if @groups.any?
       @groups = Group.near(@location, 50)
     else
