@@ -4,7 +4,12 @@ class PagesController < ApplicationController
   def home
     @groups = Group.all
     if params[:query].present?
-      @groups = Group.near(" #{params[:query]}", 10)
+      if params[:range].values.first.to_i.zero?
+        range = 25
+      else
+        range = params[:range].values.first.to_i
+      end
+      @groups = Group.near(" #{params[:query]}", range)
     else
       @groups = Group.all
     end
