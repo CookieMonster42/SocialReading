@@ -1,5 +1,13 @@
 // Import Google fonts
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@font-face {
+  font-family:'Moret Regular';
+  src:
+  url('moret.otf') format('opentype'),
+  url('moret.ttf') format('truetype');
+}
+
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
 
 // Define fonts for body and headers
