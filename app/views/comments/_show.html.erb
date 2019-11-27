@@ -1,5 +1,15 @@
-<div class="card m-3">
-  <p><%= comment.user.name %></p>
-  <p><%= comment.content %></p>
-  <p><%= comment.created_at.to_s.slice(0,20) %></p>
+<div class="container mt-3 mb-3">
+  <div class="card border-light">
+    <div class="card-body">
+      <div class="d-flex flex-row justify-content-between">
+        <div>
+          <%=  %>
+        </div>
+        <p><%= comment.user.name %></p>
+        <p class="card-text"><small class="text-muted">
+          <%= time_ago_in_words(comment.created_at) %> ago</small></p>
+      </div>
+      <p><%= comment.content %></p>
+    </div>
+  </div>
 </div>
