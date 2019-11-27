@@ -1,15 +1,19 @@
 <div class="container">
   <div class="form-group">
-    <div>
-    <%= form_for([ group, comment ], remote: true) do |f| %>
-      <% if !current_user.photo.nil? %>
-      <%= image_tag(current_user.photo) %>
-      <% else %>
-      <%=  %>
-      <% end %>
-      <%= f.text_area :content, as: :text, placeholder: "Write a comment", class: "form-control border-light" %>
-      <%= f.button :submit %>
-    <% end %>
+    <div class="comment-row">
+      <div class="user-pic">
+        <%= form_for([ group, comment ], remote: true) do |f| %>
+          <% if !current_user.photo.nil? %>
+          <%= image_tag(current_user.photo) %>
+          <% else %>
+          <%= image_tag("profile_placeholder", class: "avatar-large") %>
+          <% end %>
+      </div>
+      <div class="comment-content">
+          <%= f.text_area :content, as: :text, placeholder: "Write a comment", class: "form-control border-light" %>
+      </div>
     </div>
+    <div class="btn"><%= f.button :submit %></div>
+      <% end %>
   </div>
 </div>
