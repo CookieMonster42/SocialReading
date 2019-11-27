@@ -1,7 +1,52 @@
-<h1><%= @group.name %></h1>
-<p><%= @group.language.name %></p>
-<h2>Title: <%= @group.book.title %></h2>
-<p>Author: <%= @group.book.author %></p>
-<p>Description: <%= @group.book.description %></p>
-<p>Host message: <%= @group.host_message %></p>
+
+<<<<<<< HEAD
+<div class="mt-5 pt-5 text-center">
+  <h1><%= @group.name %></h1>
+  <p><%= @group.language.name %></p>
+</div>
+
+<div class="d-flex flex-row m-5">
+  <div>
+    <img class="img-responsive" width="200" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpayload172.cargocollective.com%2F1%2F7%2F242624%2F5743221%2Fcover%2520new.jpg&f=1&nofb=1" alt="Brave new world">
+  </div>
+  <div class="pr-5 pl-5">
+    <h2>Title: <%= @group.book.title %></h2>
+    <p>Author: <%= @group.book.author %></p>
+    <p>Description: <%= @group.book.description %></p>
+  </div>
+</div>
+
+<div class="pl-5 pr-5 m-5">
+  <p><%= @group.user.name %> founded this group because: </p>
+    <p><%= @group.host_message %></p>
+</div>
+
+<div class="text-center">
+  <h2>Group Members:</h2>
+  <%= @group.memberships.each do |member| %>
+    <ul><%= member.user.name %></ul>
+  <% end %>
+</div>
+
+<div class="d-flex flex-row m-5 space-between">
+  <div>
+    <h3>Time: <%= @group.date %></h3>
+    <h3>Location: <%= @group.location %></h3>
+  </div>
+  <div>
+    <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
+  </div>
+</div>
+
+<%= render 'comments/form', group: @group, comment: @comment %>
+
+<div id="comments">
+  <% if @group.comments.blank? %>
+  Be the first to leave a comment for <%= group.name %>
+  <% else %>
+    <% @group.comments.each do |comment| %>
+      <%= render 'comments/show', comment: comment %>
+    <% end %>
+  <% end %>
+</div>
 
