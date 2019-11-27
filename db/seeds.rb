@@ -224,7 +224,7 @@ puts "Groups seeded!"
 ###########
 membership_user1 = Membership.new()
 membership_user1.group = group
-membership_user1.user = user1
+membership_user1.user = host1
 membership_user1.save
 
 puts "Memberships seeded!"
@@ -235,7 +235,7 @@ comment = Comment.new({
   content: 'Hey guys, how are you? I have just begun reading the book and was wondering how far along you all have come. After all, its only 10 days until our meeting. Really excited to finally get to know everyone :slightly_smiling_face:'
 })
 comment.group = group
-comment.user = user1
+comment.user = host2
 comment.save
 
 puts "Comments seeded!"
