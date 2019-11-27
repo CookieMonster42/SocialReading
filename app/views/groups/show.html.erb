@@ -22,11 +22,17 @@
     <p><%= @group.host_message %></p>
 </div>
 
-<!-- Group/Participants -->
+<!-- Group/Participants & Join Button -->
 <div class="text-center">
   <h2>Group Members:</h2>
-  <%= @group.memberships.each do |member| %>
+  <% @group.memberships.each do |member| %>
     <ul><%= member.user.name %></ul>
+  <% end %>
+  <!-- Join Button -->
+  <% if @group.memberships.find_by(user_id: current_user.id) %>
+    <button type="button" class="btn btn-dark">Add Friend</button>
+  <% else %>
+    <button type="button" class="btn btn-info"><%= link_to "Join", memberships_path(id: @group.id), method: :post %></button>
   <% end %>
 </div>
 
@@ -48,7 +54,7 @@
 
 <div id="comments">
   <% if @group.comments.blank? %>
-  Be the first to leave a comment for <%= group.name %>
+    <h3>Be the first to leave a comment for <%= @group.name %></h3>
   <% else %>
     <% @group.comments.each do |comment| %>
       <%= render 'comments/show', comment: comment %>
