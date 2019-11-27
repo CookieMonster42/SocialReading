@@ -1,11 +1,12 @@
 <div class="container py-3">
   <h1>Search Your Group by Location</h1>
-  <div class="card px-5 py-2">
+  <div class="card pl-5 py-2">
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
       <div class="search-form-control form-group row">
-        <%= text_field_tag :query, params[:query], class: "form-control col-lg-11 col-sm-12", placeholder: "Where do you want to meet?" %>
+        <%= number_field(:range, in: 1..200, step: 1, class: "col-lg-1" ) %>
+        <%= text_field_tag :query, params[:query], class: "form-control col-lg-10", placeholder: "Where do you want to meet?" %>
        <!--  <input class="form-control string required col-lg-11 col-sm-12" type="text" name="search[query]" id="search_query" /> -->
-        <button name="button" type="submit" class="btn btn-flat col-lg-1 col-sm-12">
+        <button name="button" type="submit" class="btn btn-flat col-lg-1">
           <i class="fas fa-search"></i>GO!
         </button>
       </div>
@@ -16,9 +17,14 @@
     <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <div id="groups">
-        <% @groups.each do |group| %>
-          <h4><%= group.name %></h4>
-          <p><%= group.host_message %></p>
+        <% if @groups.any? %>
+          <% @groups.each do |group| %>
+            <h4><%= group.name %></h4>
+            <p><%= group.host_message %></p>
+            <p>Location: <%= group.location %> </p>
+          <% end %>
+        <% else %>
+          <h4>No Results found</h4>
         <% end %>
       </div>
     </div>
