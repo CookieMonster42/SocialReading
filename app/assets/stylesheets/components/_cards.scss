@@ -1,3 +1,13 @@
+.cards {
+  font-family:'Moret Regular';
+  font-size: 48px;
+}
+
+.cards-title {
+  color: $turquoise-lighter;
+  font-family:'Moret Regular';
+}
+
 #card-item {
   display: flex;
   margin-bottom: 30px;
@@ -21,6 +31,17 @@
 }
 
 .title {
+  font-size: 1rem;
+  margin-bottom: 0;
+  color: $turquoise-lighter;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.subtitle {
   font-size: 1rem;
   margin-bottom: 0;
 }
