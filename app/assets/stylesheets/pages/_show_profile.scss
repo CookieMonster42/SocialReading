@@ -1,0 +1,35 @@
+body {
+  background-color: $creme;
+}
+
+.user-profile {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 80px;
+}
+
+.profile-heading{
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.user-bio{
+  padding-bottom: 70px;
+}
+
+.user-profile h1 {
+  font-family: "Moret Regular";
+  font-size: 48px;
+}
+
+.reading h2 {
+  font-family: montserrat;
+  font-weight: regular;
+  font-size: 18px;
+}
+
+.user-bio p {
+  font-family: montserrat;
+  font-weight: regular;
+  font-size: 18px;
+}

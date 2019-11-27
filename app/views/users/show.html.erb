@@ -1,0 +1,23 @@
+<div class="user-profile">
+ <%= image_tag "ray-berry-rounded.png", alt: "profile picture of user", width: '170px', height: '170px'%>
+  <div class="profile-heading">
+    <h1> <%= @user.name %></h1>
+    <span> Member since <%= @user.created_at.year %></span>
+  </div>
+
+  <div class="user-bio">
+    <p> "<%= @user.bio %>" </p>
+  </div>
+
+  <div class="reading">
+    <h2> <%= @user.name %> is currently reading...</h2>
+    <%= link_to (image_tag "handmaids_tale_cover.jpg", alt: "book cover handmaid's tale", width: '180px'), group_path %>
+    <%= link_to (image_tag "little_prince_cover.jpg", alt: "book cover little prince", width: '180px'), group_path %>
+    <%= link_to (image_tag "shining-cover.jpg", alt: "book cover shining", width: '180px'), group_path %>
+  </div>
+</div>
+
+
+<!--  1.iterate over users current book groups(where he is a member)
+      2. display only image
+      3. link_to group#show-page, when clicking on cover -->
