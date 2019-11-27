@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <div class="mt-5 pt-5 text-center">
   <h1><%= @group.name %></h1>
   <p><%= @group.language.name %></p>
@@ -36,3 +37,16 @@
     <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
   </div>
 </div>
+
+<%= render 'comments/form', group: @group, comment: @comment %>
+
+<div id="comments">
+  <% if @group.comments.blank? %>
+  Be the first to leave a comment for <%= group.name %>
+  <% else %>
+    <% @group.comments.each do |comment| %>
+      <%= render 'comments/show', comment: comment %>
+    <% end %>
+  <% end %>
+</div>
+
