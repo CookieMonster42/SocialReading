@@ -1,7 +1,9 @@
 <div class="container m-5 d-flex flex-column text-center">
-<<<<<<< HEAD
   <h1 class="cards">Meet other book lovers near</h1>
-  <h1 class="cards-title">Kottbusser</h1>
+  <div class="card w-75">
+    <%= render 'shared/search_bar', location: params[:format] %>
+  </div>
+  <%# raise %>
 
   <div>
     <%= render 'shared/group_cards' %>

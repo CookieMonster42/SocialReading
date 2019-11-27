@@ -1,12 +1,14 @@
+<!-- Title -->
 
 <div class="mt-5 pt-5 text-center">
   <h1><%= @group.name %></h1>
   <p><%= @group.language.name %></p>
 </div>
 
+<!-- Book -->
 <div class="d-flex flex-row m-5">
-  <div>
-    <img class="img-responsive" width="200" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpayload172.cargocollective.com%2F1%2F7%2F242624%2F5743221%2Fcover%2520new.jpg&f=1&nofb=1" alt="Brave new world">
+  <div class="img-responsive" width="200">
+    <%= image_tag @group.book.photo, class: 'book-image' %>
   </div>
   <div class="pr-5 pl-5">
     <h2>Title: <%= @group.book.title %></h2>
@@ -15,18 +17,31 @@
   </div>
 </div>
 
+<!-- Host -->
 <div class="pl-5 pr-5 m-5">
   <p><%= @group.user.name %> founded this group because: </p>
     <p><%= @group.host_message %></p>
 </div>
 
+<!-- Group/Participants & Join Button -->
 <div class="text-center">
   <h2>Group Members:</h2>
-  <%= @group.memberships.each do |member| %>
-    <ul><%= member.user.name %></ul>
+  <% @group.memberships.each do |member| %>
+    <% if member.user.name %>
+      <ul><%= link_to member.user.name, user_path(id: member.user.id) %></ul>
+    <% else %>
+      <ul><%= link_to "Placeholder Name", user_path(id: member.user.id) %></ul>
+    <% end %>
+  <% end %>
+  <!-- Join Button -->
+  <% if @group.memberships.find_by(user_id: current_user.id) %>
+    <button type="button" class="btn btn-dark">Add Friend</button>
+  <% else %>
+    <button type="button" class="btn btn-info"><%= link_to "Join", memberships_path(id: @group.id), method: :post %></button>
   <% end %>
 </div>
 
+<!-- Info -->
 <div class="d-flex flex-row m-5 space-between">
   <div>
     <h3>Time: <%= @group.date %></h3>
@@ -37,11 +52,14 @@
   </div>
 </div>
 
+
+<!-- Comment Function -->
+
 <%= render 'comments/form', group: @group, comment: @comment %>
 
 <div id="comments">
   <% if @group.comments.blank? %>
-  Be the first to leave a comment for <%= group.name %>
+    <h3>Be the first to leave a comment for <%= @group.name %></h3>
   <% else %>
     <% @group.comments.each do |comment| %>
       <%= render 'comments/show', comment: comment %>

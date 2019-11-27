@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :groups, only: [:index]
 
+  resources :memberships, only: [:create]
+
   resources :groups, only: [:show] do
     resources :comments, only: :create
   end
