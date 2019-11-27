@@ -1,18 +1,17 @@
 
-
-Book.destroy_all
+Comment.destroy_all
+Membership.destroy_all
 Group.destroy_all
+Book.destroy_all
 User.destroy_all
 Language.destroy_all
-Membership.destroy_all
-Comment.destroy_all
 
 puts "Destroyed all records of users, books and groups!"
 
 ###########
 # Language seed
 ###########
-language = Language.create!({name: "English"})
+language = Language.create({name: "English"})
 
 puts "Languages seeded!"
 
@@ -22,42 +21,42 @@ puts "Languages seeded!"
 ###########
 # User/host seed
 ###########
-host = User.create!({
+host = User.create({
   name: "Andy",
   password: '123456',
   email: 'andy@smile.com',
   bio: 'I love fiction and Babelsberg, I also have some dogs'
 })
 
-host1 = User.create!({
+host1 = User.create({
   name: "Lala",
   password: '123456',
   email: 'lala@smile.com',
   bio: 'I love fiction and Babelsberg, I also have some dogs'
 })
 
-host2 = User.create!({
+host2 = User.create({
   name: "Kevin",
   password: '123456',
   email: 'kevin@smile.com',
   bio: 'I love fiction and Babelsberg, I also have some dogs'
 })
 
-host3 = User.create!({
+host3 = User.create({
   name: "Jay",
   password: '123456',
   email: 'jay@smile.com',
   bio: 'I love fiction and Babelsberg, I also have some dogs'
 })
 
-host4 = User.create!({
+host4 = User.create({
   name: "May",
   password: '123456',
   email: 'may@smile.com',
   bio: 'I love fiction and Babelsberg, I also have some dogs'
 })
 
-host5 = User.create!({
+host5 = User.create({
   name: "Des",
   password: '123456',
   email: 'des@smile.com',
@@ -72,7 +71,7 @@ puts "Users seeded!"
 ###########
 # Book seed
 ###########
-book = Book.create!({
+book = Book.create({
   title: "brave new world",
   author: 'Aldous Huxley',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley, written in 1931 and published in 1932. Largely set in a futuristic World State, inhabited by genetically modified citizens and an intelligence-based social hierarchy, the novel anticipates huge scientific advancements in reproductive technology, sleep-learning, psychological manipulation and classical ... "
@@ -89,14 +88,25 @@ puts "Books seeded!"
 ###########
 group = Group.new({
   name: "Book Beasts",
-  location: "Ankerklause, Kottbusser Damm 104",
+  location: "Kottbusser Damm 104, Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Friday, January 21 2020, 8pm'
 })
 group.user_id = host.id
 group.book = book
 group.language = language
-group.save!
+group.save
+
+group_moskau = Group.new({
+  name: "Book Beasts in Moskau",
+  location: "moskau",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
+  date: 'Friday, January 21 2020, 8pm'
+})
+group_moskau.user_id = host.id
+group_moskau.book = book
+group_moskau.language = language
+group_moskau.save
 
 group = Group.new({
   name: "The Poor and Infamous",
@@ -107,7 +117,7 @@ group = Group.new({
 group.user_id = host1.id
 group.book = book
 group.language = language
-group.save!
+group.save
 
 group = Group.new({
   name: "Aaaaaa Aaaaaaaaa",
@@ -118,7 +128,7 @@ group = Group.new({
 group.user_id = host2.id
 group.book = book
 group.language = language
-group.save!
+group.save
 
 group = Group.new({
   name: "Bbbbbbbb Bbbbbbbbbb",
@@ -129,7 +139,7 @@ group = Group.new({
 group.user_id = host3.id
 group.book = book
 group.language = language
-group.save!
+group.save
 
 group = Group.new({
   name: "Cccccc Cccccccccc",
@@ -140,7 +150,7 @@ group = Group.new({
 group.user_id = host4.id
 group.book = book
 group.language = language
-group.save!
+group.save
 
 group = Group.new({
   name: "Dddddd Ddddddddddd",
@@ -151,7 +161,7 @@ group = Group.new({
 group.user_id = host5.id
 group.book = book
 group.language = language
-group.save!
+group.save
 
 puts "Groups seeded!"
 
@@ -163,9 +173,9 @@ puts "Groups seeded!"
 # Membership seed
 ###########
 membership_user1 = Membership.new()
-membership_user1.group = group
-membership_user1.user = user1
-membership_user1.save!
+membrship_user1.group = group
+membrship_user1.user = user1
+membrship_user1.save
 
 puts "Memberships seeded!"
 ###########
@@ -176,7 +186,7 @@ comment = Comment.new({
 })
 comment.group = group
 comment.user = user1
-comment.save!
+comment.save
 
 puts "Comments seeded!"
 

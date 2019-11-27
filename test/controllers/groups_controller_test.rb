@@ -5,5 +5,4 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
     get groups_index_url
     assert_response :success
   end
-
 end
