@@ -79,50 +79,50 @@ puts "Users seeded!"
 # Book seed
 ###########
 book = Book.create({
-  title: "brave new world",
-  author: 'Aldous Huxley',
+  title: "The Amulet of Smarkand",
+  author: 'Jonathan Stroud',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley, written in 1931 and published in 1932. Largely set in a futuristic World State, inhabited by genetically modified citizens and an intelligence-based social hierarchy, the novel anticipates huge scientific advancements in reproductive technology, sleep-learning, psychological manipulation and classical ... ",
   photo: "bookcover.jpg"
 })
 
 book1 = Book.create({
-  title: "brave new world",
-  author: 'Aldous Huxley',
+  title: "The Alchemist",
+  author: 'Paulo Coelho',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley.",
   photo: "bookcover1.jpg"
 })
 
 book2 = Book.create({
-  title: "brave new world",
-  author: 'Aldous Huxley',
+  title: "On the Road",
+  author: 'Jack Kerouac',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley.",
   photo: "bookcover2.jpg"
 })
 
 book3 = Book.create({
-  title: "brave new world",
-  author: 'Aldous Huxley',
+  title: "Tom McCarthy",
+  author: 'Satin Island',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley.",
   photo: "bookcover3.jpg"
 })
 
 book4 = Book.create({
-  title: "brave new world",
-  author: 'Aldous Huxley',
+  title: "The Farm",
+  author: 'Tom Rob Smith',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley.",
   photo: "bookcover4.jpg"
 })
 
 book5 = Book.create({
-  title: "brave new world",
-  author: 'Aldous Huxley',
+  title: "The Little Prince",
+  author: 'Antoine de Saint-Exupéry',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley.",
   photo: "bookcover5.jpg"
 })
 
 book6 = Book.create({
-  title: "brave new world",
-  author: 'Aldous Huxley',
+  title: "Thinking, Fast and Slow",
+  author: 'Daniel Kahneman',
   description: "Brave New World is a dystopian novel by English author Aldous Huxley.",
   photo: "bookcover6.jpg"
 })
