@@ -204,7 +204,7 @@ group.save
 
 group = Group.new({
   name: "Better Way of Thinking",
-  location: "Moskau",
+  location: "Moscow",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Fri, Nov 29 2020, 11:00 am'
 })
