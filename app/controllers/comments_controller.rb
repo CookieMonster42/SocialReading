@@ -1,12 +1,4 @@
 class CommentsController < ApplicationController
-  # def show
-  #   @comment = Comment.find(params[:id])
-  # end
-
-  # def new
-  #   @group = Group.find(params[:group_id])
-  #   @comment = Comment.new
-  # end
 
   def create
     @group = Group.find(params[:group_id])
@@ -25,6 +17,13 @@ class CommentsController < ApplicationController
         format.js
       end
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @group = @comment.group
+    @comment.destroy
+    redirect_to group_path(@group)
   end
 
   private
