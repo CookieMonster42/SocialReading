@@ -1,5 +1,5 @@
 <div class="card m-3">
   <p><%= comment.user.name %></p>
   <p><%= comment.content %></p>
-  <p><%= comment.created_at.to_s.slice(0,20) %></p>
+  <p><%= time_ago_in_words(comment.created_at) %> ago</p>
 </div>

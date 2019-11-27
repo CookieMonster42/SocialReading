@@ -1,6 +1,7 @@
-
-<%= form_for([ group, comment ], remote: true) do |f| %>
-  <%= f.label :comment %>
-  <%= f.text_field :content, as: :text %>
-  <%= f.button :submit %>
-<% end %>
+<div>
+  <%= form_for([ group, comment ], remote: true) do |f| %>
+    <%= f.label :comment %>
+    <%= f.text_field :content, as: :text %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
