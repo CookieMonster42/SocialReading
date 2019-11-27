@@ -11,9 +11,9 @@
       <p class="title"><strong><%= g.name %></strong></p>
       <p class="title mb-4">are meeting on</p>
       <p class="date"><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
-        <p class="date"><%= g.date.strftime("%H:%M") %></p>
-        <p class="location mt-4"><%= g.location.split(",").first.capitalize %></p>
-        <p class="address"><%= g.location.split(",")[1..-1].join %></p>
+      <p class="date"><%= g.date.strftime("%H:%M") %></p>
+      <p class="location mt-4"><%= g.location.split(",").first.capitalize %></p>
+      <p class="address"><%= g.location.split(",")[1..-1].join %></p>
       </div>
     </div>
     <% end %>
