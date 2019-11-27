@@ -242,4 +242,3 @@ puts "Comments seeded!"
 
 
 puts "sample book, user and group created"
-
