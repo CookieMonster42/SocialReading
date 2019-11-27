@@ -26,7 +26,7 @@
 <div class="text-center">
   <h2>Group Members:</h2>
   <% @group.memberships.each do |member| %>
-    <ul><%= member.user.name %></ul>
+    <ul><%= link_to member.user.name, user_path(id: member.user.id) %></ul>
   <% end %>
   <!-- Join Button -->
   <% if @group.memberships.find_by(user_id: current_user.id) %>
