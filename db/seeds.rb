@@ -70,9 +70,9 @@ group_moskau.save!
 # Membership seed
 ###########
 membership_user1 = Membership.new()
-membrship_user1.group = group
-membrship_user1.user = user1
-membrship_user1.save!
+membership_user1.group = group
+membership_user1.user = user1
+membership_user1.save!
 
 ###########
 # comment seed
@@ -86,4 +86,3 @@ comment.save!
 
 
 puts "sample book, user and group created"
-
