@@ -1,15 +1,21 @@
-<div class="d-flex flex-row col-md-4", style="width:400;">
+<div class="row">
   <% @groups.each do |g| %>
-    <div>
-      <%= image_tag "bookcover.jpg", width: 150 %>
-    </div>
-    <div class="d-flex flex-column text-left pl-3">
-        <p><%= g.name %></p>
-        <p>are meeting on</p>
-        <p><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
-        <p><%= g.date.strftime("%H:%M") %></p>
-        <p><%= g.location.split(",").first %></p>
-        <p><%= g.location.split(",")[1..-1].join %></p>
-    </div>
+  <%= link_to group_path(g), class:"link", :action => 'go' do %>
+  <div class="col-xs-12 col-sm-6 col-lg-4" id="card-item">
+    <% if g.book.photo.present? %>
+     <%= image_tag g.book.photo, class: 'book-image' %>
+    <% else %>
+     <%= image_tag "bookcover.jpg", class: 'book-image' %>
+    <% end %>
+    <div class="detail">
+      <p class="title"><strong><%= g.name%></strong></p>
   <% end %>
-</div>
+      <p class="subtitle mb-4">are meeting on</p>
+      <p class="date"><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
+        <p class="date"><%= g.date.strftime("%H:%M") %></p>
+        <p class="location mt-4"><%= g.location.split(",").first.capitalize %></p>
+        <p class="address"><%= g.location.split(",")[1..-1].join %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
