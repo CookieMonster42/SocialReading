@@ -1,0 +1,19 @@
+<h1><%= @group.name %></h1>
+<p><%= @group.language.name %></p>
+<h2>Title: <%= @group.book.title %></h2>
+<p>Author: <%= @group.book.author %></p>
+<p>Description: <%= @group.book.description %></p>
+<p>Host message: <%= @group.host_message %></p>
+
+<%= render 'comments/form', group: @group, comment: @comment %>
+
+<div id="comments">
+  <% if @group.comments.blank? %>
+  Be the first to leave a comment for <%= group.name %>
+  <% else %>
+    <% @group.comments.each do |comment| %>
+      <%= render 'comments/show', comment: comment %>
+    <% end %>
+  <% end %>
+</div>
+

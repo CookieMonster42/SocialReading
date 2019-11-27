@@ -3,10 +3,15 @@ class PagesController < ApplicationController
 
   def home
     @groups = Group.all
-    @memberships = Membership.all
-    @comments = Comment.all
-    @books = Book.all
-    @languages = Language.all
-    @users = User.all
+    if params[:query].present?
+      if params[:range].values.first.to_i.zero?
+        range = 25
+      else
+        range = params[:range].values.first.to_i
+      end
+      @groups = Group.near(" #{params[:query]}", range)
+    else
+      @groups = Group.all
+    end
   end
 end
