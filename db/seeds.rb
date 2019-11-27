@@ -138,7 +138,7 @@ puts "Books seeded!"
 ###########
 group = Group.new({
   name: "Clever Witches",
-  location: "Ankerklause, Kottbusser Damm 104 Berlin",
+  location: "Kottbusser Damm 104 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Friday, January 21 2020, 8pm'
 })
@@ -149,7 +149,7 @@ group.save
 
 group = Group.new({
   name: "Find The Real You",
-  location: "Bonanza Coffee Roaster, Adalbertstraße 70 Berlin",
+  location: "Adalbertstraße 70 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Thu, Nov 28 2020, 19:00 pm'
 })
@@ -160,7 +160,7 @@ group.save
 
 group = Group.new({
   name: "Be Real Adventurer",
-  location: "Arabica Coffee Shop, Reichenberger Str. 36 Berlin",
+  location: "Reichenberger Str. 36 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Thu, Nov 28 2020, 19:00 pm'
 })
@@ -182,7 +182,7 @@ group.save
 
 group = Group.new({
   name: "Out of My Mind",
-  location: "19 grams Schlesi, Schlesische Str. 38, Berlin",
+  location: "Lima",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Thu, Nov 28 2020, 19:00 pm'
 })
@@ -204,7 +204,7 @@ group.save
 
 group = Group.new({
   name: "Better Way of Thinking",
-  location: "The Coffee Ape, Hermannplatz, Berlin",
+  location: "Moscow",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Fri, Nov 29 2020, 11:00 am'
 })
@@ -224,7 +224,7 @@ puts "Groups seeded!"
 ###########
 membership_user1 = Membership.new()
 membership_user1.group = group
-membership_user1.user = user1
+membership_user1.user = host1
 membership_user1.save
 
 puts "Memberships seeded!"
@@ -235,7 +235,7 @@ comment = Comment.new({
   content: 'Hey guys, how are you? I have just begun reading the book and was wondering how far along you all have come. After all, its only 10 days until our meeting. Really excited to finally get to know everyone :slightly_smiling_face:'
 })
 comment.group = group
-comment.user = user1
+comment.user = host2
 comment.save
 
 puts "Comments seeded!"

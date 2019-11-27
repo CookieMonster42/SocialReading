@@ -14,7 +14,6 @@
     <% @memberships.each do |membership| %>
       <%= link_to (image_tag membership.group.book.photo, width: '180px'), group_path(id: membership.group.id) %>
     <% end %>
-
   </div>
 </div>
 
