@@ -1,10 +1,10 @@
-
-<<<<<<< HEAD
+<!-- Title -->
 <div class="mt-5 pt-5 text-center">
   <h1><%= @group.name %></h1>
   <p><%= @group.language.name %></p>
 </div>
 
+<!-- Book -->
 <div class="d-flex flex-row m-5">
   <div>
     <img class="img-responsive" width="200" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpayload172.cargocollective.com%2F1%2F7%2F242624%2F5743221%2Fcover%2520new.jpg&f=1&nofb=1" alt="Brave new world">
@@ -16,11 +16,13 @@
   </div>
 </div>
 
+<!-- Host -->
 <div class="pl-5 pr-5 m-5">
   <p><%= @group.user.name %> founded this group because: </p>
     <p><%= @group.host_message %></p>
 </div>
 
+<!-- Group/Participants -->
 <div class="text-center">
   <h2>Group Members:</h2>
   <%= @group.memberships.each do |member| %>
@@ -28,6 +30,7 @@
   <% end %>
 </div>
 
+<!-- Info -->
 <div class="d-flex flex-row m-5 space-between">
   <div>
     <h3>Time: <%= @group.date %></h3>
@@ -37,6 +40,9 @@
     <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
   </div>
 </div>
+
+
+<!-- Comment Function -->
 
 <%= render 'comments/form', group: @group, comment: @comment %>
 
