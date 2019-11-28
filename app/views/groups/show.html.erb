@@ -25,14 +25,21 @@
 
 <!-- Group/Participants & Join Button -->
 <div class="text-center">
-  <p class="member"><%= @groups.memberships.count %> / <%= @groups.max_members %> Members</p>
-  <% @group.memberships.each do |member| %>
-    <% if member.user.name %>
-      <ul><%= link_to member.user.name, user_path(id: member.user.id) %></ul>
-    <% else %>
-      <ul><%= link_to "Placeholder Name", user_path(id: member.user.id) %></ul>
+  <p><%= @group.memberships.count %> / <%= @group.max_members %> Members</p>
+  <div class="avatar-alignment">
+    <% @group.memberships.each do |member| %>
+      <% if member.user.name %>
+        <div>
+          <%= link_to user_path(id: member.user.id) do %>
+            <%= image_tag member.user.photo, alt: "profile picture of user", class: "avatar-group" %>
+            <ul><%= member.user.name %></ul>
+          <% end %>
+        </div>
+      <% else %>
+        <ul><%= link_to "Placeholder Name", user_path(id: member.user.id) %></ul>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
   <!-- Join Button -->
   <% if @group.memberships.find_by(user_id: current_user.id) %>
     <button type="button" class="btn btn-dark">Add Friend</button>

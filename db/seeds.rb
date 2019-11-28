@@ -238,19 +238,41 @@ puts "Groups seeded!"
 
 ###########
 # Membership seed
-###########
-membership_user1 = Membership.new()
-membership_user1.group = group1
-membership_user1.user = host1
-membership_user1.save
+# ###########
+# membership_user1 = Membership.new()
+# membership_user1.group = group1
+# membership_user1.user = host1
+# membership_user1.save
 
 
+### group 1 ###
 Membership.create({user: host1, group: group1})
+Membership.create({user: host3, group: group1})
+Membership.create({user: host6, group: group1})
+### group 2 ###
 Membership.create({user: host2, group: group2})
+Membership.create({user: host4, group: group2})
+Membership.create({user: host5, group: group2})
+### group 3 ###
+Membership.create({user: host1, group: group3})
+Membership.create({user: host2, group: group3})
 Membership.create({user: host3, group: group3})
-Membership.create({user: host4, group: group4})
+Membership.create({user: host4, group: group3})
+Membership.create({user: host5, group: group3})
+Membership.create({user: host6, group: group3})
+Membership.create({user: host7, group: group3})
+### group 4 ###
+Membership.create({user: host1, group: group4})
+Membership.create({user: host2, group: group4})
+Membership.create({user: host6, group: group4})
+Membership.create({user: host7, group: group4})
+### group 5 ###
+Membership.create({user: host3, group: group5})
 Membership.create({user: host5, group: group5})
+### group 6 ###
 Membership.create({user: host6, group: group6})
+### group 7 ###
+Membership.create({user: host4, group: group7})
 Membership.create({user: host7, group: group7})
 
 puts "Memberships seeded!"
