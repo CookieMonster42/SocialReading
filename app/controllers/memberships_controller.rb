@@ -7,4 +7,12 @@ class MembershipsController < ApplicationController
     redirect_to group_path(group_id)
   end
 
+  def destroy
+    group_id = params[:id]
+    user_id = current_user.id
+    @membership = Membership.find_by(group_id: group_id, user_id: user_id)
+    @membership.delete
+    redirect_to group_path(group_id)
+  end
+
 end
