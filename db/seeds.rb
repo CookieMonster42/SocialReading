@@ -140,7 +140,8 @@ group = Group.new({
   name: "Clever Witches",
   location: "Kottbusser Damm 104 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Friday, January 21 2020, 8pm'
+  date: 'Friday, January 21 2020, 8pm',
+  max_members: 10
 })
 group.user_id = host.id
 group.book = book
@@ -151,7 +152,8 @@ group = Group.new({
   name: "Find The Real You",
   location: "Adalbertstraße 70 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 15
 })
 group.user_id = host1.id
 group.book = book1
@@ -162,7 +164,8 @@ group = Group.new({
   name: "Be Real Adventurer",
   location: "Reichenberger Str. 36 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 7
 })
 group.user_id = host2.id
 group.book = book2
@@ -173,7 +176,8 @@ group = Group.new({
   name: "Who is U",
   location: "Cuccuma, Zossener Str. 34 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 5
 })
 group.user_id = host3.id
 group.book = book3
@@ -184,7 +188,8 @@ group = Group.new({
   name: "Out of My Mind",
   location: "Lima",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 12
 })
 group.user_id = host4.id
 group.book = book4
@@ -195,7 +200,8 @@ group = Group.new({
   name: "We are The Children",
   location: "Two and Two, Pannierstraße 6, Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 10
 })
 group.user_id = host5.id
 group.book = book5
@@ -206,7 +212,8 @@ group = Group.new({
   name: "Better Way of Thinking",
   location: "Moscow",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Fri, Nov 29 2020, 11:00 am'
+  date: 'Fri, Nov 29 2020, 11:00 am',
+  max_members: 5
 })
 group.user_id = host6.id
 group.book = book6
