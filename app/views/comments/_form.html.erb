@@ -4,7 +4,7 @@
         <%= simple_form_for([ group, comment ], remote: true) do |f| %>
       <div class="comment-form">
         <% if !current_user.photo.nil? %>
-        <%= image_tag(current_user.photo) %>
+        <%= image_tag(current_user.photo, class: "avatar-large") %>
         <% else %>
         <%= image_tag("profile_placeholder", class: "avatar-large") %>
         <% end %>
