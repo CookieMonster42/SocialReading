@@ -1,6 +1,7 @@
 function refreshForm(innerHTML) {
   const newCommentForm = document.getElementById("new_comment");
   newCommentForm.innerHTML = innerHTML;
+  newCommentForm.reset();
 }
 
 function addComment(commentHTML) {
