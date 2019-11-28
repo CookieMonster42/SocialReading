@@ -24,10 +24,11 @@
 
 .detail {
   flex: 1;
-  width: 165px;
+  min-width: 165px;
   height: 256px;
   text-align: left;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .title {
@@ -35,6 +36,7 @@
   margin-bottom: 0;
   color: $turquoise-lighter;
   text-decoration: none;
+  font-weight: bolder;
 }
 
 .link:hover {
@@ -62,5 +64,11 @@ margin-bottom: 0;
 .address {
  font-size: 0.8rem;
  margin-top: 0;
+ margin-bottom: 0;
+}
+
+.member {
+ font-size: 0.8rem;
+ margin-top: 24px;
  margin-bottom: 0;
 }
