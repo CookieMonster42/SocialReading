@@ -8,6 +8,12 @@ class GroupsController < ApplicationController
 
   def index
     skip_policy_scope
+    search_groups(params)
+  end
+
+  private
+
+  def search_groups(params)
     if params[:query]
       @location = params[:query]
       @groups = Group.near(@location, 50)
@@ -21,19 +27,6 @@ class GroupsController < ApplicationController
       @groups = Group.near(@location, 50)
     else
       @groups = Group.all
-    end
-  end
-
-  private
-
-  def search_groups(location)
-    if params[:query].present?
-      # if params[:range].values.first.to_i.zero?
-      #   range = 50
-      # else
-      #   range = params[:range].values.first.to_i
-      # end
-      @groups = Group.near(" #{location}", 50)
     end
   end
 end
