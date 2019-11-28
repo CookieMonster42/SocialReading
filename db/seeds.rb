@@ -21,53 +21,63 @@ puts "Languages seeded!"
 ###########
 # User/host seed
 ###########
-host = User.create({
+
+names = ["Andy", "Lala", "Kevin", "Jay", "May", "Des", "Roy"]
+
+host1 = User.create({
   name: "Andy",
   password: '123456',
   email: 'andy@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs'
-})
-
-host1 = User.create({
-  name: "Lala",
-  password: '123456',
-  email: 'lala@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs'
+  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  photo: "https://avatars3.githubusercontent.com/u/12513436?v=4"
 })
 
 host2 = User.create({
-  name: "Kevin",
+  name: "Lala",
   password: '123456',
-  email: 'kevin@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs'
+  email: 'lala@smile.com',
+  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  photo: 'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80'
 })
 
 host3 = User.create({
-  name: "Jay",
+  name: "Kevin",
   password: '123456',
-  email: 'jay@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs'
+  email: 'kevin@smile.com',
+  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  photo: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 })
 
 host4 = User.create({
-  name: "May",
+  name: "Jay",
   password: '123456',
-  email: 'may@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs'
+  email: 'jay@smile.com',
+  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  photo: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 })
 
 host5 = User.create({
-  name: "Des",
+  name: "May",
   password: '123456',
-  email: 'des@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs'
+  email: 'may@smile.com',
+  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  photo: "https://images.unsplash.com/photo-1493106819501-66d381c466f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 })
 
 host6 = User.create({
+  name: "Des",
+  password: '123456',
+  email: 'des@smile.com',
+  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  photo: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+})
+
+host7 = User.create({
   name: "Roy",
   password: '123456',
   email: 'roy@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs'
+  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  photo: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 })
 
 puts "Users seeded!"
@@ -136,82 +146,89 @@ puts "Books seeded!"
 ###########
 # group seed
 ###########
-group = Group.new({
+group1 = Group.new({
   name: "Clever Witches",
   location: "Kottbusser Damm 104 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Friday, January 21 2020, 8pm'
+  date: 'Friday, January 21 2020, 8pm',
+  max_members: 10
 })
-group.user_id = host.id
-group.book = book
-group.language = language
-group.save
+group1.user_id = host7.id
+group1.book = book
+group1.language = language
+group1.save
 
-group = Group.new({
+group2 = Group.new({
   name: "Find The Real You",
   location: "Adalbertstraße 70 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 15
 })
-group.user_id = host1.id
-group.book = book1
-group.language = language
-group.save
+group2.user_id = host1.id
+group2.book = book1
+group2.language = language
+group2.save
 
-group = Group.new({
+group3 = Group.new({
   name: "Be Real Adventurer",
   location: "Reichenberger Str. 36 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 7
 })
-group.user_id = host2.id
-group.book = book2
-group.language = language
-group.save
+group3.user_id = host2.id
+group3.book = book2
+group3.language = language
+group3.save
 
-group = Group.new({
+group4 = Group.new({
   name: "Who is U",
   location: "Cuccuma, Zossener Str. 34 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 5
 })
-group.user_id = host3.id
-group.book = book3
-group.language = language
-group.save
+group4.user_id = host3.id
+group4.book = book3
+group4.language = language
+group4.save
 
-group = Group.new({
+group5 = Group.new({
   name: "Out of My Mind",
   location: "Lima",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 12
 })
-group.user_id = host4.id
-group.book = book4
-group.language = language
-group.save
+group5.user_id = host4.id
+group5.book = book4
+group5.language = language
+group5.save
 
-group = Group.new({
+group6 = Group.new({
   name: "We are The Children",
   location: "Two and Two, Pannierstraße 6, Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Thu, Nov 28 2020, 19:00 pm'
+  date: 'Thu, Nov 28 2020, 19:00 pm',
+  max_members: 10
 })
-group.user_id = host5.id
-group.book = book5
-group.language = language
-group.save
+group6.user_id = host5.id
+group6.book = book5
+group6.language = language
+group6.save
 
-group = Group.new({
+group7 = Group.new({
   name: "Better Way of Thinking",
   location: "Moscow",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Fri, Nov 29 2020, 11:00 am'
+  date: 'Fri, Nov 29 2020, 11:00 am',
+  max_members: 5
 })
-group.user_id = host6.id
-group.book = book6
-group.language = language
-group.save
+group7.user_id = host6.id
+group7.book = book6
+group7.language = language
+group7.save
 
 puts "Groups seeded!"
 
@@ -223,9 +240,18 @@ puts "Groups seeded!"
 # Membership seed
 ###########
 membership_user1 = Membership.new()
-membership_user1.group = group
+membership_user1.group = group1
 membership_user1.user = host1
 membership_user1.save
+
+
+Membership.create({user: host1, group: group1})
+Membership.create({user: host2, group: group2})
+Membership.create({user: host3, group: group3})
+Membership.create({user: host4, group: group4})
+Membership.create({user: host5, group: group5})
+Membership.create({user: host6, group: group6})
+Membership.create({user: host7, group: group7})
 
 puts "Memberships seeded!"
 ###########
@@ -234,7 +260,7 @@ puts "Memberships seeded!"
 comment = Comment.new({
   content: 'Hey guys, how are you? I have just begun reading the book and was wondering how far along you all have come. After all, its only 10 days until our meeting. Really excited to finally get to know everyone :slightly_smiling_face:'
 })
-comment.group = group
+comment.group = group1
 comment.user = host2
 comment.save
 
