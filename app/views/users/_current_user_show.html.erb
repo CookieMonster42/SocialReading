@@ -1,0 +1,22 @@
+<%= if current.user == user %>
+
+<%= else %>
+  <div class="user-profile">
+   <%= image_tag "ray-berry-rounded.png", alt: "profile picture of user", width: '170px', height: '170px'%>
+    <div class="profile-heading">
+      <h1> <%= @user.name %></h1>
+      <span> Member since <%= @user.created_at.year %></span>
+    </div>
+
+    <div class="user-bio">
+      <p> "<%= @user.bio %>" </p>
+    </div>
+
+    <div class="reading">
+      <h2> <%= @user.name %> is currently reading...</h2>
+      <% @memberships.each do |membership| %>
+        <%= link_to (image_tag membership.group.book.photo, width: '180px'), group_path(id: membership.group.id) %>
+      <% end %>
+    </div>
+  </div>
+<%= end %>

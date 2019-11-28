@@ -23,9 +23,9 @@
         <li class="nav-item dropdown mr-2">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "[SOON!] Dashboard", "#", class: "dropdown-item" %>
+            <%= link_to "Dashboard", user_path(current_user), class: "dropdown-item" %>
             <%#= link_to "", root_path, class: "dropdown-item" %>
-            <%= link_to "Profil", user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "My Account", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
