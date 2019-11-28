@@ -4,7 +4,7 @@
       <div class="d-flex flex-row justify-content-between">
         <div class="text-center">
           <% if !current_user.photo.nil? %>
-          <%= image_tag(current_user.photo) %>
+          <%= image_tag(current_user.photo, class: "avatar-large") %>
           <% else %>
           <%= image_tag("profile_placeholder", class: "avatar-large") %>
           <% end %>
