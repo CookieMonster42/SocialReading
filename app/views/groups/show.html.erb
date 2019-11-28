@@ -25,7 +25,7 @@
 
 <!-- Group/Participants & Join Button -->
 <div class="text-center">
-  <h2>Group Members:</h2>
+  <p class="member"><%= @groups.memberships.count %> / <%= @groups.max_members %> Members</p>
   <% @group.memberships.each do |member| %>
     <% if member.user.name %>
       <ul><%= link_to member.user.name, user_path(id: member.user.id) %></ul>
@@ -73,9 +73,3 @@
     <button type="button" class="btn btn-danger"><%= link_to "Leave Group", membership_path(id: @group.id), method: :delete %></button>
   <% end %>
 </div>
-
-
-
-
-
-
