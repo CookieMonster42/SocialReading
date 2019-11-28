@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @group = Group.find(params[:group_id])
     @comment = Comment.new(comment_params)
