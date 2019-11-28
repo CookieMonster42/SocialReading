@@ -1,8 +1,8 @@
 <!-- Title -->
 
 <div class="mt-5 pt-5 text-center">
-  <h1><%= @group.name %></h1>
-  <p><%= @group.language.name %></p>
+  <h1 class="group-title"><%= @group.name %></h1>
+  <p class="group-language"><%= @group.language.name %></p>
 </div>
 
 <!-- Book -->
@@ -11,8 +11,8 @@
     <%= image_tag @group.book.photo, class: 'book-image' %>
   </div>
   <div class="pr-5 pl-5">
-    <h2>Title: <%= @group.book.title %></h2>
-    <p>Author: <%= @group.book.author %></p>
+    <h2><%= @group.book.title.upcase %></h2>
+    <p><%= @group.book.author.upcase %></p>
     <p>Description: <%= @group.book.description %></p>
   </div>
 </div>
@@ -51,8 +51,8 @@
 <!-- Info -->
 <div class="d-flex flex-row m-5 space-between">
   <div>
-    <h3>Time: <%= @group.date %></h3>
-    <h3>Location: <%= @group.location %></h3>
+    <h2>Time: <%= @group.date %></h2>
+    <h2>Location: <%= @group.location %></h2>
   </div>
   <div>
     <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
