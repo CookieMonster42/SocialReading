@@ -67,3 +67,15 @@
   <% end %>
 </div>
 
+<!-- Leave Button -->
+<div>
+  <% if @group.memberships.find_by(user_id: current_user.id) %>
+    <button type="button" class="btn btn-danger"><%= link_to "Leave Group", membership_path(id: @group.id), method: :delete %></button>
+  <% end %>
+</div>
+
+
+
+
+
+
