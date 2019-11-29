@@ -1,24 +1,29 @@
 <div class="cards-row text-center">
   <% @groups.each do |g| %>
-    <div class="" id="card-item">
-  <%= link_to group_path(g), class:"link", :action => 'go' do %>
-      <% if g.book.photo.present? %>
-      <%= image_tag g.book.photo, class: 'book-image' %>
-      <% else %>
-      <%= image_tag "bookcover.jpg", class: 'book-image' %>
+  <div class="" id="card-item">
+    <%= link_to group_path(g), class:"link", :action => 'go' do %>
+    <% if g.book.photo.present? %>
+    <%= image_tag g.book.photo, class: 'book-image' %>
+    <% else %>
+    <%= image_tag "bookcover.jpg", class: 'book-image' %>
+    <% end %>
+    <div class="detail">
+      <p class="title"><strong><%= g.name%></strong></p>
       <% end %>
-      <div class="detail">
-        <p class="title"><strong><%= g.name%></strong></p>
-        <% end %>
-        <p class="subtitle mb-4">are meeting on</p>
-        <p class="date"><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
+      <p class="subtitle mb-4">are meeting on</p>
+      <p class="date"><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
         <p class="date"><%= g.date.strftime("%H:%M") %></p>
         <p class="location mt-4"><%= g.location.split(",").first.capitalize %></p>
         <p class="address"><%= g.location.split(",")[1..-1].join %></p>
-        <% if g.memberships.count >= g.max_members%>
+        <% if g.memberships.count + 1 >= g.max_members%>
          <p class="member">Join Waiting List</p>
         <% else %>
-         <p class="member"><%= g.memberships.count %> / <%= g.max_members %> Members</p>
+        <p class="member"><%= g.memberships.count %> / <%= g.max_members %> Members</p>
+        <% end %>
+        <% if g.tag_list.any? %>
+          <div>
+            <%= render 'shared/tag', group: g %>
+          </div>
         <% end %>
       </div>
       <div class="count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
@@ -26,5 +31,5 @@
         <div id="subday">days</div>
       </div>
     </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>

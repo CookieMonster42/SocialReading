@@ -1,8 +1,22 @@
-<div class="user-profile">
- <%= image_tag @user.photo, alt: "profile picture of user", class: "avatar-profile"%>
-  <div class="profile-heading">
-    <h1> <%= @user.name %></h1>
-    <span> Member since <%= @user.created_at.year %></span>
+<%= render "shared/navbar_dark" %>
+
+<% if current_user == @user %>
+<%= render "current_user_show" %>
+<% else %>
+<div class="profile-con">
+  <div class="user-profile">
+    <div class="user-profile">
+      <% if !@user.photo.nil? %>
+        <%= image_tag @user.photo, alt: "profile picture of user", class: "avatar-profile"%>
+      <% else %>
+        <%= image_tag ("profile_placeholder"), alt: "profile picture of user", class: "avatar-profile" %>
+      <% end %>
+
+      <div class="profile-heading">
+        <h1> <%= @user.name %></h1>
+        <span> Member since <%= @user.created_at.year %></span>
+      </div>
+    </div>
   </div>
 
   <div class="user-bio">
@@ -10,15 +24,11 @@
   </div>
 
   <div class="reading">
-    <h2> <%= @user.name %> is currently reading...</h2>
-    <% @memberships.each do |membership| %>
-      <%= link_to (image_tag membership.group.book.photo, width: '180px'), group_path(id: membership.group.id) %>
-    <% end %>
+
+    <h2 class="reading-title"> <%= @user.name %> is currently reading...</h2>
+  <div>
+    <%= render "shared/current_readings_card" %>
+  </div>
   </div>
 </div>
-
-
-<!--  1.iterate over users current book groups(where he is a member)
-      2. display only image
-      3. link_to group#show-page, when clicking on cover -->
-
+<% end %>

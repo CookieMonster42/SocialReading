@@ -1,3 +1,7 @@
+.container {
+  width: 800px;
+}
+
 .comment-form {
   display: flex;
   justify-content: center;
@@ -12,5 +16,36 @@
 
 .form-btn {
   padding-left: 10px;
+}
+
+.form-btn:focus {
+  outline: none;
+}
+
+.card-body {
+  background-color: white;
+}
+
+// Styling Group
+
+.group-title {
+  font-family:'Moret Regular';
+}
+
+.group-language {
+  color: $turquoise;
+  font-family: "Montserrat";
+}
+
+h2 {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.group-author {
+  color: $turquoise;
+  font-size: 12px;
+  font-weight: 500;
 }
 
