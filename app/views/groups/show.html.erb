@@ -1,96 +1,98 @@
-<!-- Title -->
+<div class="container">
+  <!-- Title -->
 
-<div class="mt-5 pt-5 text-center">
-  <h1 class="group-title"><%= @group.name %></h1>
-  <p class="group-language"><%= @group.language.name %></p>
-</div>
-
-<!-- Book -->
-<div class="d-flex flex-row m-5">
-  <div class="img-responsive" width="200">
-    <%= image_tag @group.book.photo, class: 'book-image' %>
+  <div class="mt-5 pt-5 text-center">
+    <h1 class="group-title"><%= @group.name %></h1>
+    <p class="group-language"><%= @group.language.name %></p>
   </div>
-  <div class="pr-5 pl-5">
-    <h2><%= @group.book.title.upcase %></h2>
-    <p><%= @group.book.author.upcase %></p>
-    <p>Description: <%= @group.book.description %></p>
+
+  <!-- Book -->
+  <div class="d-flex flex-row m-5">
+    <div class="img-responsive" width="200">
+      <%= image_tag @group.book.photo, class: 'book-image' %>
+    </div>
+    <div class="pr-5 pl-5">
+      <h2><%= @group.book.title.upcase %></h2>
+      <p class="group-author"><%= @group.book.author.upcase %></p>
+      <p>»<%= @group.book.description %>...</p>
+    </div>
   </div>
-</div>
 
-<!-- Host -->
-<div class="pl-5 pr-5 m-5">
-  <p><%= @group.user.name %> founded this group because: </p>
-    <p><%= @group.host_message %></p>
-</div>
+  <!-- Host -->
+  <div class="pl-5 pr-5 m-5">
+    <p><%= @group.user.name %> founded this group because: </p>
+      <p><%= @group.host_message %></p>
+  </div>
 
-<!-- Group/Participants & Join Button -->
-<div class="text-center">
-  <!-- Membership Number -->
-  <p><%= @group.memberships.count %> / <%= @group.max_members %> Members</p>
-  <!-- Membership Avatars -->
-  <div class="avatar-alignment">
-    <!-- Host -->
-    <%= link_to user_path(id: @group.user.id) do %>
-      <% image_tag @group.user.photo, alt: "profile picture of host", class: "avatar-group" %>
-      <ul><%= @group.user.name %></ul>
+  <!-- Group/Participants & Join Button -->
+  <div class="text-center">
+    <!-- Membership Number -->
+    <p><%= @group.memberships.count + 1 %> / <%= @group.max_members %> Members</p>
+    <!-- Membership Avatars -->
+    <div class="avatar-alignment">
+      <!-- Host -->
+      <%= link_to user_path(id: @group.user.id) do %>
+        <%= image_tag @group.user.photo, alt: "profile picture of host", class: "avatar-group" %>
+        <ul><%= @group.user.name %></ul>
+      <% end %>
+      <!-- Other members -->
+      <% @group.memberships.each do |member| %>
+        <% if member.user.name %>
+          <div>
+            <%= link_to user_path(id: member.user.id) do %>
+              <%= image_tag member.user.photo, alt: "profile picture of user", class: "avatar-group" %>
+              <ul><%= member.user.name %></ul>
+            <% end %>
+          </div>
+        <% else %>
+          <ul><%= link_to "Placeholder Name", user_path(id: member.user.id) %></ul>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- Join Button -->
+    <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
+      <button type="button" class="btn btn-dark">Invite Friend</button>
+    <% elsif !@group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
+      <%= link_to memberships_path(id: @group.id), method: :post do %>
+        <button type="button" class="btn btn-success">Join</button>
+      <% end %>
+    <% else %>
+      <button type="button" class="btn btn-dark">Join Waiting List</button>
     <% end %>
-    <!-- Other members -->
-    <% @group.memberships.each do |member| %>
-      <% if member.user.name %>
-        <div>
-          <%= link_to user_path(id: member.user.id) do %>
-            <%= image_tag member.user.photo, alt: "profile picture of user", class: "avatar-group" %>
-            <ul><%= member.user.name %></ul>
-          <% end %>
-        </div>
-      <% else %>
-        <ul><%= link_to "Placeholder Name", user_path(id: member.user.id) %></ul>
+  </div>
+
+  <!-- Info -->
+  <div class="d-flex flex-row m-5 space-between">
+    <div>
+      <h2>Time: <%= @group.date %></h2>
+      <h2>Location: <%= @group.location %></h2>
+    </div>
+    <div>
+      <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
+    </div>
+  </div>
+
+
+  <!-- Comment Function -->
+
+  <%= render 'comments/form', group: @group, comment: @comment %>
+
+  <div id="comments">
+    <% if @group.comments.blank? %>
+      <h3>Be the first to leave a comment for <%= @group.name %></h3>
+    <% else %>
+      <% @group.comments.each do |comment| %>
+        <%= render 'comments/show', comment: comment %>
       <% end %>
     <% end %>
   </div>
-  <!-- Join Button -->
-  <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count < @group.max_members %>
-    <button type="button" class="btn btn-dark">Invite Friend</button>
-  <% elsif !@group.memberships.find_by(user_id: current_user.id) %>
-    <%= link_to memberships_path(id: @group.id), method: :post do %>
-      <button type="button" class="btn btn-success">Join</button>
-    <% end %>
-  <% else %>
-    <button type="button" class="btn btn-dark">Join Waiting List</button>
-  <% end %>
-</div>
 
-<!-- Info -->
-<div class="d-flex flex-row m-5 space-between">
-  <div>
-    <h2>Time: <%= @group.date %></h2>
-    <h2>Location: <%= @group.location %></h2>
+  <!-- Leave Button -->
+  <div class="text-center m-5">
+    <% if @group.memberships.find_by(user_id: current_user.id) %>
+      <%= link_to membership_path(id: @group.id), method: :delete do %>
+        <button type="button" class="btn btn-danger">Leave Group</button>
+      <% end %>
+    <% end %>
   </div>
-  <div>
-    <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
-  </div>
-</div>
-
-
-<!-- Comment Function -->
-
-<%= render 'comments/form', group: @group, comment: @comment %>
-
-<div id="comments">
-  <% if @group.comments.blank? %>
-    <h3>Be the first to leave a comment for <%= @group.name %></h3>
-  <% else %>
-    <% @group.comments.each do |comment| %>
-      <%= render 'comments/show', comment: comment %>
-    <% end %>
-  <% end %>
-</div>
-
-<!-- Leave Button -->
-<div class="text-center m-5">
-  <% if @group.memberships.find_by(user_id: current_user.id) %>
-    <%= link_to membership_path(id: @group.id), method: :delete do %>
-      <button type="button" class="btn btn-danger">Leave Group</button>
-    <% end %>
-  <% end %>
 </div>
