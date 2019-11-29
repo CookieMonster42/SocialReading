@@ -2,19 +2,25 @@ body {
   background-color: $creme;
 }
 
-.user-profile {
+.profile-con{
   text-align: center;
-  margin-top: 150px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.user-profile {
+  margin-top: 80px;
+
 }
 
 .profile-heading{
-  padding-top: 50px;
-  padding-bottom: 70px;
+  padding-top: 20px;
 }
 
 .user-bio{
-  padding-bottom: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .user-profile h1 {
@@ -33,4 +39,64 @@ body {
   font-family: montserrat;
   font-weight: regular;
   font-size: 18px;
+}
+
+.reading-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.reading-card {
+  position: relative;
+  display: flex;
+  padding: 0px 30px;
+  flex-direction: column;
+}
+
+.book-image{
+  flex: 1;
+  object-fit: fill;
+}
+
+.resub {
+  flex: 1;
+  margin-top: 18px;
+}
+
+.reading-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 0rem;
+}
+
+.user-count-down {
+ position: absolute;
+ width:50px;
+ height:50px;
+ border-radius:25px;
+ color: $creme;
+ text-align:center;
+ top: -25px;
+ left: 6px;
+ display: flex;
+ flex-direction: column;
+     justify-content: center;
+}
+
+#user-number {
+    font-size: 16px;
+    color: #fdf8f4;
+}
+
+#user-subday {
+    font-size: 0.6rem;
+    color: #fdf8f4;
+}
+
+.bc-red {
+  background: $magenta-red
+}
+
+.bc-green {
+  background: $turquoise-lighter;
 }
