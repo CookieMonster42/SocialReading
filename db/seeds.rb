@@ -23,6 +23,7 @@ puts "Languages seeded!"
 ###########
 
 names = ["Andy", "Lala", "Kevin", "Jay", "May", "Des", "Roy"]
+tags = ['Fantasy','Fairy Tale', 'Fiction', 'Thriller', 'Historical Fiction', 'Science Fiction', 'Novel', 'Horror', 'Short Stories', 'Travelling']
 
 host1 = User.create({
   name: "Andy",
@@ -156,6 +157,7 @@ group1 = Group.new({
 group1.user_id = host7.id
 group1.book = book
 group1.language = language
+group1.tag_list
 group1.save
 
 group2 = Group.new({
