@@ -182,7 +182,7 @@ group3 = Group.new({
   location: "Reichenberger Str. 36 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Sat, Dec 14 2019, 18:00 pm',
-  max_members: 6
+  max_members: 7
 })
 group3.user_id = host2.id
 group3.book = book2

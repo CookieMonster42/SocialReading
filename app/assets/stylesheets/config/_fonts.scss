@@ -2,9 +2,10 @@
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 @font-face {
   font-family:'Moret Regular';
-  src:
-  url('moret.otf') format('opentype'),
-  url('moret.ttf') format('truetype');
+  src:font-url('moret.otf') format('opentype'),
+      font-url('moret.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -23,3 +24,4 @@ $subheading-font: "Montserrat", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
