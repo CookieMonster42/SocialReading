@@ -29,11 +29,6 @@
   <p><%= @group.memberships.count %> / <%= @group.max_members %> Members</p>
   <!-- Membership Avatars -->
   <div class="avatar-alignment">
-    <!-- Host -->
-    <%= link_to user_path(id: @group.user.id) do %>
-      <% image_tag @group.user.photo, alt: "profile picture of host", class: "avatar-group" %>
-      <ul><%= @group.user.name %></ul>
-    <% end %>
     <!-- Other members -->
     <% @group.memberships.each do |member| %>
       <% if member.user.name %>
