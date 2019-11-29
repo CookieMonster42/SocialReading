@@ -1,6 +1,7 @@
 .cards {
   font-family:'Moret Regular';
   font-size: 48px;
+  color: $dark-blue;
 }
 .cards-title {
   color: $turquoise-lighter;
@@ -34,10 +35,12 @@
  flex-direction: column;
      justify-content: center;
 }
+
 #number {
     font-size: 16px;
     color: #fdf8f4;
 }
+
 #subday {
     font-size: 0.6rem;
     color: #fdf8f4;

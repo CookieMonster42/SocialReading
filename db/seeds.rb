@@ -23,6 +23,7 @@ puts "Languages seeded!"
 ###########
 
 names = ["Andy", "Lala", "Kevin", "Jay", "May", "Des", "Roy"]
+tags = ['Fantasy','Fairy Tale', 'Fiction', 'Thriller', 'Historical Fiction', 'Science Fiction', 'Novel', 'Horror', 'Short Stories', 'Travelling']
 
 host1 = User.create({
   name: "Andy",
@@ -160,6 +161,7 @@ group1 = Group.new({
 group1.user_id = host7.id
 group1.book = book
 group1.language = language
+group1.tag_list
 group1.save
 
 group2 = Group.new({
@@ -179,7 +181,7 @@ group3 = Group.new({
   location: "Reichenberger Str. 36 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Sat, Dec 14 2019, 18:00 pm',
-  max_members: 7
+  max_members: 6
 })
 group3.user_id = host2.id
 group3.book = book2
@@ -259,7 +261,6 @@ Membership.create({user: host4, group: group2})
 Membership.create({user: host5, group: group2})
 ### group 3 ###
 Membership.create({user: host1, group: group3})
-Membership.create({user: host2, group: group3})
 Membership.create({user: host3, group: group3})
 Membership.create({user: host4, group: group3})
 Membership.create({user: host5, group: group3})
