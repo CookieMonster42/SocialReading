@@ -1,5 +1,7 @@
 
 <div class="container py-3">
   <h1>Search Your Group by Location</h1>
-    <%= render 'shared/search_bar', content: 'Search' %>
+  <div class="search-section w-75 mx-auto">
+    <%= render 'shared/search_bar', location: params[:format] %>
+  </div>
   </div>

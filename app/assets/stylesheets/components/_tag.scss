@@ -1,5 +1,14 @@
-.tag {
-  font-size: 12px;
-  background-color: $turquoise;
-  max-width: 50px;
+.tag-regular {
+  color: $turquoise;
+  border: 1px solid $turquoise;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  height: 40px;
+}
+
+.tag-regular:hover {
+  opacity: 1;
 }
