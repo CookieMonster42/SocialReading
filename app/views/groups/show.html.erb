@@ -15,6 +15,9 @@
     <h2>Title: <%= @group.book.title %></h2>
     <p>Author: <%= @group.book.author %></p>
     <p>Description: <%= @group.book.description %></p>
+    <% if @group.tag_list.any? %>
+      <%= render 'shared/tag', group: @group %>
+    <% end %>
   </div>
 </div>
 
