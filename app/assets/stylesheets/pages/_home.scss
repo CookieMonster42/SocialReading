@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+.background-img {
+  background-image: url("LandingPageImage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: $creme;
+  font-family: "Moret Regular";
+}
