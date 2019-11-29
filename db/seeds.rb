@@ -23,6 +23,7 @@ puts "Languages seeded!"
 ###########
 
 names = ["Andy", "Lala", "Kevin", "Jay", "May", "Des", "Roy"]
+tags = ['Fantasy','Fairy Tale', 'Fiction', 'Thriller', 'Historical Fiction', 'Science Fiction', 'Novel', 'Horror', 'Short Stories', 'Travelling']
 
 host1 = User.create({
   name: "Andy",
@@ -52,7 +53,11 @@ host4 = User.create({
   name: "Jay",
   password: '123456',
   email: 'jay@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  bio: 'I love to read. I wish I could advise more people to
+read. There’s a whole new world in books. If you
+can’t afford to travel, you travel mentally through
+reading. You can see anything and go any place
+you want to in reading.',
   photo: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 })
 
@@ -156,6 +161,7 @@ group1 = Group.new({
 group1.user_id = host7.id
 group1.book = book
 group1.language = language
+group1.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
 group1.save
 
 group2 = Group.new({
@@ -168,6 +174,7 @@ group2 = Group.new({
 group2.user_id = host1.id
 group2.book = book1
 group2.language = language
+group2.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
 group2.save
 
 group3 = Group.new({
@@ -180,6 +187,7 @@ group3 = Group.new({
 group3.user_id = host2.id
 group3.book = book2
 group3.language = language
+group3.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
 group3.save
 
 group4 = Group.new({
@@ -192,6 +200,7 @@ group4 = Group.new({
 group4.user_id = host3.id
 group4.book = book3
 group4.language = language
+group4.tag_list.add("#{tags.sample}")
 group4.save
 
 group5 = Group.new({
@@ -204,6 +213,7 @@ group5 = Group.new({
 group5.user_id = host4.id
 group5.book = book4
 group5.language = language
+group5.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
 group5.save
 
 group6 = Group.new({
@@ -216,6 +226,7 @@ group6 = Group.new({
 group6.user_id = host5.id
 group6.book = book5
 group6.language = language
+group6.tag_list.add("#{tags.sample}", "#{tags.sample}")
 group6.save
 
 group7 = Group.new({
@@ -228,6 +239,7 @@ group7 = Group.new({
 group7.user_id = host6.id
 group7.book = book6
 group7.language = language
+group7.tag_list.add("#{tags.sample}")
 group7.save
 
 puts "Groups seeded!"

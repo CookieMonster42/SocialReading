@@ -1,6 +1,7 @@
+<%= render "shared/navbar_dark" %>
+
 <div class="container">
   <!-- Title -->
-
   <div class="mt-5 pt-5 text-center">
     <h1 class="group-title"><%= @group.name %></h1>
     <p class="group-language"><%= @group.language.name %></p>
@@ -15,6 +16,9 @@
       <h2><%= @group.book.title.upcase %></h2>
       <p class="group-author"><%= @group.book.author.upcase %></p>
       <p>»<%= @group.book.description %>...</p>
+      <% if @group.tag_list.any? %>
+      <%= render 'shared/tag', group: @group %>
+    <% end %>
     </div>
   </div>
 
