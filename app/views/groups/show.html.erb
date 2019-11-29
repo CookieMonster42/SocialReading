@@ -2,8 +2,8 @@
 <!-- Title -->
 
 <div class="mt-5 pt-5 text-center">
-  <h1><%= @group.name %></h1>
-  <p><%= @group.language.name %></p>
+  <h1 class="group-title"><%= @group.name %></h1>
+  <p class="group-language"><%= @group.language.name %></p>
 </div>
 
 <!-- Book -->
@@ -12,8 +12,8 @@
     <%= image_tag @group.book.photo, class: 'book-image' %>
   </div>
   <div class="pr-5 pl-5">
-    <h2>Title: <%= @group.book.title %></h2>
-    <p>Author: <%= @group.book.author %></p>
+    <h2><%= @group.book.title.upcase %></h2>
+    <p><%= @group.book.author.upcase %></p>
     <p>Description: <%= @group.book.description %></p>
     <% if @group.tag_list.any? %>
       <%= render 'shared/tag', group: @group %>
@@ -29,8 +29,11 @@
 
 <!-- Group/Participants & Join Button -->
 <div class="text-center">
+  <!-- Membership Number -->
   <p><%= @group.memberships.count %> / <%= @group.max_members %> Members</p>
+  <!-- Membership Avatars -->
   <div class="avatar-alignment">
+    <!-- Other members -->
     <% @group.memberships.each do |member| %>
       <% if member.user.name %>
         <div>
@@ -45,18 +48,22 @@
     <% end %>
   </div>
   <!-- Join Button -->
-  <% if @group.memberships.find_by(user_id: current_user.id) %>
-    <button type="button" class="btn btn-dark">Add Friend</button>
+  <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count < @group.max_members %>
+    <button type="button" class="btn btn-dark">Invite Friend</button>
+  <% elsif !@group.memberships.find_by(user_id: current_user.id) %>
+    <%= link_to memberships_path(id: @group.id), method: :post do %>
+      <button type="button" class="btn btn-success">Join</button>
+    <% end %>
   <% else %>
-    <button type="button" class="btn btn-success"><%= link_to "Join", memberships_path(id: @group.id), method: :post %></button>
+    <button type="button" class="btn btn-dark">Join Waiting List</button>
   <% end %>
 </div>
 
 <!-- Info -->
 <div class="d-flex flex-row m-5 space-between">
   <div>
-    <h3>Time: <%= @group.date %></h3>
-    <h3>Location: <%= @group.location %></h3>
+    <h2>Time: <%= @group.date %></h2>
+    <h2>Location: <%= @group.location %></h2>
   </div>
   <div>
     <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
@@ -79,8 +86,10 @@
 </div>
 
 <!-- Leave Button -->
-<div>
+<div class="text-center m-5">
   <% if @group.memberships.find_by(user_id: current_user.id) %>
-    <button type="button" class="btn btn-danger"><%= link_to "Leave Group", membership_path(id: @group.id), method: :delete %></button>
+    <%= link_to membership_path(id: @group.id), method: :delete do %>
+      <button type="button" class="btn btn-danger">Leave Group</button>
+    <% end %>
   <% end %>
 </div>
