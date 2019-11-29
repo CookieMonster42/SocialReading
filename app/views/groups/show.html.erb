@@ -25,8 +25,16 @@
 
 <!-- Group/Participants & Join Button -->
 <div class="text-center">
+  <!-- Membership Number -->
   <p><%= @group.memberships.count %> / <%= @group.max_members %> Members</p>
+  <!-- Membership Avatars -->
   <div class="avatar-alignment">
+    <!-- Host -->
+    <%= link_to user_path(id: @group.user.id) do %>
+      <% image_tag @group.user.photo, alt: "profile picture of host", class: "avatar-group" %>
+      <ul><%= @group.user.name %></ul>
+    <% end %>
+    <!-- Other members -->
     <% @group.memberships.each do |member| %>
       <% if member.user.name %>
         <div>
@@ -41,10 +49,14 @@
     <% end %>
   </div>
   <!-- Join Button -->
-  <% if @group.memberships.find_by(user_id: current_user.id) %>
-    <button type="button" class="btn btn-dark">Add Friend</button>
+  <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count < @group.max_members %>
+    <button type="button" class="btn btn-dark">Invite Friend</button>
+  <% elsif !@group.memberships.find_by(user_id: current_user.id) %>
+    <%= link_to memberships_path(id: @group.id), method: :post do %>
+      <button type="button" class="btn btn-success">Join</button>
+    <% end %>
   <% else %>
-    <button type="button" class="btn btn-success"><%= link_to "Join", memberships_path(id: @group.id), method: :post %></button>
+    <button type="button" class="btn btn-dark">Join Waiting List</button>
   <% end %>
 </div>
 
@@ -75,8 +87,10 @@
 </div>
 
 <!-- Leave Button -->
-<div>
+<div class="text-center m-5">
   <% if @group.memberships.find_by(user_id: current_user.id) %>
-    <button type="button" class="btn btn-danger"><%= link_to "Leave Group", membership_path(id: @group.id), method: :delete %></button>
+    <%= link_to membership_path(id: @group.id), method: :delete do %>
+      <button type="button" class="btn btn-danger">Leave Group</button>
+    <% end %>
   <% end %>
 </div>
