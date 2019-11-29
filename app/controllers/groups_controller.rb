@@ -14,16 +14,19 @@ class GroupsController < ApplicationController
   private
 
   def search_groups(params)
+    searched = false
     if params[:query]
       @location = params[:query]
+      searched = true
       @groups = Group.near(@location, 50)
     elsif params[:format]
       @location = params[:format]
+      searched = true
       @groups = Group.near(@location, 50)
     else
       @groups = Group.all
     end
-    if @groups.any?
+    if @groups.any? && searched
       @groups = Group.near(@location, 50)
     else
       @groups = Group.all

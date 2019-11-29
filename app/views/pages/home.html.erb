@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body class="background-img">
   <%= render "shared/navbar_light" %>
   <div class="container py-3">
@@ -14,5 +15,20 @@
         </div>
       <% end %>
     </div>
+=======
+
+<div class="container py-3">
+  <h1>Search Your Group by Location</h1>
+  <div class="card">
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group p-3">
+        <%= text_field_tag :query, params[:query], class: "form-control col-lg-10", placeholder: "Where do you want to meet?" %>
+       <!--  <input class="form-control string required col-lg-11 col-sm-12" type="text" name="search[query]" id="search_query" /> -->
+        <button name="button" type="submit" class="btn btn-flat col-lg-1">
+          <i class="fas fa-search"></i> GO!
+        </button>
+      </div>
+    <% end %>
+>>>>>>> 4c004c54b6b52c7c910921fb98953daf8a429a39
   </div>
 </body>
