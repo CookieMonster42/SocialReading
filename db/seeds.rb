@@ -52,7 +52,11 @@ host4 = User.create({
   name: "Jay",
   password: '123456',
   email: 'jay@smile.com',
-  bio: 'I love fiction and Babelsberg, I also have some dogs',
+  bio: 'I love to read. I wish I could advise more people to
+read. There’s a whole new world in books. If you
+can’t afford to travel, you travel mentally through
+reading. You can see anything and go any place
+you want to in reading.',
   photo: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 })
 

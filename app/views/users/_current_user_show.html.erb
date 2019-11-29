@@ -1,4 +1,6 @@
 <div class="dashboard_and_account">
+
+  <!-- Shows Dashboard and Account tabs -->
   <ul class="nav nav-pills justify-content-center">
     <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dashboard</a>
@@ -11,19 +13,22 @@
 </ul>
 
 
+
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <div>
-      <p>You are currently reading...</p>
+      <div class ="title">You are currently reading...</div>
+      <p class="current-reads">
       <% @memberships.each do |membership| %>
         <%= link_to (image_tag membership.group.book.photo, width: '180px'), group_path(id: membership.group.id) %>
-        <%#= membership.group.book.date %>
+        <%= membership.group.name %>
+        <%= membership.group.date %>
         <!-- also shows  - bookgroup name
                     - date to meet
                     - new post, if available
                     - badge -->
       <% end %>
-
+      </p>
 
     </div>
   </div>
