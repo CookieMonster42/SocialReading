@@ -1,7 +1,21 @@
-
-<div class="container py-3">
-  <h1>Search Your Group by Location</h1>
-  <div class="search-section w-75 mx-auto">
-    <%= render 'shared/search_bar', location: params[:format] %>
-  </div>
-  </div>
+<body class="background-img">
+  <%= render "shared/navbar_light" %>
+  <div class="container py-3 mt-5">
+    <div class="d-flex flex-column mt-5">
+      <h1 class="d-flex justify-content-center">Read, Meet, Repeat <br /> Find book groups near you...</h1>
+      <div class="home-card">
+        <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+          <div class="search-bar-home">
+            <%#= number_field(:range, in: 1..200, step: 1, class: "col-lg-1" ) %>
+            <%= text_field_tag :query, params[:query], class: " home-input-field", autocomplete:"off", placeholder: "Berlin, Germany" %>
+           <!--  <input class="form-control string required col-lg-11 col-sm-12" type="text" name="search[query]" id="search_query" /> -->
+          </div>
+          <div class="search-btn">
+            <button name="button" type="submit" class="btn-regular search">
+              <i class="fas fa-search"></i> Search
+          </button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</body>
