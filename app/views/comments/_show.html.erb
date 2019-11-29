@@ -3,8 +3,8 @@
     <div class="card-body">
       <div class="d-flex flex-row justify-content-between">
         <div class="text-center">
-          <% if !current_user.photo.nil? %>
-          <%= image_tag(current_user.photo, class: "avatar-large") %>
+          <% if !comment.user.photo.nil? %>
+          <%= image_tag(comment.user.photo, class: "avatar-large") %>
           <% else %>
           <%= image_tag("profile_placeholder", class: "avatar-large") %>
           <% end %>
@@ -20,7 +20,9 @@
       </div>
       <div><p><%= comment.content %></p></div>
       <div class="d-flex justify-content-end">
-        <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), method: :delete %>
+        <% if policy(comment).destroy? %>
+          <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), method: :delete %>
+          <% end %>
       </div>
     </div>
   </div>
