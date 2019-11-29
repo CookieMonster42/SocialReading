@@ -22,8 +22,8 @@
         <% end %>
       </div>
       <div class="count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
-      <div id="number"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
-      <div id="subday">days</div>
+        <div id="number"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
+        <div id="subday">days</div>
       </div>
     </div>
   <% end %>
