@@ -1,3 +1,7 @@
+.container {
+  width: 800px;
+}
+
 .comment-form {
   display: flex;
   justify-content: center;
@@ -38,3 +42,10 @@ h2 {
   font-weight: 500;
   font-size: 20px;
 }
+
+.group-author {
+  color: $turquoise;
+  font-size: 12px;
+  font-weight: 500;
+}
+
