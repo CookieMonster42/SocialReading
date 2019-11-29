@@ -8,11 +8,59 @@
   font-family:'Moret Regular';
 }
 
+.cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+@media(max-width: 768px) {
+  .cards-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 1200px) and (min-width: 768px) {
+  .cards-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.count-down {
+ width:50px;
+ height:50px;
+ border-radius:25px;
+ font-size:20px;
+ color: $creme;
+ line-height:50px;
+ text-align:center;
+ position: absolute;
+ top: -25px;
+ left: -25px;
+}
+
+.bc-red {
+  background: $magenta-red
+}
+
+.bc-green {
+  background: $turquoise-lighter;
+}
+
+.outside {
+  justify-content: center;
+  margin: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 #card-item {
   display: flex;
   margin-bottom: 30px;
   margin-top: 30px;
-  justify-content: space-between;
+  padding: 0px;
+  position: relative;
+  margin-left: 30px;
 }
 
 .book-image {
