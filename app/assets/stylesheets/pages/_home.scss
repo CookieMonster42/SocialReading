@@ -8,4 +8,35 @@
 h1 {
   color: $creme;
   font-family: "Moret Regular";
+  text-align: center;
+  opacity: 0.8;
 }
+
+.home-card {
+  background-color: transparent;
+  margin-top: 20px;
+  display:flex;
+  justify-content: center;
+}
+
+.home-input-field {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $creme;
+  width: 40vw;
+  font-size: 30px;
+  font-family: "Moret Regular";
+  text-align: center;
+  color: $turquoise;
+}
+
+.home-input-field:focus {
+    outline: none;
+}
+
+.search-btn {
+  margin-top: 15px;
+  margin-left: 16vw;
+}
+
+
