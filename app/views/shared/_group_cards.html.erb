@@ -21,7 +21,10 @@
          <p class="member"><%= g.memberships.count %> / <%= g.max_members %> Members</p>
         <% end %>
       </div>
-      <div class="count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
+      <div class="count-down
+        <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
+        <%= (g.date.to_date - Date.today.to_date).to_i %>
+      </div>
     </div>
   <% end %>
 </div>

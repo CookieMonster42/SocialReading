@@ -1,4 +1,5 @@
-<ul class="nav nav-pills justify-content-center">
+<div class="dashboard_and_account">
+  <ul class="nav nav-pills justify-content-center">
     <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dashboard</a>
   </li>
@@ -15,22 +16,15 @@
     <div>
       <p>You are currently reading...</p>
       <% @memberships.each do |membership| %>
-        <%= link_to (image_tag membership.group.book.photo, width: '180px'), group_path(id: membership.group.id) %> -->
+        <%= link_to (image_tag membership.group.book.photo, width: '180px'), group_path(id: membership.group.id) %>
+        <%#= membership.group.book.date %>
+        <!-- also shows  - bookgroup name
+                    - date to meet
+                    - new post, if available
+                    - badge -->
       <% end %>
 
-      <p>You are currently hosting...</p>
-      <% if Group.where(user_id: @user.id).nil? %>
-        <% Group.where(user_id: @user.id) do |group| %>
-          <%= link_to (image_tag group.book.photo, width: '180px'), group_path(id: membership.group.id) %>
-        <% end %>
 
-      <% else %>
-         <p>show nothing</p>
-      <% end %>
-      <p>Previous reads</p>
-        <!-- <#% @memberships.each do |membership| %> -->
-        <%#= link_to (image_tag membership.group.book.photo, width: '180px'), group_path(id: membership.group.id) %>
-      <#% end %>
     </div>
   </div>
 
@@ -48,6 +42,8 @@
   </div>
 </div>
 
+
+</div>
 
 
 
