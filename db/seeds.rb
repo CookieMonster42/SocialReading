@@ -195,7 +195,7 @@ group4 = Group.new({
   location: "Cuccuma, Zossener Str. 34 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Fri, Dec 06 2019, 09:00 am',
-  max_members: 5
+  max_members: 9
 })
 group4.user_id = host3.id
 group4.book = book3
@@ -234,7 +234,7 @@ group7 = Group.new({
   location: "Moscow",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Thu, Dec 31 2019, 11:00 am',
-  max_members: 5
+  max_members: 8
 })
 group7.user_id = host6.id
 group7.book = book6
