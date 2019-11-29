@@ -78,18 +78,21 @@
 
 
   <!-- Comment Function -->
+  <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
 
-  <%= render 'comments/form', group: @group, comment: @comment %>
+    <%= render 'comments/form', group: @group, comment: @comment %>
 
-  <div id="comments">
-    <% if @group.comments.blank? %>
-      <h6>Be the first to leave a comment for <%= @group.name %></h6>
-    <% else %>
-      <% @group.comments.each do |comment| %>
-        <%= render 'comments/show', comment: comment %>
+  <% end %>
+
+    <div id="comments">
+      <% if @group.comments.blank? && @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
+        <h6>Be the first to leave a comment for <%= @group.name %></h6>
+      <% else %>
+        <% @group.comments.each do |comment| %>
+          <%= render 'comments/show', comment: comment %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
   <!-- Leave Button -->
   <div class="text-center m-5">
