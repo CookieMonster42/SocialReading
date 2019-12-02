@@ -86,10 +86,10 @@
 
   <div id="comments">
     <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
-      <% counter = 1 %>
+      <% counterrr = 1 %>
       <% @group.comments.each do |comment| %>
-        <%= render 'comments/show', comment: comment, counter: counter %>
-        <% counter += 1 %>
+        <%= render 'comments/show', comment: comment, number: counterrr %>
+        <% counterrr += 1 %>
       <% end %>
     <% end %>
   </div>
