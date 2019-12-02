@@ -4,6 +4,12 @@ class GroupsController < ApplicationController
     @comment = Comment.new
     # for now ok but later make no external see the group
     skip_authorization
+
+    @markers =
+      {
+        lat: @group.latitude,
+        lng: @group.longitude
+      }
   end
 
   def index

@@ -1,4 +1,6 @@
 import "bootstrap";
+
+// comment delete function
 let trashes = document.querySelectorAll('.delete-icon')
 
 const removeComment = (event) => {
@@ -11,3 +13,10 @@ const removeComment = (event) => {
 trashes.forEach((trash) => {
   trash.addEventListener("click", removeComment)
 })
+
+// map
+
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();
