@@ -1,6 +1,5 @@
 import "bootstrap";
-import { fomth } from './select_input.js'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
 
-
-fomth()
-
+initMapbox();
