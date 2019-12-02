@@ -54,3 +54,37 @@ h2 {
   justify-content: center;
   flex-direction: column;
 }
+
+.group-creation {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.member-name {
+  color: $turquoise;
+  text-decoration: none !important;
+  margin-top: 13px;
+  font-size: 13px;
+  margin-bottom: 0px !important;
+  width: 20%;
+}
+
+.host {
+  text-decoration: none !important;
+  color: $dark-blue;
+  font-size: 10px;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0px;
+}
+// Join/Add
+
+.join-button {
+  border: 1px solid $turquoise;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+
+}
+
