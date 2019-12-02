@@ -20,16 +20,19 @@
         <% else %>
         <p class="member"><%= g.memberships.count %> / <%= g.max_members %> Members</p>
         <% end %>
-        <% if g.tag_list.any? %>
+
+        <!-- TAGS in the group/index
+        <%# if g.tag_list.any? %>
           <div>
-            <%= render 'shared/tag', group: g %>
+            <%#= render 'shared/tag', group: g %>
           </div>
-        <% end %>
-      </div>
-      <div class="count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
-        <div id="number"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
-        <div id="subday">days</div>
-      </div>
+        <%# end %> -->
+
+    </div>
+    <div class="count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
+      <div id="number"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
+      <div id="subday">days</div>
+    </div>
     </div>
     <% end %>
   </div>
