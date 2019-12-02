@@ -1,5 +1,5 @@
 <div class="container mt-3 mb-3">
-  <div class="card-body">
+  <div class="card-body card-<%= counter %>">
     <div class="d-flex flex-row justify-content-between">
       <div class="text-center">
         <% if !comment.user.photo.nil? %>
@@ -19,8 +19,10 @@
     </div>
     <div><p><%= comment.content %></p></div>
     <div class="d-flex justify-content-end">
+      <% counter = 1 %>
       <% if policy(comment).destroy? %>
-        <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), method: :delete %>
+        <%= link_to image_tag("trashbin", class: "delete-icon trsh-#{counter}"), comment_path(comment), id: "delete-link", method: :delete, remote: true %>
+        <% counter += 1 %>
         <% end %>
     </div>
   </div>

@@ -85,11 +85,11 @@
   <% end %>
 
   <div id="comments">
-    <% if @group.comments.blank? && @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
-      <h6>Be the first to leave a comment for <%= @group.name %></h6>
-    <% else %>
+    <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
+      <% counter = 1 %>
       <% @group.comments.each do |comment| %>
-        <%= render 'comments/show', comment: comment %>
+        <%= render 'comments/show', comment: comment, counter: counter %>
+        <% counter += 1 %>
       <% end %>
     <% end %>
   </div>
