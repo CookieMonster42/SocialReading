@@ -1,0 +1,17 @@
+.tag-regular {
+  color: $dark-blue;
+  background-color: $turquoise;
+  border: 1px solid $turquoise;
+  padding: 4px 12px;
+  margin: 2px 2px;
+  border-radius: 50px;
+  font-size: 9px;
+  font-weight: lighter;
+  max-height: 25px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.tag-regular:hover {
+  opacity: 1;
+}

@@ -1,0 +1,40 @@
+.dashboard_and_account {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.tab-content {
+  margin-top: 60px;
+}
+
+.current-reads {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-current-reads {
+  color: $dark-blue;
+}
+
+
+#home-tab {
+  font-family: Moret Regular;
+  font-size: 48px;
+}
+
+#profile-tab {
+  font-family: Moret Regular;
+  font-size: 48px;
+}
+
+.nav-pills .nav-link.active {
+  color: $turquoise;
+  background-color: $creme;
+}
+
+.nav-pills .nav-link {
+  color: $dark-blue;
+  background-color: $creme;
+}

@@ -1,15 +1,41 @@
 .btn-regular {
-  color: $turquoise;
+  color: $dark-blue;
+  background-color: $turquoise;
   border: 1px solid $turquoise;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
 .btn-regular:hover {
   opacity: 1;
+}
+
+.btn-regular:focus {
+  outline: none;
+}
+
+.btn-regular-searchbar {
+  color: $dark-blue;
+  background-color: $turquoise;
+  border: 1px solid $turquoise;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 50px;
+  max-height: 45px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.btn-regular-searchbar:hover {
+  opacity: 1;
+}
+
+.btn-regular-searchbar:focus {
+  outline: none;
 }
 
 .btn-flat {

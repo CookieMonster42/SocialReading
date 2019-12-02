@@ -1,0 +1,55 @@
+<div class="dashboard_and_account">
+
+  <!-- Shows Dashboard and Account tabs -->
+  <ul class="nav nav-pills justify-content-center">
+    <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dashboard</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Account</a>
+  </li>
+
+</ul>
+
+
+<!-- Dashboard -->
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div>
+      <div class ="title-current-reads">You are currently reading...</div>
+      <div>
+        <%= render "shared/current_readings_card" %>
+      </div>
+    </div>
+  </div>
+
+<!-- Account -->
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><div class="user-profile">
+      <% if !@user.photo.nil? %>
+        <%= image_tag @user.photo, alt: "profile picture of user", class: "avatar-profile"%>
+      <% else %>
+        <%= image_tag ("profile_placeholder"), alt: "profile picture of user", class: "avatar-profile" %>
+      <% end %>
+    <div class="profile-heading">
+      <h1> <%= @user.name %></h1>
+      <span> Member since <%= @user.created_at.year %></span>
+    </div>
+
+
+
+
+    <div class="user-bio">
+      <p> "<%= @user.bio %>" </p>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+

@@ -1,27 +1,27 @@
 <div class="container mt-3 mb-3">
-  <div class="card border-light">
-    <div class="card-body">
-      <div class="d-flex flex-row justify-content-between">
-        <div class="text-center">
-          <% if !current_user.photo.nil? %>
-          <%= image_tag(current_user.photo, class: "avatar-large") %>
-          <% else %>
-          <%= image_tag("profile_placeholder", class: "avatar-large") %>
-          <% end %>
-          <% if !comment.user.name.nil? %>
-          <p><%= comment.user.name %></p>
-          <% else %>
-          <p><em>Username</em></p>
-          <% end %>
-        </div>
-        <p class="card-text"><small class="text-muted">
-          <%= time_ago_in_words(comment.created_at) %> ago</small>
-        </p>
+  <div class="card-body">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="text-center">
+        <% if !comment.user.photo.nil? %>
+        <%= link_to image_tag(comment.user.photo, class: "avatar-large"), user_path(comment.user) %>
+        <% else %>
+        <%= link_to image_tag("profile_placeholder", class: "avatar-large"), user_path(comment.user) %>
+        <% end %>
+        <% if !comment.user.name.nil? %>
+        <p><%= comment.user.name %></p>
+        <% else %>
+        <p><em>Username</em></p>
+        <% end %>
       </div>
-      <div><p><%= comment.content %></p></div>
-      <div class="d-flex justify-content-end">
+      <p class="card-text"><small class="text-muted">
+        <%= time_ago_in_words(comment.created_at) %> ago</small>
+      </p>
+    </div>
+    <div><p><%= comment.content %></p></div>
+    <div class="d-flex justify-content-end">
+      <% if policy(comment).destroy? %>
         <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), method: :delete %>
-      </div>
+        <% end %>
     </div>
   </div>
 </div>
