@@ -6,9 +6,13 @@
       <div class="home-card">
         <%= simple_form_for :search, url: root_path, method: :get do |f| %>
           <div class="search-bar-home">
-            <%#= number_field(:range, in: 1..200, step: 1, class: "col-lg-1" ) %>
-            <%= text_field_tag :query, params[:query], class: " home-input-field", autocomplete:"off", placeholder: "Berlin, Germany" %>
-           <!--  <input class="form-control string required col-lg-11 col-sm-12" type="text" name="search[query]" id="search_query" /> -->
+            <input type="text" placeholder="Berlin" name="query" class="home-input-field">
+            <input type="hidden" name="range" value="">
+            <input type="hidden" name="language" value="">
+            <input type="hidden" name="tags" value="">
+            <div class="search-btn">
+              <button type="submit">Serach</button>
+            </div>
           </div>
           <div class="search-btn">
             <button name="button" type="submit" class="btn-regular search">
