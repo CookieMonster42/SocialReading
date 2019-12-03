@@ -14,21 +14,6 @@ function addComment(commentHTML) {
 <% if @comment.errors.any? %>
   refreshForm('<%= j render "comments/form", group: @group, comment: @comment %>');
 <% else %>
-  addComment('<%= j render "comments/show", comment: @comment, number: @counterrr %>');
+  addComment('<%= j render "comments/show", comment: @comment %>');
   refreshForm('<%= j render "comments/form", group: @group, comment: Comment.new %>');
 <% end %>
-
-// delete a comment
-
-var trashes = document.querySelectorAll('.delete-icon')
-
-var removeComment = (event) => {
-  console.log(event.currentTarget, "this is the target")
-  const id = event.currentTarget.classList[1].split("-")[1]
-  const card = document.querySelector(`.card-${id}`)
-  card.remove()
-}
-
-trashes.forEach((trash) => {
-  trash.addEventListener("click", removeComment)
-})

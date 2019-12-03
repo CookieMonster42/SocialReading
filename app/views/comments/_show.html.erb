@@ -19,10 +19,8 @@
     </div>
     <div><p><%= comment.content %></p></div>
     <div class="d-flex justify-content-end">
-      <% counter = 1 %>
       <% if policy(comment).destroy? %>
-        <%= link_to image_tag("trashbin", class: "delete-icon trsh-#{number}"), comment_path(comment), id: "delete-link", method: :delete, remote: true %>
-        <% counter += 1 %>
+        <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), id: "delete-link", method: :delete, remote: true %>
         <% end %>
     </div>
   </div>
