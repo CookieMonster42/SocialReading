@@ -99,6 +99,17 @@ h2 {
   margin-bottom: 0px;
 }
 
+.host-box {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+
+.message-move {
+  padding-left: 20px;
+}
+
 // Lower part organisation
 
 .alignment {
