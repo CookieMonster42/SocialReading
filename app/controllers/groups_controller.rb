@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
 
   def index
     @languages = Language.all
+    @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     skip_policy_scope
     search_groups(params)
   end
@@ -23,16 +24,21 @@ class GroupsController < ApplicationController
   def search_groups(params)
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     @location = params[:query]
-    @range = 50 if params[:range].empty?
+    if @range.nil?
+      @range = ""
+      @range = params[:range].empty? ? 50 : params[:range]
+    else
+      @range = params[:range].empty? ? 50 : params[:range]
+    end
     # @range = 50 if @range.empty?
     @language = params[:language]
-    @language = Language.first.id if @language.empty?
+    @language = Language.first.id if @language.nil? || @language.empty?
     @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
 
-    if !@location.empty?
+    if !@location.nil?
       # if more tags than one are given the any should be all in line 28
       @groups = Group.near(@location, @range).where(language_id: @language).tagged_with(@tags_given, any: true)
-    elsif @location.empty?
+    elsif @location.nil?
       @groups = Group.where(language_id: @language).tagged_with(@tags_given, any: true)
     else
       @groups = Group.all
