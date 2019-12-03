@@ -42,13 +42,13 @@ ActiveRecord::Schema.define(version: 2019_12_03_104948) do
     t.string "name"
     t.text "host_message"
     t.datetime "date"
-    t.string "location_name"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.integer "max_members"
+    t.string "location_name"
     t.index ["book_id"], name: "index_groups_on_book_id"
     t.index ["language_id"], name: "index_groups_on_language_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
