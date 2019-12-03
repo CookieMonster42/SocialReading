@@ -71,8 +71,12 @@
       <h2>Time: <%= @group.date %></h2>
       <h2>Location: <%= @group.location %></h2>
     </div>
-    <div>
-      <img class="img-responsive" width="500" src="https://scgberlin.de/wp-content/uploads/2019/01/PlanOpenStreetMap.jpg" alt="map placeholder">
+    <div
+    id="map"
+    style="width: 100%;
+    height: 300px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 
@@ -85,9 +89,7 @@
   <% end %>
 
   <div id="comments">
-    <% if @group.comments.blank? && @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
-      <h6>Be the first to leave a comment for <%= @group.name %></h6>
-    <% else %>
+    <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
       <% @group.comments.each do |comment| %>
         <%= render 'comments/show', comment: comment %>
       <% end %>
