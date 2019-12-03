@@ -29,7 +29,14 @@
 }
 
 .card-body {
-  background-color: white;
+  background-color: $creme;
+  position: relative;
+}
+
+.icon-position {
+  position: absolute;
+  right: 24px;
+  top: 22px;
 }
 
 // Styling Group
