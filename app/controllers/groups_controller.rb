@@ -1,4 +1,9 @@
 class GroupsController < ApplicationController
+  def index
+    skip_policy_scope
+    search_groups(params)
+  end
+
   def show
     @group = Group.find(params[:id])
     @comment = Comment.new
@@ -12,12 +17,16 @@ class GroupsController < ApplicationController
       }
   end
 
-  def index
-    skip_policy_scope
-    search_groups(params)
+  def create
+    @group = Group.new(group_params)
+    @group.user_id = current_user.id
   end
 
   private
+
+  def group_params
+    params.require(:group).permit(:name, :date, :location, :language_id, :host_message, :max_members)
+  end
 
   def search_groups(params)
     searched = false
