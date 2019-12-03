@@ -69,6 +69,11 @@ h2 {
   width: 20%;
 }
 
+.member-name:hover {
+  color: $turquoise;
+  text-decoration: none !important;
+}
+
 .host {
   text-decoration: none !important;
   color: $dark-blue;
@@ -81,10 +86,35 @@ h2 {
 // Join/Add
 
 .join-button {
-  border: 1px solid $turquoise;
   border-radius: 50%;
   height: 60px;
   width: 60px;
-
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: $creme;
+  background-color: $turquoise-lighter;
 }
 
+.join-button:hover {
+  background-color: $turquoise;
+  // transition-delay: 0.1s;
+}
+
+.add-button {
+  border: 1px solid;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: $turquoise-lighter;
+  background-color: $creme;
+}
+
+.add-button:hover {
+  background-color: $turquoise-lighter;
+  color: $creme;
+  // transition-delay: 0.1s;
+}
