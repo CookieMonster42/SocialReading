@@ -23,6 +23,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @group = @comment.group
     @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to group_path(@group) }
+      format.js
+    end
   end
 
   private
