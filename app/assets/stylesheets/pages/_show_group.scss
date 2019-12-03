@@ -98,6 +98,33 @@ h2 {
 .no-margin-bottom {
   margin-bottom: 0px;
 }
+
+// Lower part organisation
+
+.alignment {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+// Group Info
+
+.info-top {
+  border-top: solid 2px;
+  padding-top: 15px;
+}
+
+.info {
+  border-bottom: solid 1px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.info-bottom {
+  padding-top: 15px;
+}
+
 // Join/Add
 
 .join-button {
@@ -132,4 +159,30 @@ h2 {
   background-color: $turquoise-lighter;
   color: $creme;
   // transition-delay: 0.1s;
+}
+
+.abcwtf{
+  justify-content: center;
+  display:flex;
+}
+
+.leave-button {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  text-decoration: none !important;
+  border: 1px solid;
+  color: $turquoise-lighter;
+  background-color: $creme;
+  width: 150px;
+  p {
+    margin: 0;
+    padding: 10px;
+  }
+  border-radius: 25px;
+}
+
+.leave-button:hover {
+  background-color: $turquoise-lighter;
+  color: $creme;
 }
