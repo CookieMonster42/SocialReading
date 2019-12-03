@@ -1,6 +1,6 @@
 // Styling Comment-Form
 
-.comment-content {
+.comment-container {
   padding-left: 15px;
   width: 400px;
 }
@@ -8,8 +8,8 @@
 #comment_content {
   background-color: $creme;
   display: flex;
-  height: 100px;
-  overflow: hidden;
+  overflow: auto;
+  height: 70px;
   max-height: 100px;
 }
 
