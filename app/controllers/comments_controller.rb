@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   def create
     @group = Group.find(params[:group_id])
     @comment = Comment.new(comment_params)
-    @counterrr = @group.comments.count
     @comment.group = @group
     @comment.user = current_user
 
