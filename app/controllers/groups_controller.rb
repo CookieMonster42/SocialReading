@@ -24,7 +24,12 @@ class GroupsController < ApplicationController
   def search_groups(params)
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     @location = params[:query]
-    @range = params[:range].empty? ? 50 : params[:range]
+    if @range.nil?
+      @range = ""
+      @range = params[:range].empty? ? 50 : params[:range]
+    else
+      @range = params[:range].empty? ? 50 : params[:range]
+    end
     # @range = 50 if @range.empty?
     @language = params[:language]
     @language = Language.first.id if @language.nil? || @language.empty?
