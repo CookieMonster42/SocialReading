@@ -23,9 +23,15 @@
   </div>
 
   <!-- Host Message -->
-  <div class="pl-5 pr-5 m-5">
-    <p class="group-creation"><%= @group.user.name %> founded this group <%= time_ago_in_words(@group.created_at) %> ago because: </p>
+  <!-- <div class="pl-5 pr-5 m-5"> -->
+  <div class="host-box">
+    <div class="img">
+      <%= image_tag @group.user.photo, alt: "profile picture of host", class: "avatar-host" %>
+    </div>
+    <div class="message-move">
+      <p class="group-creation"><%= @group.user.name %> founded this group <%= time_ago_in_words(@group.created_at) %> ago because: </p>
       <p><%= @group.host_message %></p>
+    </div>
   </div>
 
   <!-- Group/Participants & Join Button -->
@@ -70,23 +76,25 @@
             <p class="no-margin-bottom">Join Group</p>
           <% end %>
         <% else %>
-          <button type="button" class="btn btn-dark">Join Waiting List</button>
+            <div class="img">
+              <p class="add-button avatar-group">+</p>
+            </div>
+            <p class="no-margin-bottom">Join waiting list</p>
         <% end %>
       </div>
     </div>
   </div>
 
   <!-- Info -->
-  <div class="d-flex flex-row m-5 space-between">
+  <div class="alignment">
     <div>
-      <h2><%= @group.date.strftime("%a").upcase %>, <%= @group.date.strftime("%b %d").upcase %></h2>
-      <h2><%= @group.date.strftime("%H:%M").upcase %></h2>
-      <p></p>
-      <h2><%= @group.location %></h2>
+      <h2 class="info-top"><%= @group.date.strftime("%a").upcase %>, <%= @group.date.strftime("%b %d").upcase %></h2>
+      <h2 class="info"><%= @group.date.strftime("%H:%M").upcase %></h2>
+      <h2 class="info-bottom"><%= @group.location %></h2>
     </div>
     <div
     id="map"
-    style="width: 100%;
+    style="width: 50%;
     height: 300px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -110,10 +118,10 @@
   </div>
 
   <!-- Leave Button -->
-  <div class="text-center m-5">
+  <div class="abcwtf">
     <% if @group.memberships.find_by(user_id: current_user.id) %>
-      <%= link_to membership_path(id: @group.id), method: :delete do %>
-        <button type="button" class="btn btn-danger">Leave Group</button>
+      <%= link_to membership_path(id: @group.id), class:"leave-button", method: :delete do %>
+        <p>Leave Group</p>
       <% end %>
     <% end %>
   </div>
