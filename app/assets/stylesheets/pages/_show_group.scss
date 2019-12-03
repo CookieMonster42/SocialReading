@@ -1,7 +1,4 @@
-.container {
-  width: 800px;
-}
-
+// Styling Comment-Form
 .comment-form {
   display: flex;
   justify-content: center;
@@ -12,6 +9,7 @@
 .comment-content {
   padding-left: 15px;
   width: 400px;
+  background-color: $creme;
 }
 
 .form-btn {
@@ -20,6 +18,23 @@
 
 .form-btn:focus {
   outline: none;
+}
+
+#comment_content {
+  background-color: $creme;
+  display: flex;
+  height: 100px;
+  overflow: hidden;
+}
+
+#comment_content::placeholder {
+  color: $turquoise;
+  line-height: 100px;
+}
+
+// Styling Comment-Card
+.container {
+  width: 800px;
 }
 
 .card-body {
