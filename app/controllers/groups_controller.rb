@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-
   def show
     @group = Group.find(params[:id])
     @comment = Comment.new
@@ -11,6 +10,9 @@ class GroupsController < ApplicationController
         lat: @group.latitude,
         lng: @group.longitude
       }
+  end
+
+  def new
   end
 
   def create
