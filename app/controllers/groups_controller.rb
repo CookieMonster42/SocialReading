@@ -23,11 +23,11 @@ class GroupsController < ApplicationController
   def search_groups(params)
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     @location = params[:query]
-    @range = params[:range]
-    @range = 50 if @range.empty?
-    @language = params[:search][:language]
+    @range = 50 if params[:range].empty?
+    # @range = 50 if @range.empty?
+    @language = params[:language]
     @language = Language.first.id if @language.empty?
-    @tags_given = params[:search][:tags].empty? ? @tags_all : params[:search][:tags]
+    @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
 
     if !@location.empty?
       # if more tags than one are given the any should be all in line 28
