@@ -1,23 +1,8 @@
 // Styling Comment-Form
-.comment-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
 
 .comment-content {
   padding-left: 15px;
   width: 400px;
-  background-color: $creme;
-}
-
-.form-btn {
-  padding-left: 10px;
-}
-
-.form-btn:focus {
-  outline: none;
 }
 
 #comment_content {
@@ -25,11 +10,17 @@
   display: flex;
   height: 100px;
   overflow: hidden;
+  max-height: 100px;
 }
 
 #comment_content::placeholder {
   color: $turquoise;
-  line-height: 100px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.comment-btn {
+  padding: 2px 6px;
 }
 
 // Styling Comment-Card
