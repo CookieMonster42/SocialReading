@@ -13,7 +13,6 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @languages = Language.all
     skip_policy_scope
     search_groups(params)
   end
