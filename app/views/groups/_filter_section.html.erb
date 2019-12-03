@@ -12,12 +12,9 @@
       <a class="m-0 p-0 mr-auto">Genre</a>
       <div class="line"></div>
       <div class="row">
-        <div class="col-3 mt-2">
-          <%= render 'shared/button_regular', content: "+" %>
-        </div>
         <div class="col-2 p-0 ml-auto">
           <div class="search-form-control form-group d-flex justify-content-center">
-            <!-- <input class="form-control string required" type="text" name="search[query]" id="search_query" /> -->
+
             <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name"),include_blank: true, value_method: 'name',label: false %>
           </div>
         </div>
@@ -27,13 +24,8 @@
     <a class="m-0 p-0 mr-auto">Language</a>
     <div class="line"></div>
     <div class="row">
-      <div class="col-3 mt-2">
-        <%= render 'shared/button_regular', content: "+" %>
-      </div>
       <div class="col-3 p-0 ml-auto">
         <div class="search-form-control form-group d-flex justify-content-center">
-          <!-- <input class="form-control string required" type="text" name="search[query]" id="search_query" /> -->
-
           <%= select_tag :language, options_from_collection_for_select(Language.all, "id", "name"), label: false, placeholder: "English" %>
         </div>
       </div>
