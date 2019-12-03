@@ -1,3 +1,5 @@
+// add a comment
+
 function refreshForm(innerHTML) {
   const newCommentForm = document.getElementById("new_comment");
   newCommentForm.innerHTML = innerHTML;
@@ -15,5 +17,3 @@ function addComment(commentHTML) {
   addComment('<%= j render "comments/show", comment: @comment %>');
   refreshForm('<%= j render "comments/form", group: @group, comment: Comment.new %>');
 <% end %>
-
-

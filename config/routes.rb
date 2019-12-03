@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   resources :memberships, only: [:create, :destroy]
 
   resources :groups, only: [:show] do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
 
-  resources :comments, only: :destroy
-
+  resources :comments, only: [:create, :destroy]
 end
