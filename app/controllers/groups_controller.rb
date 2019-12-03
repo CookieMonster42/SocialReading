@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
 
   def index
     @languages = Language.all
+    @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     skip_policy_scope
     search_groups(params)
   end
@@ -23,7 +24,7 @@ class GroupsController < ApplicationController
   def search_groups(params)
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     @location = params[:query]
-    @range = 50 if params[:range].empty?
+    @range = params[:range].empty?  ? 50 : params[:range]
     # @range = 50 if @range.empty?
     @language = params[:language]
     @language = Language.first.id if @language.empty?
