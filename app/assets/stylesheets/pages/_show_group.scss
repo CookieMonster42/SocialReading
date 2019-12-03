@@ -69,3 +69,67 @@ h2 {
   justify-content: center;
   flex-direction: column;
 }
+
+.group-creation {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.member-name {
+  color: $turquoise;
+  text-decoration: none !important;
+  margin-top: 13px;
+  font-size: 13px;
+  margin-bottom: 0px !important;
+  width: 20%;
+}
+
+.member-name:hover {
+  color: $turquoise;
+  text-decoration: none !important;
+}
+
+.host {
+  text-decoration: none !important;
+  color: $dark-blue;
+  font-size: 10px;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0px;
+}
+// Join/Add
+
+.join-button {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: $creme;
+  background-color: $turquoise-lighter;
+}
+
+.join-button:hover {
+  background-color: $turquoise;
+  // transition-delay: 0.1s;
+}
+
+.add-button {
+  border: 1px solid;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: $turquoise-lighter;
+  background-color: $creme;
+}
+
+.add-button:hover {
+  background-color: $turquoise-lighter;
+  color: $creme;
+  // transition-delay: 0.1s;
+}
