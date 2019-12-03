@@ -143,6 +143,15 @@ book6 = Book.create({
   photo: "bookcover6.jpg"
 })
 
+
+# book7 = Book.create({
+#   title:
+#   author:
+#   description:
+#   photo:
+# })
+
+
 puts "Books seeded!"
 
 
@@ -238,7 +247,7 @@ group6.save
 
 group7 = Group.new({
   name: "Better Way of Thinking",
-  location_name: "DADA cafe",
+  location_name: "DADA Café",
   location: "Moscow",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Thu, Dec 31 2019, 11:00 am',
