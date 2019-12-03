@@ -2,7 +2,7 @@
   <div class="form-group">
     <div class="comment-row">
         <%= simple_form_for([ group, comment ], remote: true) do |f| %>
-      <div class="comment-form">
+      <div class="form-center">
         <% if !current_user.photo.nil? %>
         <%= image_tag(current_user.photo, class: "avatar-large") %>
         <% else %>
@@ -10,11 +10,11 @@
         <% end %>
 
         <div class="comment-content">
-            <%= f.text_area :content, as: :text, placeholder: "Write a comment", class: "form-control border-light" %>
+            <%= f.text_area :content, as: :text, placeholder: "Write a comment", class: "form-control border-light no-border-input" %>
         </div>
 
-        <div class="form-btn">
-          <%= f.button :submit, value: "Submit", method: :post %>
+        <div class="btn-regular comment-btn">
+          <%= f.button :submit, value: "Comment", method: :post %>
         </div>
         <% end %>
       </div>

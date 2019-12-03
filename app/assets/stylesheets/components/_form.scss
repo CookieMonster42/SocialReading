@@ -1,0 +1,10 @@
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.no-border-input:focus {
+    outline: none;
+    box-shadow: none;
+}

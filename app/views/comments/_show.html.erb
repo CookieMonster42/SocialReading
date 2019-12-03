@@ -1,27 +1,34 @@
 <div class="container mt-3 mb-3" comment-id="<%= comment.id %>">
   <div class="card-body">
-    <div class="d-flex flex-row justify-content-between">
-      <div class="text-center">
-        <% if !comment.user.photo.nil? %>
-        <%= link_to image_tag(comment.user.photo, class: "avatar-large"), user_path(comment.user) %>
-        <% else %>
-        <%= link_to image_tag("profile_placeholder", class: "avatar-large"), user_path(comment.user) %>
-        <% end %>
-        <% if !comment.user.name.nil? %>
-        <p><%= comment.user.name %></p>
-        <% else %>
-        <p><em>Username</em></p>
-        <% end %>
+    <div class="d-flex flex-row">
+      <% if !comment.user.photo.nil? %>
+      <%= link_to image_tag(comment.user.photo, class: "avatar-large"), user_path(comment.user) %>
+      <% else %>
+      <%= link_to image_tag("profile_placeholder", class: "avatar-large"), user_path(comment.user) %>
+      <% end %>
+
+      <div>
+        <p class="ml-2 mb-0">
+          <small class="text-muted">
+            <% if !comment.user.name.nil? %>
+            <p><%= comment.user.name %></p>
+            <% else %>
+            <em>Username</em>
+            <% end %>
+            wrote this <%= time_ago_in_words(comment.created_at) %> ago
+          </small>
+        </p>
+
+        <div class="ml-2">
+          <p><%= comment.content %></p>
+        </div>
       </div>
-      <p class="card-text"><small class="text-muted">
-        <%= time_ago_in_words(comment.created_at) %> ago</small>
-      </p>
-    </div>
-    <div><p><%= comment.content %></p></div>
-    <div class="d-flex justify-content-end">
-      <% if policy(comment).destroy? %>
-        <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), id: "delete-link", method: :delete, remote: true %>
-        <% end %>
+
+      <div class="icon-position">
+        <% if policy(comment).destroy? %>
+          <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), id: "delete-link", method: :delete, remote: true %>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>

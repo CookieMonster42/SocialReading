@@ -12,6 +12,14 @@ class GroupsController < ApplicationController
       }
   end
 
+  def new
+  end
+
+  def create
+    @group = Group.new(group_params)
+    @group.user_id = current_user.id
+  end
+
   def index
     @languages = Language.all
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
@@ -20,6 +28,10 @@ class GroupsController < ApplicationController
   end
 
   private
+
+  def group_params
+    params.require(:group).permit(:name, :date, :location, :language_id, :host_message, :max_members)
+  end
 
   def search_groups(params)
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
