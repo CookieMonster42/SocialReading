@@ -125,7 +125,7 @@ book3 = Book.create({
 book4 = Book.create({
   title: "The Farm",
   author: 'Tom Rob Smith',
-  description: "Until the moment he received a frantic call from his father, Daniel believed his parents were headed into a peaceful, well-deserved retirement. They had sold their home and business in London, and said "farewell to England" with a cheerful party where all their friends had gathered to wish them well on their great adventure: setting off to begin life anew on a remote, bucolic farm in rural Sweden.",
+  description: "Until the moment he received a frantic call from his father, Daniel believed his parents were headed into a peaceful, well-deserved retirement. They had sold their home and business in London, and said 'farewell to England' with a cheerful party where all their friends had gathered to wish them well on their great adventure: setting off to begin life anew on a remote, bucolic farm in rural Sweden.",
   photo: "bookcover4.jpg"
 })
 
@@ -143,6 +143,15 @@ book6 = Book.create({
   photo: "bookcover6.jpg"
 })
 
+
+# book7 = Book.create({
+#   title:
+#   author:
+#   description:
+#   photo:
+# })
+
+
 puts "Books seeded!"
 
 
@@ -154,7 +163,8 @@ puts "Books seeded!"
 ###########
 group1 = Group.new({
   name: "Clever Witches",
-  location: "Ankerklause, Kottbusser Damm 104 Berlin",
+  location_name: "Ankerklause",
+  location: "Kottbusser Damm 104 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Friday, January 21 2020, 20:00 pm',
   max_members: 10
@@ -167,7 +177,8 @@ group1.save
 
 group2 = Group.new({
   name: "Find The Real You",
-  location: "Bonanza, Adalbertstraße 70 Berlin",
+  location_name: "Bonanza",
+  location: "Adalbertstraße 70 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Sun, Dec 01 2019, 11:00 am',
   max_members: 15
@@ -180,7 +191,8 @@ group2.save
 
 group3 = Group.new({
   name: "Be Real Adventurer",
-  location: "Arabica, Reichenberger Str. 36 Berlin",
+  location_name: "Arabica",
+  location: "Reichenberger Str. 36 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Sat, Dec 14 2019, 18:00 pm',
   max_members: 7
@@ -193,7 +205,8 @@ group3.save
 
 group4 = Group.new({
   name: "Who is U",
-  location: "Cuccuma, Zossener Str. 34 Berlin",
+  location_name: "Cuccuma",
+  location: "Zossener Str. 34 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Fri, Dec 06 2019, 09:00 am',
   max_members: 9
@@ -206,6 +219,7 @@ group4.save
 
 group5 = Group.new({
   name: "Out of My Mind",
+  location_name: "Bonavista Café",
   location: "Lima",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Wed, Dec 04 2019, 13:00 pm',
@@ -219,7 +233,8 @@ group5.save
 
 group6 = Group.new({
   name: "We are The Children",
-  location: "Two and Two, Pannierstraße 6, Berlin",
+  location_name: "Two and Two",
+  location: "Pannierstraße 6, Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Wed, Dec 04 2019, 16:00 pm',
   max_members: 10
@@ -232,6 +247,7 @@ group6.save
 
 group7 = Group.new({
   name: "Better Way of Thinking",
+  location_name: "DADA Café",
   location: "Moscow",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Thu, Dec 31 2019, 11:00 am',
