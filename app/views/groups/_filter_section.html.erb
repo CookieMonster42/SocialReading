@@ -6,42 +6,42 @@
     <%#= f.hidden_field :my_score %>
     <%#= range_field_tag(name: "distance", value = 50, options = {within: 1...100}) %>
     <%#= render 'shared/button_regular', content: "Let's Go!" %>
-  </div>
-<div class="d-flex col-lg-3 mx-auto flex-column">
-    <a class="m-0 p-0 mr-auto">Genre</a>
-    <div class="line"></div>
-    <div class="mt-2 ml-auto">
-      <%= render 'shared/button_regular', content: "+" %>
-    </div>
-    <div class="d-flex col-lg-3 mx-auto flex-column">
+    <div class="col-lg-3 mx-auto flex-column">
         <a class="m-0 p-0 mr-auto">Genre</a>
         <div class="line"></div>
         <div class="row">
           <div class="col-3 mt-2">
             <%= render 'shared/button_regular', content: "+" %>
           </div>
-          <div class="col-8 p-0 ml-auto">
+          <div class="col-3 p-0 ml-auto">
             <div class="search-form-control form-group d-flex justify-content-center">
               <!-- <input class="form-control string required" type="text" name="search[query]" id="search_query" /> -->
-              <%= f.input :tags, collection: ActsAsTaggableOn::Tag.all, value_method: 'name', as: :select,label: false, class: "col-lg-10 ", placeholder: "English" %>
+              <%= text_field_tag :tags, collection: ActsAsTaggableOn::Tag.all, value_method: 'name', as: :select,label: false, class:"col-lg-3", placeholder: "English" %>
             </div>
           </div>
         </div>
     </div>
-    <div class="d-flex col-lg-3 mx-auto flex-column">
-        <a class="m-0 p-0 mr-auto">Language</a>
-        <div class="line"></div>
-        <div class="row">
-          <div class="col-3 mt-2">
-            <%= render 'shared/button_regular', content: "+" %>
-          </div>
-          <div class="col-8 p-0 ml-auto">
-            <div class="search-form-control form-group d-flex justify-content-center">
-              <!-- <input class="form-control string required" type="text" name="search[query]" id="search_query" /> -->
-              <%= f.input :language, collection: Language.all, as: :select, label: false, class: "col-lg-10 ", placeholder: "English" %>
-            </div>
+    <div class="col-lg-3 mx-auto flex-column">
+      <a class="m-0 p-0 mr-auto">Language</a>
+      <div class="line"></div>
+      <div class="row">
+        <div class="col-3 mt-2">
+          <%= render 'shared/button_regular', content: "+" %>
+        </div>
+        <div class="col-3 p-0 ml-auto">
+          <div class="search-form-control form-group d-flex justify-content-center">
+            <!-- <input class="form-control string required" type="text" name="search[query]" id="search_query" /> -->
+            <%= text_field_tag :language, collection: Language.all, as: :select, label: false, class:"col-lg-3 ", placeholder: "English" %>
           </div>
         </div>
+      </div>
     </div>
   </div>
-<% end %>
+
+  <!--   <div class="col-lg-3 mx-auto flex-column">
+      <a class="m-0 p-0 mr-auto">Genre</a>
+      <div class="line"></div>
+      <div class="mt-2 ml-auto">
+        <%#= render 'shared/button_regular', content: "+" %>
+      </div>
+    </div> -->
