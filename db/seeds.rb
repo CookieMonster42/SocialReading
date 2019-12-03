@@ -219,7 +219,7 @@ group4.save
 
 group5 = Group.new({
   name: "Out of My Mind",
-  location_name: "Bonavista Café",
+  location_name: "Buenavista Café",
   location: "Lima",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
   date: 'Wed, Dec 04 2019, 13:00 pm',
