@@ -10,17 +10,19 @@ body {
 }
 
 .user-profile {
-  margin-top: 80px;
-
+  margin-top: 50px;
+  width: 50%;
 }
 
 .profile-heading{
-  padding-top: 20px;
+  text-align: center;
+  margin-right: auto;
+  // padding-top: 20px;
 }
 
 .user-bio{
-  padding-top: 50px;
-  padding-bottom: 50px;
+  text-align: justify;
+  margin-bottom: 0px;
 }
 
 .user-profile h1 {

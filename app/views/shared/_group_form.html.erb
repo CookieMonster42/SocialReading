@@ -1,0 +1,60 @@
+<div class="mx-5">
+
+  <br/>
+
+  <form action="/groups" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <h2 class="border-bottom pb-3">Which book do you want to discuss?</h2>
+    <label for="title">Book title: </label>
+    <input type="text" name="book[title]" id="#">
+
+    <br/>
+    <br/>
+
+    <h2 class="border-bottom pb-3 mt-5">Tell us more about the group!</h2>
+    <label for="name">Group Name: </label>
+    <input type="text" name="group[name]" id="#">
+
+    <br/>
+    <br/>
+
+    <label for="name">Group Language: </label>
+    <input type="select" name="tag[name]" id="#">
+
+    <br/>
+    <br/>
+
+    <label for="host_message">Host Message: </label>
+    <input type="text" name="group[host_message]" id="#">
+
+    <br/>
+    <br/>
+
+    <label for="location">Location: </label>
+    <input type="text" name="group[location]" id="#">
+
+    <br/>
+    <br/>
+
+    <label for="datetime">Date: </label>
+    <input type="date" name="group[datetime]" id="#">
+
+    <br/>
+    <br/>
+
+    <label for="datetime">Time: </label>
+    <input type="time" name="group[datetime]" id="#">
+
+    <br/>
+    <br/>
+
+    <label for="max_members">How many people can join: </label>
+    <input type="text" name="group[max_members]" id="#">
+
+    <br/>
+    <br/>
+
+    <input type="submit">
+  </form>
+</div>

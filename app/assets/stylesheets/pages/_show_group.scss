@@ -67,3 +67,131 @@ h2 {
   justify-content: center;
   flex-direction: column;
 }
+
+.group-creation {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.member-name {
+  color: $turquoise;
+  text-decoration: none !important;
+  margin-top: 13px;
+  font-size: 13px;
+  margin-bottom: 0px !important;
+  width: 20%;
+}
+
+.member-name:hover {
+  color: $turquoise;
+  text-decoration: none !important;
+}
+
+.host {
+  text-decoration: none !important;
+  color: $dark-blue;
+  font-size: 10px;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0px;
+}
+
+.host-box {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+
+.message-move {
+  padding-left: 20px;
+}
+
+// Lower part organisation
+
+.alignment {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+// Group Info
+
+.info-top {
+  border-top: solid 2px;
+  padding-top: 15px;
+}
+
+.info {
+  border-bottom: solid 1px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.info-bottom {
+  padding-top: 15px;
+}
+
+// Join/Add
+
+.join-button {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: $creme;
+  background-color: $turquoise-lighter;
+}
+
+.join-button:hover {
+  background-color: $turquoise;
+  // transition-delay: 0.1s;
+}
+
+.add-button {
+  border: 1px solid;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: $turquoise-lighter;
+  background-color: $creme;
+}
+
+.add-button:hover {
+  background-color: $turquoise-lighter;
+  color: $creme;
+  // transition-delay: 0.1s;
+}
+
+.abcwtf{
+  justify-content: center;
+  display:flex;
+}
+
+.leave-button {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  text-decoration: none !important;
+  border: 1px solid;
+  color: $turquoise-lighter;
+  background-color: $creme;
+  width: 150px;
+  p {
+    margin: 0;
+    padding: 10px;
+  }
+  border-radius: 25px;
+}
+
+.leave-button:hover {
+  background-color: $turquoise-lighter;
+  color: $creme;
+}
