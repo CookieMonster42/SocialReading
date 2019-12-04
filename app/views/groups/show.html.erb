@@ -87,14 +87,15 @@
 
   <!-- Info -->
   <div class="alignment">
-    <div>
+    <div class="info-spacing">
       <h2 class="info-top"><%= @group.date.strftime("%a").upcase %>, <%= @group.date.strftime("%b %d").upcase %></h2>
       <h2 class="info"><%= @group.date.strftime("%H:%M").upcase %></h2>
-      <h2 class="info-bottom"><%= @group.location %></h2>
+      <h2 class="info-bottom"><%= @group.location_name %></h2>
+      <p class="info-address"><%= @group.location %></p>
     </div>
     <div
     id="map"
-    style="width: 50%;
+    style="width: 60%;
     height: 300px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
