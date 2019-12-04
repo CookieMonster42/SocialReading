@@ -1,11 +1,9 @@
 .dashboard_and_account {
-  margin-top: 80px;
-  text-align: center;
-  width: 800px;
+ margin-top: 10px;
 }
 
 .tab-content {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .current-reads {
@@ -29,6 +27,11 @@
   font-size: 48px;
 }
 
+.nav-pills {
+  width: 40%;
+  margin: auto;
+}
+
 .nav-pills .nav-link.active {
   color: $turquoise;
   background-color: $creme;
@@ -37,6 +40,11 @@
 .nav-pills .nav-link {
   color: $dark-blue;
   background-color: $creme;
+}
+
+.nav-item {
+  margin-right: auto;
+  color: #383748;
 }
 
 #profile {
@@ -49,21 +57,21 @@
   display:flex;
 }
 .my-account-top-right {
-  margin-left: 60px;
-  text-align: left;
+  display: inline-grid;
 }
 
 .display-line {
-  width: 300px;
+  width: 350px;
   border-bottom: 1px solid;
   border-color: $dark-blue-ligher;
   text-align: left;
 }
 
 .fake-button {
-  color: $turquoise;
+  color: #6bc491;
   font-size: 0.8rem;
-  margin-top: 12px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .my-account-bottom {
