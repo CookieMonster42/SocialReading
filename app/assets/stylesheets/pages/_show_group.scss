@@ -2,25 +2,31 @@
 
 .comment-container {
   padding-left: 15px;
-  width: 400px;
+  width: 75%;
+
+}
+
+.bg-grey {
+  background-color: $custom-grey;
+}
+
+.comment-box {
+  margin: 30px auto;
 }
 
 #comment_content {
-  background-color: $creme;
+  background-color: $custom-grey;
   display: flex;
   overflow: auto;
   height: 70px;
   max-height: 100px;
+  border-radius: 3px;
 }
 
 #comment_content::placeholder {
   color: $turquoise;
   font-weight: 500;
   font-size: 1rem;
-}
-
-.comment-btn {
-  padding: 2px 6px;
 }
 
 // Styling Comment-Card
@@ -31,12 +37,6 @@
 .card-body {
   background-color: $creme;
   position: relative;
-}
-
-.icon-position {
-  position: absolute;
-  right: 24px;
-  top: 22px;
 }
 
 // Styling Group
