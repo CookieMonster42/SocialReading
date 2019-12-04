@@ -1,0 +1,16 @@
+console.log("<%= @book.author %>")
+var authorInput = document.querySelector("#author-form")
+authorInput.value = "<%= @book.author %>"
+
+var descriptionInput = document.querySelector("#description-form")
+descriptionInput.value = "<%= @book.description %>"
+
+var photoInput = document.querySelector("#photo-form")
+photoInput.value = "<%= @book.photo %>"
+
+var image = document.querySelector(".form-image")
+
+image.innerHTML = "<img class='book-image' src='/assets/<%= @book.photo %>'>"
+
+
+
