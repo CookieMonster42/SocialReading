@@ -1,13 +1,13 @@
-<div class="row align-items-start justify-space-between mb-5">
-  <div class="d-flex col-lg-3 mx-auto flex-column">
-    <a class="m-0 p-0 mr-auto">Distance</a>
+<div class="row align-items-start d-flex justify-content-between">
+
+  <div class="col-3 filter-container">
+    <p class="filter-label">Range</p>
     <div class="line"></div>
-    <!-- <input type="range" action='distance' class="custom-range my-2 pr-2" id="customRange0"> -->
-    <%#= f.hidden_field :my_score %>
-    <input id="range" name="range" min="1" max="100" type="number" />
-    <%#= range_field_tag(name: "distance", value = 50, within: 1...100) %>
-    <%#= render 'shared/button_regular', content: "Let's Go!" %>
+    <div class="d-flex">
+      <input id="range" name="range" min="1" max="100" type="number" class="filter tags_dropdown" />
+    </div>
   </div>
+
   <div class="col-lg-3 mx-auto flex-column">
       <a class="m-0 p-0 mr-auto">Genre</a>
       <div class="line"></div>
@@ -33,11 +33,5 @@
       </div>
     </div>
   </div>
+
 </div>
-  <!--   <div class="col-lg-3 mx-auto flex-column">
-      <a class="m-0 p-0 mr-auto">Genre</a>
-      <div class="line"></div>
-      <div class="mt-2 ml-auto">
-        <%#= render 'shared/button_regular', content: "+" %>
-      </div>
-    </div> -->
