@@ -56,7 +56,10 @@
               <p><%= member.user.name %></p>
             <% end %>
         <% else %>
-          <p><%= link_to "Placeholder Name", user_path(id: member.user.id), class:"member-name" %></p>
+          <%= link_to user_path(id: member.user.id), class:"member-name" do%>
+              <%= image_tag src="http://litreactor.com/sites/default/files/images/column/2013/05/mirror-spock.jpg", alt: "profile picture of user", class: "avatar-group" %>
+              <p>Spock</p>
+          <% end %>
         <% end %>
       <% end %>
     <!-- Join/Add Buttons -->
@@ -95,8 +98,8 @@
     </div>
     <div
     id="map"
-    style="width: 60%;
-    height: 300px;"
+    style="width: 70%;
+    height: 350px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
