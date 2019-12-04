@@ -31,7 +31,6 @@ class GroupsController < ApplicationController
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     skip_policy_scope
     search_groups(params)
-    raise
   end
 
   private
