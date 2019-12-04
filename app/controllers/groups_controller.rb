@@ -31,6 +31,7 @@ class GroupsController < ApplicationController
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     skip_policy_scope
     search_groups(params)
+    raise
   end
 
   private
@@ -54,7 +55,7 @@ class GroupsController < ApplicationController
     if params[:tags].nil?
       @tags_given = params[:tags].present? ? @tags_all : params[:tags]
     else
-      @tags_given = params[:tags].empty? ? params[:tags] : @tags_all
+      @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
     end
 
     if !@location.nil?
