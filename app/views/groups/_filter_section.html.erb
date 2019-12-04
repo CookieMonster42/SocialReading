@@ -1,37 +1,34 @@
-<div class="row align-items-start d-flex justify-content-between">
+<div class="">
 
-  <div class="col-3 filter-container">
+  <div class="">
     <p class="filter-label">Range</p>
     <div class="line"></div>
-    <div class="d-flex">
+    <div class="">
       <input id="range" name="range" min="1" max="100" type="number" class="filter tags_dropdown" />
     </div>
   </div>
 
-  <div class="col-lg-3 mx-auto flex-column">
-      <a class="m-0 p-0 mr-auto">Genre</a>
+  <div class="">
+      <a class="">Genre</a>
       <div class="line"></div>
       <div class="row">
-        <div class="col-3 p-0 ml-auto">
-        <div class="col-2 p-0 ml-auto">
-
-          <div class="search-form-control form-group d-flex justify-content-center">
-
+        <div class="">
+          <div class="search-form-control form-group">
             <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name"),include_blank: true, value_method: 'name',label: false %>
           </div>
         </div>
       </div>
   </div>
-  <div class="col-lg-3 mx-auto flex-column">
-    <a class="m-0 p-0 mr-auto">Language</a>
+
+  <div class="">
+    <a class="">Language</a>
     <div class="line"></div>
     <div class="row">
-      <div class="col-3 p-0 ml-auto">
-        <div class="search-form-control form-group d-flex justify-content-center">
+      <div class="">
+        <div class="search-form-control form-group">
           <%= select_tag :language, options_from_collection_for_select(Language.all, "id", "name"), label: false,include_blank: true %>
         </div>
       </div>
     </div>
   </div>
 
-</div>

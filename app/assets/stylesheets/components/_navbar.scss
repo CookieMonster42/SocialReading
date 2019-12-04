@@ -19,27 +19,31 @@ a.nav-light {
 .nav-item {
   margin-right: 22px;
   font-weight: 400px;
-  color: $dark-blue-ligher
+  color: $dark-blue-lighter
 }
 
-.navbar-light .navbar-nav .nav-link{
-    color: $creme;
+// links nav-bar light
+.navbar-nav .nav-item .link-light {
+  color: $creme;
+  opacity: 0.8;
 }
 
-// .nav-item-light {
-//   margin-top: 8px;
-//   padding-right: 6px;
-// }
+.navbar-nav .nav-item .link-light:hover {
+  color: $creme;
+  opacity: 1;
+}
 
-// .navbar-light .navbar-nav .nav-link {
-//   color: $dark-blue-ligher;
-//   opacity: 0.5;
-// }
+// links nav-bar dark
 
-// .navbar-light .navbar-nav .nav-link:hover {
-//     color: $dark-blue;
-// }
+.navbar-nav .nav-item .link-dark {
+  color: $dark-blue;
+  opacity: 0.8;
+}
 
+.navbar-nav .nav-item .link-dark:hover {
+  color: $dark-blue;
+  opacity: 1;
+}
 
 
 

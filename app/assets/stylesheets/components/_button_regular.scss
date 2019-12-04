@@ -1,3 +1,5 @@
+// turquoise rounded button
+
 .btn-regular {
   color: $dark-blue;
   background-color: $turquoise;
@@ -6,18 +8,19 @@
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.8;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
 .btn-regular:hover {
   opacity: 1;
+  font-size: bold;
 }
 
 .btn-regular:focus {
   outline: none;
 }
 
-// --------
+// -------
 
 .btn-regular-searchbar {
   color: $dark-blue;
@@ -25,6 +28,7 @@
   border: 1px solid $turquoise;
   padding: 8px 16px;
   margin-top: 8px;
+  margin-left: 1000008px;
   border-radius: 50px;
   max-height: 45px;
   font-weight: lighter;
@@ -70,4 +74,12 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+// positioning-buttons
+
+.btn-align-bottom {
+  margin: 0 auto;
+  display: table;
+  margin-top: 35px;
 }
