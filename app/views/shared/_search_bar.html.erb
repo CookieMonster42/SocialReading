@@ -12,11 +12,8 @@
         <form action="/groups">
           <div class="search-bar-home row">
             <div class="col-12">
-              <input type="text" placeholder="Berlin" name="query" class="home-input-field" autocomplete="off">
+              <input type="text" placeholder="Berlin"  value="<%= params[:query] || '' %>" name="query" class="home-input-field" autocomplete="off">
               <div class="line mb-5 w-50 mx-auto"></div>
-              <input type="hidden" name="range" value="">
-              <input type="hidden" name="language" value="">
-              <input type="hidden" name="tags" value="">
             </div>
           </div>
           <div class="">

@@ -42,6 +42,7 @@ class GroupsController < ApplicationController
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     skip_policy_scope
     search_groups(params)
+    # raise
   end
 
   private
@@ -51,30 +52,44 @@ class GroupsController < ApplicationController
   end
 
   def search_groups(params)
-    @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
+    # raise
+    @tags_all = ActsAsTaggableOn::Tag.all.map { |tag| tag.name }
+    @languages_all = Language.all.map { |language| language.id }
+    @range = ""
+    @languages = []
     @location = params[:query]
-    if @range.nil?
-      @range = ""
-      @range = params[:range].present? ? params[:range] : 50
+
+    if @range.present?
+      @range = params[:range] || 50 if params[:range].empty?
     else
-      @range = params[:range].empty? ? 50 : params[:range]
-    end
-    # @range = 50 if @range.empty?
-    @language = params[:language]
-    @language = Language.first.id if @language.nil? || @language.empty?
-    if params[:tags].nil?
-      @tags_given = params[:tags].present? ? @tags_all : params[:tags]
-    else
-      @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
+      # params[:range] = 50
+      @range = 50
     end
 
-    if !@location.nil?
-      # if more tags than one are given the any should be all in line 28
-      @groups = Group.near(@location, @range).where(language_id: @language).tagged_with(@tags_given, any: true)
-    elsif @location.nil?
-      @groups = Group.where(language_id: @language).tagged_with(@tags_given, any: true)
+    if params[:language].present?
+      @languages = params[:language].empty? ? @languages_all : params[:language]
     else
-      @groups = Group.all
+      # params[:language] = @languages_all
+      @languages = @languages_all
     end
+
+    if params[:tags].present?
+      @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
+    else
+      @tags_given = @tags_all
+      # params[:tags] = @tags_given.first
+    end
+    if @location.present?
+      # if more tags than one are given the any should be all in line 28
+      @groups = Group.near(@location, @range).where(language_id: @languages).tagged_with(@tags_given, any: true)
+    else
+      @groups = Group.where(language_id: @languages).tagged_with(@tags_given, any: true)
+    end
+    # @groups = filter_outdated_books(@groups)
+    # raise
   end
+
+  # def filter_outdated_books(groups)
+  #   groups.map { |g| g if g.date >= Date.today }
+  # end
 end
