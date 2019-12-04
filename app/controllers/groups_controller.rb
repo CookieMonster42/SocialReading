@@ -54,7 +54,7 @@ class GroupsController < ApplicationController
     if params[:tags].nil?
       @tags_given = params[:tags].present? ? @tags_all : params[:tags]
     else
-      @tags_given = params[:tags].empty? ? params[:tags] : @tags_all
+      @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
     end
 
     if !@location.nil?
