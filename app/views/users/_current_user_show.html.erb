@@ -5,11 +5,9 @@
     <li class="nav-item">
       <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Books</a>
     </li>
-
     <li>
       <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Account</a>
     </li>
-
   </ul>
 
 
@@ -18,70 +16,42 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div>
         <div class ="title-mybooks">You are currently reading...</div>
-        <div>
+        <div class="reading-card-box">
           <%= render "shared/current_readings_card" %>
         </div>
         <div class ="title-mybooks">You are hosting...</div>
-        <div>
-          <% if Group.where(user_id: @user.id).nil? %>
-            <% Group.where(user_id: @user.id) do |g| %>
-            <div class ="reading-card">
-              <%= link_to group_path(id: group.id), class: "book-image" , :action => 'go' do %>
-              <%= image_tag group.book.photo, width: '165px', height: '256px' %>
-              <% end %>
-              <div class="resub">
-                <p class="reading-subtitle"> <%= group.name %></p>
-                <p class="reading-subtitle">
-                  <%= group.date.strftime("%a")%>, <%= group.date.strftime("%b %d")%>
-                </p>
-              </div>
-
-              <div class="user-count-down <%= (m.group.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
-                <div id="user-number"><%= (group.date.to_date - Date.today.to_date).to_i %></div>
-                <div id="user-subday">days</div>
-              </div>
-            </div>
-          <% end %>
-          <% else %>
-            <!-- <p> Suggest a book to others!</p> -->
-            <p class="fake-button">Create a Group</p>
-          <% end %>
-        </div>
-
-
+        <div class="reading-card-box">
+          <%= render "shared/host_readings_card" %>
         </div>
       </div>
-
-      <!-- Account -->
-      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><div class="user-profile">
-
-        <div class="my-account-top">
-          <div class="profile-heading", class="my-account-top-left">
-            <% if !@user.photo.nil? %>
-            <%= image_tag @user.photo, alt: "profile picture of user", class: "avatar-profile-private"%>
-            <% else %>
-            <%= image_tag ("profile_placeholder"), alt: "profile picture of user", class: "avatar-profile-private" %>
-            <% end %>
-            <p class="fake-button">edit image</p>
-          </div>
-          <div class="my-account-top-right">
-            <!-- <p class="display-line"><%= @user.name %></p> -->
-            <p class="display-line">Lala</p>
-            <p class="display-line"><%= @user.email %></p>
-            <p class="display-line">My Password</p>
-            <p class="fake-button">update information</p>
-          </div>
-        </div>
-
-        <div class="my-account-bottom">
-          <!-- <p class="user-bio"> "<%= @user.bio %>" </p> -->
-          <p class="user-bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, modi sed quia labore expedita dolores. Maxime sed placeat dolores, quia praesentium labore rerum illo, illum impedit, sunt amet dolorem alias.</p>
-          <p class="fake-button">update bio</p>
-        </div>
-
-      </div>
-
     </div>
+
+    <!-- Account -->
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><div class="user-profile">
+
+      <div class="my-account-top">
+        <div class="profile-heading", class="my-account-top-left">
+          <% if !@user.photo.nil? %>
+          <%= image_tag @user.photo, alt: "profile picture of user", class: "avatar-profile-private"%>
+          <% else %>
+          <%= image_tag ("profile_placeholder"), alt: "profile picture of user", class: "avatar-profile-private" %>
+          <% end %>
+          <p class="fake-button">edit image</p>
+        </div>
+        <div class="my-account-top-right">
+          <p class="display-line"><%= @user.name %></p>
+          <p class="display-line"><%= @user.email %></p>
+          <p class="display-line">My Password</p>
+          <p class="fake-button">update information</p>
+        </div>
+      </div>
+      <div class="my-account-bottom">
+        <!-- <p class="user-bio"> "<%= @user.bio %>" </p> -->
+        <p class="user-bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, modi sed quia labore expedita dolores. Maxime sed placeat dolores, quia praesentium labore rerum illo, illum impedit, sunt amet dolorem alias.</p>
+        <p class="fake-button">update bio</p>
+      </div>
+    </div>
+  </div>
 
 
 
