@@ -4,15 +4,15 @@
     <div class="d-flex flex-column mt-5">
       <h1 class="d-flex justify-content-center landing-page-header">Read, Meet, Repeat <br /> Find book groups near you...</h1>
       <div class="home-card">
-        <form action="/groups">
-          <div class="search-bar-home ">
-            <input type="text" placeholder="Berlin" name="query" class="home-input-field">
-            <input type="hidden" name="range" value="">
-            <input type="hidden" name="language" value="">
-            <input type="hidden" name="tags" value="">
-            <div class="search-btn">
-              <button type="submit" class="btn-regular">Search</button>
-            </div>
+        <form class="home-form" action="/groups">
+          <div>
+            <input type="text" placeholder="Berlin" name="query" class="home-input-field" autocomplete=" off">
+          </div>
+          <input type="hidden" name="range" value="">
+          <input type="hidden" name="language" value="">
+          <input type="hidden" name="tags" value="">
+          <div class="btn-align-bottom">
+            <button type="submit" class="btn-regular">Search</button>
           </div>
         </form>
       </div>
