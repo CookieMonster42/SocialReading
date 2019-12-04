@@ -1,0 +1,25 @@
+<div class="reading-cards">
+  <% @hosted_groups.each do |g| %>
+  <% if g.user_id == current_user.id %>
+  <div>
+    <div class ="reading-card">
+      <%= link_to group_path(g), class: "book-image" , :action => 'go' do %>
+      <%= image_tag Book.find(g.book_id).photo, width: '165px', height: '256px' %>
+      <% end %>
+      <div class="resub">
+        <p class="reading-subtitle"> <%= g.name %></p>
+        <p class="reading-subtitle">
+          <%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
+        </p>
+      </div>
+      <div class="user-count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
+        <div id="user-number"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
+        <div id="user-subday">days</div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+
+

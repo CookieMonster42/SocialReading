@@ -44,15 +44,28 @@ body {
 }
 
 .reading-cards {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 70%;
   margin-top: 45px;
+}
+
+@media(max-width: 568px) {
+  .reading-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reading-card-box {
+  text-align: -webkit-center;
+  margin-bottom: 60px;
 }
 
 .reading-card {
   position: relative;
   display: flex;
   padding: 0px 30px;
+  padding-bottom: 30px;
   flex-direction: column;
 }
 

@@ -279,7 +279,7 @@ group1 = Group.new({
   date: 'Fri, Jan 21 2020, 08:00 pm',
   max_members: 10
 })
-group1.user_id = host7.id
+group1.user_id = host1.id
 group1.book = book
 group1.language = language0
 group1.tag_list.add("Fantasy", "Fairy Tale", "Fiction")
@@ -377,7 +377,7 @@ group8 = Group.new({
   date: 'Mon, Jan 20 2020, 07:00 pm',
   max_members: 6
 })
-group8.user_id = host8.id
+group8.user_id = host1.id
 group8.book = book7
 group8.language = language0
 group8.tag_list.add("Biography", "NonFicton")
@@ -593,7 +593,6 @@ puts "Groups seeded! #{ Group.count}"
 
 
 ### group 1 ###
-Membership.create({user: host1, group: group1})
 Membership.create({user: host3, group: group1})
 Membership.create({user: host6, group: group1})
 ### group 2 ###
