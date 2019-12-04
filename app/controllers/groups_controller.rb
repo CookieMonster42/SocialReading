@@ -59,11 +59,11 @@ class GroupsController < ApplicationController
 
     if !@location.nil?
       # if more tags than one are given the any should be all in line 28
-      @groups = Group.near(@location, @range).where(language_id: @language).tagged_with(@tags_given, any: true).order("groups.date")
+      @groups = Group.order(date: :asc).near(@location, @range).where(language_id: @language).where('date > ?', Date.today).tagged_with(@tags_given, any: true)
     elsif @location.nil?
-      @groups = Group.where(language_id: @language).tagged_with(@tags_given, any: true).order("groups.date")
+      @groups = Group.order(date: :asc).where(language_id: @language).where('date > ?', Date.today).tagged_with(@tags_given, any: true)
     else
-      @groups = Group.all.order("groups.date")
+      @groups = Group.all.order(date: :asc).where('date > ?', Date.today)
     end
   end
 end
