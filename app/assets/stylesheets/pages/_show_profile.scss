@@ -2,15 +2,18 @@ body {
   background-color: $creme;
 }
 
-.profile-con{
+.pro-con{
+  width: 50%;
+  margin: 50px auto;
+}
+
+.user-avatar-public {
   text-align: center;
-  margin-bottom: 50px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-bottom: 30px;
 }
 
 .user-profile {
-  margin-top: 50px;
+  margin: 30px auto;
   width: 50%;
 }
 
@@ -22,13 +25,17 @@ body {
 
 .user-bio{
   text-align: justify;
-  margin-bottom: 0px;
+    margin-bottom: 80px;
 }
 
 .user-profile h1 {
   font-family: "Moret Regular";
   font-size: 48px;
   color: $dark-blue;
+}
+
+.reading {
+  text-align: center;
 }
 
 .reading h2 {
@@ -44,16 +51,9 @@ body {
 }
 
 .reading-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 70%;
-  margin-top: 45px;
-}
-
-@media(max-width: 568px) {
-  .reading-cards {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  margin: 50px auto;
+  justify-content: center;
 }
 
 .reading-card-box {
