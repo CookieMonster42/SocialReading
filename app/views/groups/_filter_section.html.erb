@@ -1,34 +1,27 @@
-<div class="">
+<div class="d-flex justify-content-between">
 
   <div class="">
-    <p class="filter-label">Range</p>
-    <div class="line"></div>
+    <a class="filter-label">Range</a>
+    <div class="line-filter mx-5"></div>
     <div class="">
-      <input id="range" name="range" min="1" max="100" type="number" class="filter tags_dropdown" />
+      <input id="range" name="range" min="1" max="100" type="number" class="filter tags_dropdown" placeholder="50" /> KM
     </div>
   </div>
 
   <div class="">
-      <a class="">Genre</a>
-      <div class="line"></div>
-      <div class="row">
-        <div class="">
-          <div class="search-form-control form-group">
-            <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name"),include_blank: true, value_method: 'name',label: false %>
-          </div>
-        </div>
-      </div>
+    <a class="">Genre</a>
+    <div class="line-filter mx-5"></div>
+      <div class="search-form-control form-group">
+        <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name"),include_blank: "All Tags", value_method: 'name',label: false, class: "filter-dropdown" %>
+    </div>
   </div>
 
   <div class="">
     <a class="">Language</a>
-    <div class="line"></div>
-    <div class="row">
-      <div class="">
-        <div class="search-form-control form-group">
-          <%= select_tag :language, options_from_collection_for_select(Language.all, "id", "name"), label: false,include_blank: true %>
-        </div>
-      </div>
+    <div class="line-filter mx-5"></div>
+    <div class="search-form-control form-group">
+      <%= select_tag :language, options_from_collection_for_select(Language.all, "id", "name"), label: false, include_blank: "All Languages", class: "filter-dropdown" %>
     </div>
   </div>
 
+</div>

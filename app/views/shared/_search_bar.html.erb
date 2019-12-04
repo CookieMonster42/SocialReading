@@ -1,28 +1,29 @@
-<div class="justify-content-center">
-  <div class="row ">
-    <div class="col-lg-12">
-      <%= simple_form_for :search, url: groups_path, method: :get do |f| %>
-          <div class="home-input-field">
-<!--             <%= text_field_tag :query, params[:query], class: "form-control col-lg-10", placeholder: "Where do you want to meet?" %>
- -->            </div>
-          <button name="button" type="submit" class="btn btn-regular-searchbar">
-            <i class="fas fa-search"></i> Search
-          </button>
+<div class="row justify-content-center">
+  <div class="col-lg-12">
+    <%= simple_form_for :search, url: groups_path, method: :get do |f| %>
+      <div class="home-input-field">
+          <!--<%#= text_field_tag :query, params[:query], class: "form-control col-lg-10", placeholder: "Where do you want to meet?" %>-->
         </div>
-        <div class="home-card">
-          <form action="/groups">
-            <div class="search-bar-home row">
-              <div class="col-8">
-                <input type="text" placeholder="Berlin" name="query" class="home-input-field" autocomplete="off">
-                <input type="hidden" name="range" value="">
-                <input type="hidden" name="language" value="">
-                <input type="hidden" name="tags" value="">
-              </div>
+        <button name="button" type="submit" class="btn btn-regular-searchbar">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+      <div class="home-card flex-column">
+        <form action="/groups">
+          <div class="search-bar-home row">
+            <div class="col-12">
+              <input type="text" placeholder="Berlin" name="query" class="home-input-field" autocomplete="off">
+              <div class="line mb-5 w-50 mx-auto"></div>
+              <input type="hidden" name="range" value="">
+              <input type="hidden" name="language" value="">
+              <input type="hidden" name="tags" value="">
             </div>
-          </form>
-        </div>
-        <%= render 'groups/filter_section' %>
-      <% end %>
-    </div>
+          </div>
+          <div class="">
+            <%= render 'groups/filter_section' %>
+          </div>
+        </form>
+      </div>
+    <% end %>
   </div>
 </div>
