@@ -1,4 +1,4 @@
-// Specific CSS for your home-page
+// CSS for home-page
 .background-img {
   background-image: asset-url("LandingPageImage.png");
   background-size: cover;
@@ -10,6 +10,7 @@
   font-family: "Moret Regular";
   text-align: center;
   opacity: 0.8;
+  font-weight: normal;
 }
 
 .home-card {

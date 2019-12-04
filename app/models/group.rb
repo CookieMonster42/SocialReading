@@ -9,4 +9,6 @@ class Group < ApplicationRecord
   acts_as_taggable_on :tags
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  validates :date, presence: true
 end
