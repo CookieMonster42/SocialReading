@@ -1,3 +1,4 @@
+puts "Destroying all records of users, books and groups..."
 
 Comment.destroy_all
 Membership.destroy_all
@@ -15,9 +16,6 @@ language0 = Language.create({name: "English"})
 language1 = Language.create({name: "German"})
 
 puts "Languages seeded!"
-
-
-
 
 ###########
 # User/host seed
@@ -96,12 +94,10 @@ host8 = User.create({
 
 puts "Users seeded!"
 
-
-
-
 ###########
 # Book seed
 ###########
+
 book = Book.create({
   title: "The Amulet of Smarkand",
   author: 'Jonathan Stroud',
@@ -154,7 +150,7 @@ book6 = Book.create({
 
 book7 = Book.create({
   title: "Becoming",
-  author: "Michele Obama",
+  author: "Michelle Obama",
   description: 'In a life filled with meaning and accomplishment, Michelle Obama has emerged as one of the most iconic and compelling women of our era. As First Lady of the United States of America—the first African American to serve in that role—she helped create the most welcoming and inclusive White House in history, while also establishing herself as a powerful advocate for women and girls in the U.S. and around the world, dramatically changing the ways that families pursue healthier and more active lives, and standing with her husband as he led America through some of its most harrowing moments. Along the way, she showed us a few dance moves, crushed Carpool Karaoke, and raised two down-to-earth daughters under an unforgiving media glare.',
   photo: "MicheleObama_Becoming.jpg"
 })
@@ -271,18 +267,16 @@ book21 = Book.create({
 puts "Books seeded!"
 
 
-
-
-
 ###########
 # group seed
 ###########
+
 group1 = Group.new({
   name: "Clever Witches",
   location_name: "Ankerklause",
   location: "Kottbusser Damm 104 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Friday, January 21 2020, 20:00 pm',
+  date: 'Fri, Jan 21 2020, 08:00 pm',
   max_members: 10
 })
 group1.user_id = host7.id
@@ -296,7 +290,7 @@ group2 = Group.new({
   location_name: "Bonanza",
   location: "Adalbertstraße 70 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Sun, Dec 01 2019, 11:00 am',
+  date: 'Sun, Dec 24 2019, 11:00 am',
   max_members: 15
 })
 group2.user_id = host1.id
@@ -310,7 +304,7 @@ group3 = Group.new({
   location_name: "Arabica",
   location: "Reichenberger Str. 36 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Sat, Dec 14 2019, 18:00 pm',
+  date: 'Sat, Dec 14 2019, 06:00 pm',
   max_members: 7
 })
 group3.user_id = host2.id
@@ -324,7 +318,7 @@ group4 = Group.new({
   location_name: "Cuccuma",
   location: "Zossener Str. 34 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Fri, Dec 06 2019, 09:00 am',
+  date: 'Fri, Dec 16 2019, 09:00 am',
   max_members: 9
 })
 group4.user_id = host3.id
@@ -338,7 +332,7 @@ group5 = Group.new({
   location_name: "Buenavista Café",
   location: "Lima",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Wed, Dec 04 2019, 13:00 pm',
+  date: 'Wed, Dec 22 2019, 01:00 pm',
   max_members: 12
 })
 group5.user_id = host4.id
@@ -352,7 +346,7 @@ group6 = Group.new({
   location_name: "Two and Two",
   location: "Pannierstraße 6, Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock. ',
-  date: 'Wed, Dec 04 2019, 16:00 pm',
+  date: 'Wed, Dec 14 2019, 06:00 pm',
   max_members: 10
 })
 group6.user_id = host5.id
@@ -376,10 +370,10 @@ group7.tag_list.add("#{tags.sample}")
 group7.save
 
 group8 = Group.new({
-  name: "We love Michele",
+  name: "We love Michelle",
   location_name: "Café Kotti",
   location: "Adalbertstraße 96B, 10999 Berlin",
-  host_message: 'I am admiring Michele Obama since her first apperance as First Lady. She does admiring work. Lets finally read her book. It will be so inspiring.',
+  host_message: 'I am admiring Michelle Obama since her first apperance as First Lady. She does admiring work. Lets finally read her book. It will be so inspiring.',
   date: 'Mon, Jan 20 2020, 07:00 pm',
   max_members: 6
 })
@@ -389,13 +383,204 @@ group8.language = language0
 group8.tag_list.add("#{tags.sample}")
 group8.save
 
+group9 = Group.new({
+  name: "Princesses and Princes",
+  location_name: "Café Westberlin",
+  location: "Friedrichstraße 215, 10969 Berlin",
+  host_message: 'At the first glance, from its packaging, tone, and treatment, The Little Prince may come across as a children’s book, and very often it’s also sold like one. However, this book is certainly also for adults. More than children, adults need to be reminded of the homilies and the simple truths about what counts and what doesn’t count in life. Children in any case are born with this wisdom.',
+  date: 'Fri, Jan 6 2020, 05:00 pm',
+  max_members: 10
+})
+group9.user_id = host4.id
+group9.book = book5
+group9.language = language1
+group9.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group9.save
 
+group10 = Group.new({
+  name: "The Thinkers",
+  location_name: "Café Landtmann",
+  location: "Universitätsring 4, 1010 Vienna",
+  host_message: 'Kahneman compiles a broad survey of research & literature addressing the gaps between how we think and how we think we think, instinctive autonomous response vs rationalization. A continous "aha experience" for me. I am excited to read it again with you guys!',
+  date: 'Sat, Jan 20 2020, 07:00 pm',
+  max_members: 8
+})
+group10.user_id = host2.id
+group10.book = book6
+group10.language = language0
+group10.tag_list.add("#{tags.sample}")
+group10.save
+
+group11 = Group.new({
+  name: "Historians",
+  location_name: "Café Mozart",
+  location: "Albertinaplatz 2, 1010 Vienna",
+  host_message: 'Very soon, there will be no remaining Holocaust survivors. There will be no further firsthand accounts of what it was like to be imprisoned in the camps. Let us remember this time and discuss about it together.',
+  date: 'Tue, Jan 28 2020, 05:00 pm',
+  max_members: 5
+})
+group11.user_id = host5.id
+group11.book = book8
+group11.language = language1
+group11.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group11.save
+
+group12 = Group.new({
+  name: "We love Classic Literature",
+  location_name: "Café Lebensart",
+  location: "Unter den Linden 69A, 10117 Berlin",
+  host_message: 'This is a towering piece of literature. Beautifully written and filled with memorable characters and a deeply moving story. A novel deserving of its status as a classic of English Literature. I would love to read it again and discuss about it with you.',
+  date: 'Thu, Jan 02 2020, 02:00 pm',
+  max_members: 9
+})
+group12.user_id = host7.id
+group12.book = book13
+group12.language = language1
+group12.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group12.save
+
+group13 = Group.new({
+  name: "Oscar Wilde Fans",
+  location_name: "Berliner Kaffeerösterei",
+  location: "Uhlandstraße 173/174, 10719 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Mon, Dec 31 2019, 03:00 pm',
+  max_members: 12
+})
+group13.user_id = host1.id
+group13.book = book15
+group13.language = language1
+group13.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group13.save
+
+group14 = Group.new({
+  name: "Freedom-Lovers",
+  location_name: "Bonnevie Berlin",
+  location: "Propststraße 1, 10178 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Sun, Dec 27 2019, 01:00 pm',
+  max_members: 9
+})
+group14.user_id = host3.id
+group14.book = book18
+group14.language = language1
+group14.tag_list.add("#{tags.sample}")
+group14.save
+
+group15 = Group.new({
+  name: "Enlightenment",
+  location_name: "BEN RAHIM",
+  location: "Sophienstraße 7, 10178 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Mon, Jan 19 2020, 11:00 am',
+  max_members: 13
+})
+group15.user_id = host5.id
+group15.book = book20
+group15.language = language1
+group15.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group15.save
+
+group16 = Group.new({
+  name: "Tale of Love",
+  location_name: "tigertörtchen - Berlin Cupcakes",
+  location: "Spandauer Str. 25, 10178 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Wed, Feb 02 2020, 09:00 pm',
+  max_members: 7
+})
+group16.user_id = host7.id
+group16.book = book21
+group16.language = language1
+group16.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group16.save
+
+group17 = Group.new({
+  name: "Circular Beings",
+  location_name: "Café Konzerthaus",
+  location: "Gendarmenmarkt 2, 10117 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Mon, Dec 29 2019, 05:00 pm',
+  max_members: 12
+})
+group17.user_id = host3.id
+group17.book = book9
+group17.language = language1
+group17.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group17.save
+
+group18 = Group.new({
+  name: "Extremely Adorable and Incredibly Sweet",
+  location_name: "Rausch Schokoladenhaus",
+  location: "Charlottenstraße 60, 10117 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Sat, Jan 01 2020, 03:00 pm',
+  max_members: 12
+})
+group18.user_id = host1.id
+group18.book = book10
+group18.language = language1
+group18.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group18.save
+
+group19 = Group.new({
+  name: "Sport Enthusiasts",
+  location_name: "Café Albrecht",
+  location: "Reinhardtstraße 23, 10117 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Thu, Jan 12 2020, 03:00 pm',
+  max_members: 6
+})
+group19.user_id = host6.id
+group19.book = book11
+group19.language = language1
+group19.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group19.save
+
+group20 = Group.new({
+  name: "Adventure Junkies",
+  location_name: "Chupenga",
+  location: "Mohrenstraße 42, 10117 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Sat, Jan 16 2020, 08:00 pm',
+  max_members: 5
+})
+group20.user_id = host1.id
+group20.book = book12
+group20.language = language1
+group20.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group20.save
+
+group21 = Group.new({
+  name: "Humble Designers",
+  location_name: "Hipster Coffehouse",
+  location: "Mühlenstraße 13, 10243 Berlin",
+  host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
+  date: 'Sat, Jan 28 2020, 07:00 pm',
+  max_members: 7
+})
+group21.user_id = host4.id
+group21.book = book16
+group21.language = language1
+group21.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group21.save
+
+group22 = Group.new({
+  name: "Friendly & Messy",
+  location_name: "Le Wagon Office",
+  location: "Rudi-Dutschke-Straße 26, 10969 Berlin",
+  host_message: 'I always wanted to read this book. It’s time to improve my ordering skills. And if it does not spark joy, it will tell me to get rid of it anyway.',
+  date: 'Sat, Jan 03 2020, 03:00 pm',
+  max_members: 6
+})
+group22.user_id = host2.id
+group22.book = book17
+group22.language = language0
+group22.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group22.save
 
 
 puts "Groups seeded! #{ Group.count}"
-
-
-
 
 
 ###########
