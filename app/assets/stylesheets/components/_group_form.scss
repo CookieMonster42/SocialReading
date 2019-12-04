@@ -17,3 +17,25 @@
   border-bottom: 2px solid $dark-blue-lighter;
   padding-bottom: 10px;
 }
+
+.createform-container {
+  margin: 0 auto;
+}
+
+.book-details{
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-image {
+  display: flex;
+  align-items: center;
+}
+
+.book-form-desc {
+  max-width: 450px;
+}
+
+.hidden {
+  display: none;
+}

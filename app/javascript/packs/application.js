@@ -10,9 +10,11 @@ initMapbox();
 
 
 var request = document.querySelector("#book-request");
-console.log(request)
+var tagInput = document.querySelector(".book-form-tags")
+console.log(tagInput)
 
 var fetchBookInfo = () => {
+  tagInput.classList.remove('hidden')
   console.log("change is the right thing")
   Rails.ajax({
     url: "/groups/new",
