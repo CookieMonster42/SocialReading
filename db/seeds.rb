@@ -282,7 +282,7 @@ group1 = Group.new({
 group1.user_id = host7.id
 group1.book = book
 group1.language = language0
-group1.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group1.tag_list.add("Fantasy", "Fairy Tale", "Fiction")
 group1.save
 
 group2 = Group.new({
@@ -296,7 +296,7 @@ group2 = Group.new({
 group2.user_id = host1.id
 group2.book = book1
 group2.language = language0
-group2.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group2.tag_list.add("Novel", "Short Stories")
 group2.save
 
 group3 = Group.new({
@@ -310,7 +310,7 @@ group3 = Group.new({
 group3.user_id = host2.id
 group3.book = book2
 group3.language = language0
-group3.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group3.tag_list.add("Travelling", "Thriller")
 group3.save
 
 group4 = Group.new({
@@ -324,7 +324,7 @@ group4 = Group.new({
 group4.user_id = host3.id
 group4.book = book3
 group4.language = language0
-group4.tag_list.add("#{tags.sample}")
+group4.tag_list.add("NonFicton", "Biography")
 group4.save
 
 group5 = Group.new({
@@ -338,7 +338,7 @@ group5 = Group.new({
 group5.user_id = host4.id
 group5.book = book4
 group5.language = language0
-group5.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group5.tag_list.add("Fantasy", "Novel", "Short Stories")
 group5.save
 
 group6 = Group.new({
@@ -352,7 +352,7 @@ group6 = Group.new({
 group6.user_id = host5.id
 group6.book = book14
 group6.language = language1
-group6.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group6.tag_list.add("Historical Fiction", "Short Stories", "Novel")
 group6.save
 
 group7 = Group.new({
@@ -366,7 +366,7 @@ group7 = Group.new({
 group7.user_id = host6.id
 group7.book = book19
 group7.language = language0
-group7.tag_list.add("#{tags.sample}")
+group7.tag_list.add("NonFicton")
 group7.save
 
 group8 = Group.new({
@@ -380,7 +380,7 @@ group8 = Group.new({
 group8.user_id = host8.id
 group8.book = book7
 group8.language = language0
-group8.tag_list.add("#{tags.sample}")
+group8.tag_list.add("Biography", "NonFicton")
 group8.save
 
 group9 = Group.new({
@@ -394,27 +394,27 @@ group9 = Group.new({
 group9.user_id = host4.id
 group9.book = book5
 group9.language = language1
-group9.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group9.tag_list.add("Fantasy", "Fiction", "Short Stories", "Novel")
 group9.save
 
 group10 = Group.new({
   name: "The Thinkers",
-  location_name: "Café Landtmann",
-  location: "Universitätsring 4, 1010 Vienna",
+  location_name: "Café Tresor",
+  location: "Köpenicker Str. 70, 10179 Berlin",
   host_message: 'Kahneman compiles a broad survey of research & literature addressing the gaps between how we think and how we think we think, instinctive autonomous response vs rationalization. A continous "aha experience" for me. I am excited to read it again with you guys!',
-  date: 'Sat, Jan 20 2020, 07:00 pm',
+  date: 'Sat, Dec 10 2019, 07:00 pm',
   max_members: 8
 })
 group10.user_id = host2.id
 group10.book = book6
 group10.language = language0
-group10.tag_list.add("#{tags.sample}")
+group10.tag_list.add("NonFiction", "Novel")
 group10.save
 
 group11 = Group.new({
   name: "Historians",
-  location_name: "Café Mozart",
-  location: "Albertinaplatz 2, 1010 Vienna",
+  location_name: "Milchhalle",
+  location: "Auguststraße 50, 10119 Berlin",
   host_message: 'Very soon, there will be no remaining Holocaust survivors. There will be no further firsthand accounts of what it was like to be imprisoned in the camps. Let us remember this time and discuss about it together.',
   date: 'Tue, Jan 28 2020, 05:00 pm',
   max_members: 5
@@ -422,11 +422,11 @@ group11 = Group.new({
 group11.user_id = host5.id
 group11.book = book8
 group11.language = language1
-group11.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group11.tag_list.add("Historical Fiction", "Thriller", "Novel")
 group11.save
 
 group12 = Group.new({
-  name: "We love Classic Literature",
+  name: "Classic Literature is our thing",
   location_name: "Café Lebensart",
   location: "Unter den Linden 69A, 10117 Berlin",
   host_message: 'This is a towering piece of literature. Beautifully written and filled with memorable characters and a deeply moving story. A novel deserving of its status as a classic of English Literature. I would love to read it again and discuss about it with you.',
@@ -436,7 +436,7 @@ group12 = Group.new({
 group12.user_id = host7.id
 group12.book = book13
 group12.language = language1
-group12.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group12.tag_list.add("Novel", "Thriller")
 group12.save
 
 group13 = Group.new({
@@ -450,7 +450,7 @@ group13 = Group.new({
 group13.user_id = host1.id
 group13.book = book15
 group13.language = language1
-group13.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group13.tag_list.add("NonFicton")
 group13.save
 
 group14 = Group.new({
@@ -464,7 +464,7 @@ group14 = Group.new({
 group14.user_id = host3.id
 group14.book = book18
 group14.language = language1
-group14.tag_list.add("#{tags.sample}")
+group14.tag_list.add("Biography", "Novel", "Fiction")
 group14.save
 
 group15 = Group.new({
@@ -478,7 +478,7 @@ group15 = Group.new({
 group15.user_id = host5.id
 group15.book = book20
 group15.language = language1
-group15.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group15.tag_list.add("NonFicton", "Short Stories")
 group15.save
 
 group16 = Group.new({
@@ -492,7 +492,7 @@ group16 = Group.new({
 group16.user_id = host7.id
 group16.book = book21
 group16.language = language1
-group16.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group16.tag_list.add("Novel", "Historical Fiction")
 group16.save
 
 group17 = Group.new({
@@ -506,11 +506,11 @@ group17 = Group.new({
 group17.user_id = host3.id
 group17.book = book9
 group17.language = language1
-group17.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
+group17.tag_list.add("Thriller", "NonFicton")
 group17.save
 
 group18 = Group.new({
-  name: "Extremely Adorable and Incredibly Sweet",
+  name: "Extremely & Incredibly Friendly",
   location_name: "Rausch Schokoladenhaus",
   location: "Charlottenstraße 60, 10117 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
@@ -520,21 +520,21 @@ group18 = Group.new({
 group18.user_id = host1.id
 group18.book = book10
 group18.language = language1
-group18.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group18.tag_list.add("Novel", "Fiction")
 group18.save
 
 group19 = Group.new({
-  name: "Sport Enthusiasts",
+  name: "Novel Enthusiasts",
   location_name: "Café Albrecht",
   location: "Reinhardtstraße 23, 10117 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
-  date: 'Thu, Jan 12 2020, 03:00 pm',
+  date: 'Thu, Jan 22 2020, 03:00 pm',
   max_members: 6
 })
 group19.user_id = host6.id
 group19.book = book11
 group19.language = language1
-group19.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group19.tag_list.add("NonFicton", "Travelling")
 group19.save
 
 group20 = Group.new({
@@ -542,13 +542,13 @@ group20 = Group.new({
   location_name: "Chupenga",
   location: "Mohrenstraße 42, 10117 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
-  date: 'Sat, Jan 16 2020, 08:00 pm',
+  date: 'Sat, Dec 11 2019, 08:00 pm',
   max_members: 5
 })
 group20.user_id = host1.id
 group20.book = book12
 group20.language = language1
-group20.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group20.tag_list.add("Novel", "Fiction", "Thriller")
 group20.save
 
 group21 = Group.new({
@@ -556,13 +556,13 @@ group21 = Group.new({
   location_name: "Hipster Coffehouse",
   location: "Mühlenstraße 13, 10243 Berlin",
   host_message: 'This book is starring at me for years now. I always wanted to read it. It’s time to improve my German skills. Don’t ask me why German, but hey, fuck it. Let’s rock.',
-  date: 'Sat, Jan 28 2020, 07:00 pm',
+  date: 'Sat, Dec 20 2019, 07:00 pm',
   max_members: 7
 })
 group21.user_id = host4.id
 group21.book = book16
 group21.language = language1
-group21.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group21.tag_list.add("NonFicton")
 group21.save
 
 group22 = Group.new({
@@ -576,7 +576,7 @@ group22 = Group.new({
 group22.user_id = host2.id
 group22.book = book17
 group22.language = language0
-group22.tag_list.add("#{tags.sample}", "#{tags.sample}")
+group22.tag_list.add("NonFicton")
 group22.save
 
 
@@ -634,5 +634,4 @@ comment.save
 
 puts "Comments seeded!"
 
-
-puts "sample book, user and group created"
+puts "Seeding done!"
