@@ -38,14 +38,18 @@ class GroupsController < ApplicationController
     @location = params[:query]
     if @range.nil?
       @range = ""
-      @range = params[:range].empty? ? 50 : params[:range]
+      @range = params[:range].present? ? params[:range] : 50
     else
       @range = params[:range].empty? ? 50 : params[:range]
     end
     # @range = 50 if @range.empty?
     @language = params[:language]
     @language = Language.first.id if @language.nil? || @language.empty?
-    @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
+    if params[:tags].nil?
+      @tags_given = params[:tags].present? ? @tags_all : params[:tags]
+    else
+      @tags_given = params[:tags].empty? ? params[:tags] : @tags_all
+    end
 
     if !@location.nil?
       # if more tags than one are given the any should be all in line 28
