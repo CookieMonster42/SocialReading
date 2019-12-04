@@ -19,9 +19,10 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'acts-as-taggable-on', '~> 6.0'
 
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+
+gem "algoliasearch-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

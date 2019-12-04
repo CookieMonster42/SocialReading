@@ -24,7 +24,7 @@ puts "Languages seeded!"
 ###########
 
 names = ["Andy", "Lala", "Kevin", "Jay", "May", "Des", "Roy"]
-tags = ['Fantasy','Fairy Tale', 'Fiction', 'Thriller', 'Historical Fiction', 'Science Fiction', 'Novel', 'Horror', 'Short Stories', 'Travelling']
+tags = ['Biography', 'Fantasy', 'Fairy Tale', 'Fiction', 'Historical Fiction', 'Horror', 'NonFicton', 'Novel', 'Science Fiction', 'Short Stories', 'Thriller', 'Travelling']
 
 host1 = User.create({
   name: "Andy",
@@ -144,13 +144,121 @@ book6 = Book.create({
 })
 
 
-# book7 = Book.create({
-#   title:
-#   author:
-#   description:
-#   photo:
-# })
+book7 = Book.create({
+  title: "Becoming",
+  author: "Michele Obama"
+  description: "In a life filled with meaning and accomplishment, Michelle Obama has emerged as one of the most iconic and compelling women of our era. As First Lady of the United States of America—the first African American to serve in that role—she helped create the most welcoming and inclusive White House in history, while also establishing herself as a powerful advocate for women and girls in the U.S. and around the world, dramatically changing the ways that families pursue healthier and more active lives, and standing with her husband as he led America through some of its most harrowing moments. Along the way, she showed us a few dance moves, crushed Carpool Karaoke, and raised two down-to-earth daughters under an unforgiving media glare."
+  photo: "MicheleObama_Becoming.jpg"
+})
 
+
+book8 = Book.create({
+  title: "The Tattooist of Auschwitz ",
+  author: " Heather Morris",
+  description: "In April 1942, Lale Sokolov, a Slovakian Jew, is forcibly transported to the concentration camps at Auschwitz-Birkenau. When his captors discover that he speaks several languages, he is put to work as a Tätowierer (the German word for tattooist), tasked with permanently marking his fellow prisoners.
+
+Imprisoned for more than two and a half years, Lale witnesses horrific atrocities and barbarism—but also incredible acts of bravery and compassion. Risking his own life, he uses his privileged position to exchange jewels and money from murdered Jews for food to keep his fellow prisoners alive.",
+  photo: "Auschwitz.jpg"
+})
+
+
+book9 = Book.create({
+  title: "The Circle"
+  author: "Dave Eggers"
+  description: "When Mae Holland is hired to work for the Circle, the world's most powerful internet company, she feels she's been given the opportunity of a lifetime. The Circle, run out of a sprawling California campus, links users' personal emails, social media, banking, and purchasing with their universal operating system, resulting in one online identity and a new age of civility and transparency. As Mae tours the open-plan office spaces, the towering glass dining facilities, the cozy dorms for those who spend nights at work, she is thrilled with the company's modernity and activity."
+  photo: "TheCircle.jpg"
+})
+
+
+book10 = Book.create({
+  title: "Extremely Loud and Incredibly Close",
+  author: "Jonathan Safran Foer"
+  description: "Nine-year-old Oskar Schell is an inventor, amateur entomologist, Francophile, letter writer, pacifist, natural historian, percussionist, romantic, Great Explorer, jeweller, detective, vegan, and collector of butterflies. When his father is killed in the September 11th attacks on the World Trade Centre, Oskar sets out to solve the mystery of a key he discovers in his father's closet. It is a search which leads him into the lives of strangers, through the five boroughs of New York, into history, to the bombings of Dresden and Hiroshima, and on an inward journey which brings him ever closer to some kind of peace."
+  photo: "Foer.jpg"
+})
+
+
+book11 = Book.create({
+  title: "The Kite Runner"
+  author: "Khaled Hosseini"
+  description: "Amir is the son of a wealthy Kabul merchant, a member of the ruling caste of Pashtuns. Hassan, his servant and constant companion, is a Hazara, a despised and impoverished caste. Their uncommon bond is torn by Amir's choice to abandon his friend amidst the increasing ethnic, religious, and political tensions of the dying years of the Afghan monarchy, wrenching them far apart. But so strong is the bond between the two boys that Amir journeys back to a distant world, to try to right past wrongs against the only true friend he ever had."
+  photo: "KiteRunner.jpg"
+})
+
+
+book12 = Book.create({
+  title: "Life of Pi",
+  author: "Yann Martel",
+  description: "Life of Pi is a fantasy adventure novel by Yann Martel published in 2001. The protagonist, Piscine Molitor "Pi" Patel, a Tamil boy from Pondicherry, explores issues of spirituality and practicality from an early age. He survives 227 days after a shipwreck while stranded on a boat in the Pacific Ocean with a Bengal tiger named Richard Parker.",
+  photo: "LifeOfPi.jpg"
+})
+
+book13 = Book.create({
+  title: "The Picture of Dorian Gray",
+  author: "Oscar Wilde",
+  description: "The Picture of Dorian Gray is about a young man named Dorian Gray who has a portrait painted of himself. The artist, Basil Hallward, thinks Dorian Gray is very beautiful, and becomes obsessed with Dorian. One day in Basil's garden, Dorian Gray meets a man named Lord Henry Wotton. Lord Henry Wotton makes Dorian Gray believe that the only thing important in life is beauty. However, Dorian realizes that he will become less beautiful as he grows older. He wishes the portrait Basil painted would become old in his place. Dorian then sells his soul so he can be beautiful forever, but not on purpose.",
+  photo: "OscarWilde.jpg"
+})
+
+book14 = Book.create({
+  title: "The Handmaid's Tale",
+  author: "Margret Atwood",
+  description: "Offred is a Handmaid in the Republic of Gilead. She may leave the home of the Commander and his wife once a day to walk to food markets whose signs are now pictures instead of words because women are no longer allowed to read. She must lie on her back once a month and pray that the Commander makes her pregnant, because in an age of declining births, Offred and the other Handmaids are only valued if their ovaries are viable.",
+  photo: "HandmaideTale.jpg"
+})
+
+book15 = Book.create({
+  title: "One Hundred Years of Solitude",
+  author: "Gabriel Garcia Marquez",
+  description: "The brilliant, bestselling, landmark novel that tells the story of the Buendia family, and chronicles the irreconcilable conflict between the desire for solitude and the need for love—in rich, imaginative prose that has come to define an entire genre known as 'magical realism.'",
+  photo: "Solitude.jpg"
+})
+
+book16 = Book.create({
+  title: "No Logo",
+  author: "Naomi Klein",
+  description: "With a new Afterword to the 2002 edition, No Logo employs journalistic savvy and personal testament to detail the insidious practices and far-reaching effects of corporate marketing—and the powerful potential of a growing activist sect that will surely alter the course of the 21st century. First published before the World Trade Organization protests in Seattle, this is an infuriating, inspiring, and altogether pioneering work of cultural criticism that investigates money, marketing, and the anti-corporate movement.",
+  photo: "NoLogo.jpg"
+})
+
+book17 = Book.create({
+  title: "The Outsiders of Uskoken Castle",
+  author: "Kurt Kläber",
+  description: "The story is about the adventures of Zora and a band of children who live in the ruins of an Uskok castle on the coast of Croatia. The children steal out of necessity, because they have no parents or other family to look after them. They are frequently involved in conflicts with the town's residents and reject the authority of adults, except for Gorian, an old fisherman who helps the children. When he needs help the children repay his kindness by coming to his rescue.",
+  photo:
+})
+
+book18 = Book.create({
+  title: "Long Walk to Freedom",
+  author: "Nelson Mandela",
+  description: "Nelson Mandela is one of the great moral and political leaders of our time: an international hero whose lifelong dedication to the fight against racial oppression in South Africa won him the Nobel Peace Prize and the presidency of his country.
+
+Since his triumphant release in 1990 from more than a quarter-century of imprisonment, Mandela has been at the center of the most compelling and inspiring political drama in the world. As president of the African National Congress and head of South Africa's anti-apartheid movement, he was instrumental in moving the nation toward multiracial government and majority rule. He is revered everywhere as a vital force in the fight for human rights and racial equality. "
+  photo: "Mandela.jpg"
+})
+
+book19 = Book.create({
+  title: "I Am Malala",
+  author: "Malala Yousafzai",
+  description: "When the Taliban took control of the Swat Valley in Pakistan, one girl spoke out. Malala Yousafzai refused to be silenced and fought for her right to an education.
+
+On Tuesday, October 9, 2012, when she was fifteen, she almost paid the ultimate price. She was shot in the head at point-blank range while riding the bus home from school, and few expected her to survive.",
+  photo: "Malala.jpg"
+})
+
+book20 = Book.create({
+  title: "1Q84",
+  author: "Haruki Murakami",
+  description: "A young woman named Aomame follows a taxi driver’s enigmatic suggestion and begins to notice puzzling discrepancies in the world around her. She has entered, she realizes, a parallel existence, which she calls 1Q84 —“Q is for ‘question mark.’ A world that bears a question.” Meanwhile, an aspiring writer named Tengo takes on a suspect ghostwriting project. He becomes so wrapped up with the work and its unusual author that, soon, his previously placid life begins to come unraveled.",
+  photo: "1Q84.jpg"
+})
+
+book21 = Book.create({
+  title: "Americanah",
+  author: "Chimamanda Ngozi Adichie",
+  description: "Ifemelu and Obinze are young and in love when they depart military-ruled Nigeria for the West. Beautiful, self-assured Ifemelu heads for America, where despite her academic success, she is forced to grapple with what it means to be black for the first time. Quiet, thoughtful Obinze had hoped to join her, but with post-9/11 America closed to him, he instead plunges into a dangerous, undocumented life in London. Fifteen years later, they reunite in a newly democratic Nigeria, and reignite their passion—for each other and for their homeland.",
+  photo: "Americanah.jpg"
+})
 
 puts "Books seeded!"
 
@@ -185,7 +293,7 @@ group2 = Group.new({
 })
 group2.user_id = host1.id
 group2.book = book1
-group2.language = language1
+group2.language = language0
 group2.tag_list.add("#{tags.sample}", "#{tags.sample}", "#{tags.sample}")
 group2.save
 
@@ -213,7 +321,7 @@ group4 = Group.new({
 })
 group4.user_id = host3.id
 group4.book = book3
-group4.language = language1
+group4.language = language0
 group4.tag_list.add("#{tags.sample}")
 group4.save
 
@@ -240,7 +348,7 @@ group6 = Group.new({
   max_members: 10
 })
 group6.user_id = host5.id
-group6.book = book5
+group6.book = book14
 group6.language = language1
 group6.tag_list.add("#{tags.sample}", "#{tags.sample}")
 group6.save
@@ -254,12 +362,13 @@ group7 = Group.new({
   max_members: 8
 })
 group7.user_id = host6.id
-group7.book = book6
+group7.book = book19
 group7.language = language0
 group7.tag_list.add("#{tags.sample}")
 group7.save
 
-puts "Groups seeded!"
+
+puts "Groups seeded! #{ Group.count}"
 
 
 

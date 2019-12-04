@@ -1,48 +1,68 @@
-<div class="mx-5">
-
-  <br/>
-
+<div class="hole-form">
   <form action="/groups" method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <h2 class="border-bottom pb-3">Which book do you want to discuss?</h2>
-    <label for="title">Book title: </label>
-    <input type="text" name="book[title]" id="#">
+    <div class="top-section">
+      <h2 class="question">What would you like to read?</h2>
+      <select name="book[title]" class="select2">
+        <% Book.all.each do |book| %>
+          <option value="<%= book.title %>"><%= book.title.capitalize %></option>
+        <% end %>
+      </select>
+      <p class="line-bottom"></p>
+    </div>
+    <!-- <label for="title">Book title: </label> -->
 
     <br/>
     <br/>
+    <label for="author">Author: </label>
+    <input type="text" name="book[author]" id="#">
+
+    <br/>
+    <br/>
+
+    <label for="title">Description: </label>
+    <input type="text" name="book[description]" id="#">
+
+    <br/>
+    <br/>
+
+    <!-- IMAGE -->
+
+
 
     <h2 class="border-bottom pb-3 mt-5">Tell us more about the group!</h2>
-    <label for="name">Group Name: </label>
+    <label for="name">Give the group a name: </label>
     <input type="text" name="group[name]" id="#">
 
     <br/>
     <br/>
 
-    <label for="name">Group Language: </label>
-    <input type="select" name="tag[name]" id="#">
-
-    <br/>
-    <br/>
-
-    <label for="host_message">Host Message: </label>
+    <label for="host_message">Why are you creating the group/ want to read the book?: </label>
     <input type="text" name="group[host_message]" id="#">
 
     <br/>
     <br/>
 
-    <label for="location">Location: </label>
+    <label for="name">In which language will you discuss the book?: </label>
+    <input type="select" name="tag[name]" id="#">
+
+    <br/>
+    <br/>
+
+    <p>Where do you want to meet?</p>
+    <label for="location_name">Name of Location: </label>
     <input type="text" name="group[location]" id="#">
 
     <br/>
     <br/>
 
-    <label for="datetime">Date: </label>
-    <input type="date" name="group[datetime]" id="#">
+    <label for="location_name">Address of Location: </label>
+    <input type="text" name="group[location]" id="#">
 
     <br/>
     <br/>
 
+    <p>When do you want to meet?</p>
     <label for="datetime">Time: </label>
     <input type="time" name="group[datetime]" id="#">
 

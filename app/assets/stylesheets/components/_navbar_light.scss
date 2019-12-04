@@ -16,20 +16,16 @@ a.nav-light {
   text-decoration: none;
 }
 
+// .nav-item-light {
+//   margin-top: 8px;
+//   padding-right: 6px;
+// }
+
 .nav-item {
   margin-right: 22px;
   font-weight: 400px;
   color: $dark-blue-ligher
 }
-
-.navbar-light .navbar-nav .nav-link{
-    color: $creme;
-}
-
-// .nav-item-light {
-//   margin-top: 8px;
-//   padding-right: 6px;
-// }
 
 // .navbar-light .navbar-nav .nav-link {
 //   color: $dark-blue-ligher;
@@ -41,6 +37,9 @@ a.nav-light {
 // }
 
 
+.navbar-light .navbar-nav .nav-link{
+    color: $creme;
+}
 
 
 
