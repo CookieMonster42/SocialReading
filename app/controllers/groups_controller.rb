@@ -27,7 +27,6 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @languages = Language.all
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     skip_policy_scope
     search_groups(params)
@@ -40,6 +39,7 @@ class GroupsController < ApplicationController
   end
 
   def search_groups(params)
+    @languages_all = Language.all.ids
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     @location = params[:query]
     if @range.nil?
@@ -49,19 +49,30 @@ class GroupsController < ApplicationController
       @range = params[:range].empty? ? 50 : params[:range]
     end
     # @range = 50 if @range.empty?
-    @language = params[:language]
-    @language = Language.first.id if @language.nil? || @language.empty?
+    if @languages.nil?
+      @languages = @languages_all
+    else
+      if @languages.present?
+        @languages = @languages.empty? ? @languages_all : params[:language]
+        # @languages = @languages.class == Array ? @languages : [@languages]
+      else
+        @languages = @languages_all
+      end
+    end
+
     if params[:tags].nil?
       @tags_given = params[:tags].present? ? @tags_all : params[:tags]
     else
-      @tags_given = params[:tags].empty? ? params[:tags] : @tags_all
+      @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
     end
 
     if !@location.nil?
       # if more tags than one are given the any should be all in line 28
-      @groups = Group.near(@location, @range).where(language_id: @language).tagged_with(@tags_given, any: true)
-    elsif @location.nil?
-      @groups = Group.where(language_id: @language).tagged_with(@tags_given, any: true)
+      if @location.empty?
+        @groups = Group.where(language_id: @languages).tagged_with(@tags_given, any: true)
+      else
+        @groups = Group.near(@location, @range).where(language_id: @languages).tagged_with(@tags_given, any: true)
+      end
     else
       @groups = Group.all
     end

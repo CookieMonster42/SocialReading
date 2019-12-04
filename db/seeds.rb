@@ -86,6 +86,14 @@ host7 = User.create({
   photo: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 })
 
+host8 = User.create({
+  name: "Clair",
+  password: '123456',
+  email: 'clair@smile.com',
+  bio: 'Did you know that when you read books, you’re also exercising your brain? The more you read, the more you stimulate your mind. Mental stimulation keeps the blood flowing to our brains, preventing diseases like dementia and Alzheimer’s. When we read, our cognitive function and memory improve. The healthier your brain is, the more you are able to focus and develop your analytical skills.',
+  photo: "https://unsplash.com/photos/HRZUzoX1e6w"
+})
+
 puts "Users seeded!"
 
 
@@ -146,15 +154,15 @@ book6 = Book.create({
 
 book7 = Book.create({
   title: "Becoming",
-  author: "Michele Obama"
-  description: "In a life filled with meaning and accomplishment, Michelle Obama has emerged as one of the most iconic and compelling women of our era. As First Lady of the United States of America—the first African American to serve in that role—she helped create the most welcoming and inclusive White House in history, while also establishing herself as a powerful advocate for women and girls in the U.S. and around the world, dramatically changing the ways that families pursue healthier and more active lives, and standing with her husband as he led America through some of its most harrowing moments. Along the way, she showed us a few dance moves, crushed Carpool Karaoke, and raised two down-to-earth daughters under an unforgiving media glare."
+  author: "Michele Obama",
+  description: 'In a life filled with meaning and accomplishment, Michelle Obama has emerged as one of the most iconic and compelling women of our era. As First Lady of the United States of America—the first African American to serve in that role—she helped create the most welcoming and inclusive White House in history, while also establishing herself as a powerful advocate for women and girls in the U.S. and around the world, dramatically changing the ways that families pursue healthier and more active lives, and standing with her husband as he led America through some of its most harrowing moments. Along the way, she showed us a few dance moves, crushed Carpool Karaoke, and raised two down-to-earth daughters under an unforgiving media glare.',
   photo: "MicheleObama_Becoming.jpg"
 })
 
 
 book8 = Book.create({
   title: "The Tattooist of Auschwitz ",
-  author: " Heather Morris",
+  author: "Heather Morris",
   description: "In April 1942, Lale Sokolov, a Slovakian Jew, is forcibly transported to the concentration camps at Auschwitz-Birkenau. When his captors discover that he speaks several languages, he is put to work as a Tätowierer (the German word for tattooist), tasked with permanently marking his fellow prisoners.
 
 Imprisoned for more than two and a half years, Lale witnesses horrific atrocities and barbarism—but also incredible acts of bravery and compassion. Risking his own life, he uses his privileged position to exchange jewels and money from murdered Jews for food to keep his fellow prisoners alive.",
@@ -163,25 +171,25 @@ Imprisoned for more than two and a half years, Lale witnesses horrific atrocitie
 
 
 book9 = Book.create({
-  title: "The Circle"
-  author: "Dave Eggers"
-  description: "When Mae Holland is hired to work for the Circle, the world's most powerful internet company, she feels she's been given the opportunity of a lifetime. The Circle, run out of a sprawling California campus, links users' personal emails, social media, banking, and purchasing with their universal operating system, resulting in one online identity and a new age of civility and transparency. As Mae tours the open-plan office spaces, the towering glass dining facilities, the cozy dorms for those who spend nights at work, she is thrilled with the company's modernity and activity."
+  title: "The Circle",
+  author: "Dave Eggers",
+  description: "When Mae Holland is hired to work for the Circle, the world's most powerful internet company, she feels she's been given the opportunity of a lifetime. The Circle, run out of a sprawling California campus, links users' personal emails, social media, banking, and purchasing with their universal operating system, resulting in one online identity and a new age of civility and transparency. As Mae tours the open-plan office spaces, the towering glass dining facilities, the cozy dorms for those who spend nights at work, she is thrilled with the company's modernity and activity.",
   photo: "TheCircle.jpg"
 })
 
 
 book10 = Book.create({
   title: "Extremely Loud and Incredibly Close",
-  author: "Jonathan Safran Foer"
-  description: "Nine-year-old Oskar Schell is an inventor, amateur entomologist, Francophile, letter writer, pacifist, natural historian, percussionist, romantic, Great Explorer, jeweller, detective, vegan, and collector of butterflies. When his father is killed in the September 11th attacks on the World Trade Centre, Oskar sets out to solve the mystery of a key he discovers in his father's closet. It is a search which leads him into the lives of strangers, through the five boroughs of New York, into history, to the bombings of Dresden and Hiroshima, and on an inward journey which brings him ever closer to some kind of peace."
+  author: "Jonathan Safran Foer",
+  description: "Nine-year-old Oskar Schell is an inventor, amateur entomologist, Francophile, letter writer, pacifist, natural historian, percussionist, romantic, Great Explorer, jeweller, detective, vegan, and collector of butterflies. When his father is killed in the September 11th attacks on the World Trade Centre, Oskar sets out to solve the mystery of a key he discovers in his father's closet. It is a search which leads him into the lives of strangers, through the five boroughs of New York, into history, to the bombings of Dresden and Hiroshima, and on an inward journey which brings him ever closer to some kind of peace.",
   photo: "Foer.jpg"
 })
 
 
 book11 = Book.create({
-  title: "The Kite Runner"
-  author: "Khaled Hosseini"
-  description: "Amir is the son of a wealthy Kabul merchant, a member of the ruling caste of Pashtuns. Hassan, his servant and constant companion, is a Hazara, a despised and impoverished caste. Their uncommon bond is torn by Amir's choice to abandon his friend amidst the increasing ethnic, religious, and political tensions of the dying years of the Afghan monarchy, wrenching them far apart. But so strong is the bond between the two boys that Amir journeys back to a distant world, to try to right past wrongs against the only true friend he ever had."
+  title: "The Kite Runner",
+  author: "Khaled Hosseini",
+  description: "Amir is the son of a wealthy Kabul merchant, a member of the ruling caste of Pashtuns. Hassan, his servant and constant companion, is a Hazara, a despised and impoverished caste. Their uncommon bond is torn by Amir's choice to abandon his friend amidst the increasing ethnic, religious, and political tensions of the dying years of the Afghan monarchy, wrenching them far apart. But so strong is the bond between the two boys that Amir journeys back to a distant world, to try to right past wrongs against the only true friend he ever had.",
   photo: "KiteRunner.jpg"
 })
 
@@ -189,7 +197,7 @@ book11 = Book.create({
 book12 = Book.create({
   title: "Life of Pi",
   author: "Yann Martel",
-  description: "Life of Pi is a fantasy adventure novel by Yann Martel published in 2001. The protagonist, Piscine Molitor "Pi" Patel, a Tamil boy from Pondicherry, explores issues of spirituality and practicality from an early age. He survives 227 days after a shipwreck while stranded on a boat in the Pacific Ocean with a Bengal tiger named Richard Parker.",
+  description: "Life of Pi is a fantasy adventure novel by Yann Martel published in 2001. The protagonist, Piscine Molitor 'Pi' Patel, a Tamil boy from Pondicherry, explores issues of spirituality and practicality from an early age. He survives 227 days after a shipwreck while stranded on a boat in the Pacific Ocean with a Bengal tiger named Richard Parker.",
   photo: "LifeOfPi.jpg"
 })
 
@@ -222,10 +230,10 @@ book16 = Book.create({
 })
 
 book17 = Book.create({
-  title: "The Outsiders of Uskoken Castle",
-  author: "Kurt Kläber",
-  description: "The story is about the adventures of Zora and a band of children who live in the ruins of an Uskok castle on the coast of Croatia. The children steal out of necessity, because they have no parents or other family to look after them. They are frequently involved in conflicts with the town's residents and reject the authority of adults, except for Gorian, an old fisherman who helps the children. When he needs help the children repay his kindness by coming to his rescue.",
-  photo:
+  title: "Spark Joy",
+  author: " Marie Kondō",
+  description: "Spark Joy is an in-depth, line illustrated, room-by-room guide to decluttering and organising your home. It covers every room in the house from bedrooms and kitchens to bathrooms and living rooms as well as a wide range of items in different categories, including clothes, photographs, paperwork, books, cutlery, cosmetics, shoes, bags, wallets and valuables. Charming line drawings explain how to properly organise drawers, wardrobes, cupboards and cabinets. The illustrations also show Ms Kondo's unique folding method, clearly showing how to fold anything from shirts, trousers and jackets to skirts, socks and bras.",
+  photo: "SparkJoy.jpg"
 })
 
 book18 = Book.create({
@@ -233,7 +241,7 @@ book18 = Book.create({
   author: "Nelson Mandela",
   description: "Nelson Mandela is one of the great moral and political leaders of our time: an international hero whose lifelong dedication to the fight against racial oppression in South Africa won him the Nobel Peace Prize and the presidency of his country.
 
-Since his triumphant release in 1990 from more than a quarter-century of imprisonment, Mandela has been at the center of the most compelling and inspiring political drama in the world. As president of the African National Congress and head of South Africa's anti-apartheid movement, he was instrumental in moving the nation toward multiracial government and majority rule. He is revered everywhere as a vital force in the fight for human rights and racial equality. "
+Since his triumphant release in 1990 from more than a quarter-century of imprisonment, Mandela has been at the center of the most compelling and inspiring political drama in the world. As president of the African National Congress and head of South Africa's anti-apartheid movement, he was instrumental in moving the nation toward multiracial government and majority rule. He is revered everywhere as a vital force in the fight for human rights and racial equality.",
   photo: "Mandela.jpg"
 })
 
@@ -366,6 +374,22 @@ group7.book = book19
 group7.language = language0
 group7.tag_list.add("#{tags.sample}")
 group7.save
+
+group8 = Group.new({
+  name: "We love Michele",
+  location_name: "Café Kotti",
+  location: "Adalbertstraße 96B, 10999 Berlin",
+  host_message: 'I am admiring Michele Obama since her first apperance as First Lady. She does admiring work. Lets finally read her book. It will be so inspiring.',
+  date: 'Mon, Jan 20 2020, 07:00 pm',
+  max_members: 6
+})
+group8.user_id = host8.id
+group8.book = book7
+group8.language = language0
+group8.tag_list.add("#{tags.sample}")
+group8.save
+
+
 
 
 puts "Groups seeded! #{ Group.count}"
