@@ -1,5 +1,5 @@
 .dashboard_and_account {
- margin-top: 10px;
+ margin-top: 50px;
 }
 
 .tab-content {
@@ -63,7 +63,7 @@
 .display-line {
   width: 350px;
   border-bottom: 1px solid;
-  border-color: $dark-blue-ligher;
+  border-color: $dark-blue-lighter;
   text-align: left;
 }
 
@@ -82,4 +82,6 @@
 .title-mybooks {
     padding-top: 65px;
     letter-spacing: 0.3px;
+    text-align: center;
+    font-weight: bold;
 }

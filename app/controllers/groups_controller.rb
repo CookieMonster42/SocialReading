@@ -14,13 +14,24 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    respond_to do |format|
+      # p "Hey here we are sending this when the ayax got called!!!"
+      book_title = params.keys.first
+      @book = Book.find_by(title: book_title)
+      p @book
+      format.js
+      format.html { render :new }
+    end
   end
 
   def create
     @group = Group.new(group_params)
     @group.user_id = current_user.id
-    if @group.save
-      redirect_to groups_path
+    @group.book = Book.find_by(title: params[:book][:title])
+    @group.language = Language.find_by(name: params[:language][:name])
+    @group.tag_list.add(params[:group][:tags])
+    if @group.save!
+      redirect_to group_path(@group)
     else
       render "new"
     end

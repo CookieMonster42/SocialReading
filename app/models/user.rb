@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :memberships, dependent: :destroy
-  # has_many :groups, through: :memberships
-  # has_many :hosted_groups, class_name: "Group", foreign_key: :user_id
+  has_many :groups, through: :memberships
+  has_many :hosted_groups, class_name: "Group", foreign_key: :user_id
 
   # def participating_groups
   #   self.hosted_groups + self.groups # array

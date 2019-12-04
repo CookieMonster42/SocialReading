@@ -1,7 +1,15 @@
 .line {
-  height: 0px;
-  border: 1px solid black;
+  border-bottom: 1.5px solid black;
 }
+
+.line-filter {
+  border-bottom: 1.5px solid black;
+  width: 230px;
+}
+.filter-dropdown{
+    background-color: $creme;
+    border: none;
+   }
 
 .filter-container{
   background-color: $creme;
