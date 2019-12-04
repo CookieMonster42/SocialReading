@@ -1,14 +1,14 @@
-.search-form-control {
-  position: relative;
-  padding: 10px;
-}
+// .search-form-control {
+//   position: relative;
+//   padding: 10px;
+// }
 
-.search-form-control .btn {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: -60px;
-}
+// .search-form-control .btn {
+//   position: absolute;
+//   top: 8px;
+//   bottom: 8px;
+//   right: -60px;
+// }
 
 .search-form-control .form-control {
   height: 3.5rem;
@@ -20,4 +20,37 @@
   border: 1px solid #1EDD88;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.home-input-field {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $creme;
+  width: 40vw;
+  font-size: 30px;
+  font-family: "Moret Regular";
+  text-align: center;
+  color: $turquoise;
+}
+
+.home-input-field:focus {
+    outline: none;
+}
+
+.search-btn {
+  margin-top: 15px;
+  margin-left: 15.5vw;
+}
+
+.hidden {
+  background-color: rgba(1,1,1,0);
+  color: rgba(1,1,1,0);
+  border: none;
+}
+
+.hidden:hover {
+  background-color: rgba(1,1,1,0);
+  color: rgba(1,1,1,0);
+  border: none;
+
 }

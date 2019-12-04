@@ -1,5 +1,27 @@
 .line {
-  width: 200px;
   height: 0px;
-  border: .1px solid #000000;
+  border: 1px solid black;
+}
+
+.filter-container{
+  background-color: $creme;
+  text-align: center;
+}
+
+.filter-label {
+  height: 20px;
+  width: 114px;
+  margin-left: -10px;
+  margin-top: 1px;
+}
+
+.filter {
+  height: 20px;
+  width: 114px;
+  margin-left: -10px;
+  margin-top: 1px;
+}
+
+.tags_dropdown {
+  width: 114px;
 }

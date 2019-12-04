@@ -1,0 +1,3 @@
+<div class="col-3 filter">
+    <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name"), value_method: 'name',label: false, class: "filter" %>
+</div>
