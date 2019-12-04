@@ -1,5 +1,5 @@
 <div class="hole-form">
-  <form action="/groups" method="post">
+  <form action="/groups" method="post" class="createform-container">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <div class="top-section">
 
@@ -10,33 +10,42 @@
         <% end %>
       </select>
       <p class="line-bottom"></p>
-
-
-
-
-
     </div>
-    <!-- <label for="title">Book title: </label> -->
 
     <br/>
     <br/>
-    <label for="author">Author: </label>
-    <input type="text" name="book[author]" id="author-form">
+    <div class="book-details">
+      <div class="book-description">
 
-    <br/>
-    <br/>
+        <div class="author-form">
 
-    <label for="title">Description: </label>
-    <input type="text" name="book[description]" id="description-form">
+        </div>
 
+        <br/>
+        <br/>
 
-    <br/>
-    <br/>
+        <div class="book-form-desc">
 
-    <div class="form-image">
+        </div>
+
+        <br/>
+        <br/>
+        <div class="book-form-tags hidden">
+           <select name="group[tags]" class="select2" id="tag-request">
+            <% ActsAsTaggableOn::Tag.all.each do |tag| %>
+              <option value="<%= tag.name %>"><%= tag.name.capitalize %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-image">
+      </div>
+      <input type="hidden" name="book[photo]" id="photo-form">
     </div>
-    <input type="hidden" name="book[photo]" id="photo-form">
 
+    <br/>
+    <br/>
 
     <h2 class="border-bottom pb-3 mt-5">Tell us more about the group!</h2>
     <label for="name">Give the group a name: </label>
@@ -80,14 +89,6 @@
     <br/>
     <br/>
 
-     <select name="group[tags]" class="select2" id="tag-request">
-      <% ActsAsTaggableOn::Tag.all.each do |tag| %>
-        <option value="<%= tag.name %>"><%= tag.name.capitalize %></option>
-      <% end %>
-    </select>
-
-    <br/>
-    <br/>
 
     <label for="max_members">How many people can join: </label>
     <input type="number" name="group[max_members]" id="#">
