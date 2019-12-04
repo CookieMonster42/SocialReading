@@ -1,17 +1,35 @@
+// bootstrap
 import "bootstrap";
-
-
 // map
-
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
+// flatpickr
+import flatpickr from "flatpickr";
 
 initMapbox();
 
 
-// select2
+var request = document.querySelector("#book-request");
+console.log(request)
 
-import 'select2/dist/css/select2.css';
-import { initSelect2 } from '../components/init_select2';
+var fetchBookInfo = () => {
+  console.log("change is the right thing")
+  Rails.ajax({
+    url: "/groups/new",
+    type: "get",
+    data: request.value,
+  })
+}
 
-initSelect2();
+
+request.addEventListener("change", fetchBookInfo);
+
+
+var element = document.querySelector('.datep')
+console.log(element)
+const options = {
+  enableTime: true,
+  dateFormat: "Y-m-d H:i",
+}
+flatpickr(element, options);
+
