@@ -80,9 +80,11 @@
     <br/>
     <br/>
 
-     <!-- <p>When do you want to meet?</p>
-    <label for="time">Time: </label>
-    <input type="time" name="group[datetime]" id="time"> -->
+     <select name="group[tags]" class="select2" id="tag-request">
+      <% ActsAsTaggableOn::Tag.all.each do |tag| %>
+        <option value="<%= tag.name %>"><%= tag.name.capitalize %></option>
+      <% end %>
+    </select>
 
     <br/>
     <br/>
