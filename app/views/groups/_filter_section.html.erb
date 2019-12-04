@@ -16,7 +16,7 @@
     <!-- <a class="">Genre</a> -->
       <div class="search-form-control form-group">
         <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name", params[:tags] || @tags_all),include_blank: "All Tags", value_method: 'name',label: false, class: "filter-dropdown" %>
-    </div>
+      </div>
     <div class="line-filter mx-5"></div>
     <div class="">
       <%#= params[:tags] %>
