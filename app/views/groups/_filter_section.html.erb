@@ -13,25 +13,21 @@
   </div>
 
   <div class="">
-    <!-- <a class="">Genre</a> -->
+    <a class="">Genre</a>
+    <div class="line-filter mx-5"></div>
       <div class="search-form-control form-group">
         <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name", params[:tags] || @tags_all),include_blank: "All Tags", value_method: 'name',label: false, class: "filter-dropdown" %>
       </div>
-    <div class="line-filter mx-5"></div>
-    <div class="">
-      <%#= params[:tags] %>
-    </div>
+    <!-- <div class=""><%#= params[:tags] %></div> -->
   </div>
 
   <div class="">
-    <!-- <a class="">Language</a> -->
+    <a class="">Language</a>
+    <div class="line-filter mx-5"></div>
     <div class="search-form-control form-group">
       <%= select_tag :language, options_from_collection_for_select(Language.all, "id", "name", params[:language] || @languages_all), label: false, include_blank: "All Languages", class: "filter-dropdown" %>
     </div>
-    <div class="line-filter mx-5"></div>
-    <div class="">
-      <%#= Language.find(params[:language]).name %>
-    </div>
+    <!-- <div class=""><%#= Language.find(params[:language]).name %></div> -->
   </div>
 
 </div>
