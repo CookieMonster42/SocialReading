@@ -13,11 +13,17 @@ class GroupsController < ApplicationController
   end
 
   def new
+    @group = Group.new
   end
 
   def create
     @group = Group.new(group_params)
     @group.user_id = current_user.id
+    if @group.save
+      redirect_to groups_path
+    else
+      render "new"
+    end
   end
 
   def index
@@ -36,16 +42,25 @@ class GroupsController < ApplicationController
   def search_groups(params)
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     @location = params[:query]
-    @range = params[:range].empty?  ? 50 : params[:range]
+    if @range.nil?
+      @range = ""
+      @range = params[:range].present? ? params[:range] : 50
+    else
+      @range = params[:range].empty? ? 50 : params[:range]
+    end
     # @range = 50 if @range.empty?
     @language = params[:language]
-    @language = Language.first.id if @language.empty?
-    @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
+    @language = Language.first.id if @language.nil? || @language.empty?
+    if params[:tags].nil?
+      @tags_given = params[:tags].present? ? @tags_all : params[:tags]
+    else
+      @tags_given = params[:tags].empty? ? @tags_all : params[:tags]
+    end
 
-    if !@location.empty?
+    if !@location.nil?
       # if more tags than one are given the any should be all in line 28
       @groups = Group.near(@location, @range).where(language_id: @language).tagged_with(@tags_given, any: true)
-    elsif @location.empty?
+    elsif @location.nil?
       @groups = Group.where(language_id: @language).tagged_with(@tags_given, any: true)
     else
       @groups = Group.all
