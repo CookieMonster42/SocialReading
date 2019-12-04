@@ -1,5 +1,5 @@
-<div class="container mt-3 mb-3" comment-id="<%= comment.id %>">
-  <div class="card-body">
+<div class="container" comment-id="<%= comment.id %>">
+  <div class="card-body p-2">
     <div class="d-flex flex-row">
       <% if !comment.user.photo.nil? %>
       <%= link_to image_tag(comment.user.photo, class: "avatar-large"), user_path(comment.user) %>
@@ -11,7 +11,7 @@
         <p class="ml-2 mb-0">
           <small class="text-muted">
             <% if !comment.user.name.nil? %>
-            <p><%= comment.user.name %></p>
+            <%= comment.user.name %>
             <% else %>
             <em>Username</em>
             <% end %>
@@ -20,7 +20,7 @@
         </p>
 
         <div class="ml-2">
-          <p><%= comment.content %></p>
+          <p class="mb-0"><%= comment.content %></p>
         </div>
       </div>
 
