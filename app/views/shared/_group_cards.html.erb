@@ -26,9 +26,6 @@
             <%#= render 'shared/tag', group: g %>
           </div>
         <%# end %> -->
-        <div>
-          <%=  %>
-        </div>
       </div>
       <div class="count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
         <div id="number"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
