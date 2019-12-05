@@ -1,6 +1,4 @@
 class Group < ApplicationRecord
-  include AlgoliaSearch
-
   belongs_to :user # , class_name: "User"
 
   belongs_to :language
@@ -12,8 +10,4 @@ class Group < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   validates :date, presence: true
-
-  algoliasearch do
-    attributes :location_name, :location
-  end
 end
