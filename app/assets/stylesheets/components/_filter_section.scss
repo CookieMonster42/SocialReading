@@ -40,6 +40,10 @@
 
 .filter-action{
   margin-top: 20px;
+  color: $turquoise;
+  a{
+    margin-top:1px;
+  }
 }
 
 
@@ -114,7 +118,7 @@ input[type=range]::-ms-thumb {
 }
 // [END] Styling the range thumb ////////////////////////////////
 
-
+// [START] Styling the range track ////////////////////////////////
 input[type=range]::-webkit-slider-runnable-track {
   width: 50%;
   height: .1px;
@@ -124,3 +128,18 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 1.3px;
   border-bottom: 1px solid $turquoise;
 }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+  width: 50%;
+  height: .1px;
+  cursor: pointer;
+  background: $creme;
+  border-radius: 1.3px;
+  border: 0.2px solid $turquoise;
+}
+
+// [END] Styling the range track ////////////////////////////////
