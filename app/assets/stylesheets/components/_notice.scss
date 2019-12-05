@@ -1,10 +1,9 @@
-.alert {
+.notice {
   position: fixed;
   top: 50px;
   z-index: 1000;
-  background-color: #ffffff;
+  background-color: #c3b8ae85;
   color: $dark-blue;
   border-color: #ffffff;
   width: 100%;
-  box-shadow: 3px 3px 30px 2px;
 }
