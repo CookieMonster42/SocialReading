@@ -1,9 +1,9 @@
 <div class="reading-cards">
   <% @memberships.each do |m| %>
-  <div>
+  <!-- <div> -->
     <div class ="reading-card">
       <%= link_to group_path(id: m.group.id), class: "book-image" , :action => 'go' do %>
-      <%= image_tag m.group.book.photo, width: '165px', height: '256px' %>
+        <%= image_tag m.group.book.photo, width: '165px', height: '256px' %>
       <% end %>
       <div class="resub">
         <p class="reading-subtitle"> <%= m.group.name %></p>
@@ -16,6 +16,6 @@
         <div id="user-subday">days</div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
   <% end %>
 </div>
