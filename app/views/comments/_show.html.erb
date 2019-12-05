@@ -1,13 +1,13 @@
-<div class="container" comment-id="<%= comment.id %>">
-  <div class="card-body p-2">
-    <div class="d-flex flex-row">
+<div class="" comment-id="<%= comment.id %>">
+  <div class="">
+    <div class="comment-box d-flex flex-row">
       <% if !comment.user.photo.nil? %>
       <%= link_to image_tag(comment.user.photo, class: "avatar-large"), user_path(comment.user) %>
       <% else %>
       <%= link_to image_tag("profile_placeholder", class: "avatar-large"), user_path(comment.user) %>
       <% end %>
 
-      <div>
+      <div class="comment-container parent-position">
         <p class="ml-2 mb-0">
           <small class="text-muted">
             <% if !comment.user.name.nil? %>
@@ -22,12 +22,12 @@
         <div class="ml-2">
           <p class="mb-0"><%= comment.content %></p>
         </div>
-      </div>
 
-      <div class="icon-position">
-        <% if policy(comment).destroy? %>
-          <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), id: "delete-link", method: :delete, remote: true %>
-          <% end %>
+        <div class="icon-position">
+          <% if policy(comment).destroy? %>
+            <%= link_to image_tag("trashbin", class: "delete-icon"), comment_path(comment), id: "delete-link", method: :delete, remote: true %>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>

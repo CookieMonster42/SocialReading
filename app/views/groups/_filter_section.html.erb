@@ -1,27 +1,37 @@
 <div class="d-flex justify-content-between">
 
   <div class="">
-    <a class="filter-label">Range</a>
+    <a class="filter-label">Distance</a>
     <div class="line-filter mx-5"></div>
-    <div class="">
-      <input id="range" name="range" min="1" max="100" type="number" class="filter tags_dropdown" placeholder="50" /> KM
+    <!-- <div class="">
+      <%#= params[:range] %> KM
+    </div> -->
+    <div class="filter-action">
+      <input id="range-slider" name="range" type="range" min="1" max="100" value="<%= params[:range] || 50 %>" class="custom-range" ><a>   <%= params[:range] %>KM</a>
+      <!-- <input id="range" name="range" min="1" value="<%#= params[:range] || 50 %>" max="100" type="number" class="filter tags_dropdown" placeholder="50" /> KM -->
     </div>
   </div>
 
   <div class="">
     <a class="">Genre</a>
     <div class="line-filter mx-5"></div>
+    <div class="filter-action">
       <div class="search-form-control form-group">
-        <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name"),include_blank: "All Tags", value_method: 'name',label: false, class: "filter-dropdown" %>
-    </div>
+        <%= select_tag :tags, options_from_collection_for_select(ActsAsTaggableOn::Tag.all, "name", "name", params[:tags] || @tags_all),include_blank: "All Tags", value_method: 'name',label: false, class: "filter-dropdown" %>
+      </div>
+      </div>
+    <!-- <div class=""><%#= params[:tags] %></div> -->
   </div>
 
   <div class="">
     <a class="">Language</a>
     <div class="line-filter mx-5"></div>
+    <div class="filter-action">
     <div class="search-form-control form-group">
-      <%= select_tag :language, options_from_collection_for_select(Language.all, "id", "name"), label: false, include_blank: "All Languages", class: "filter-dropdown" %>
+      <%= select_tag :language, options_from_collection_for_select(Language.all, "id", "name", params[:language] || @languages_all), label: false, include_blank: "All Languages", class: "filter-dropdown" %>
     </div>
+    </div>
+    <!-- <div class=""><%#= Language.find(params[:language]).name %></div> -->
   </div>
 
 </div>

@@ -15,10 +15,11 @@
     <div class="pr-5 pl-5">
       <h2><%= @group.book.title.upcase %></h2>
       <p class="group-author"><%= @group.book.author.upcase %></p>
-      <p style="word-spacing: 3px;">»<%= @group.book.description %>...</p>
       <% if @group.tag_list.any? %>
-      <%= render 'shared/tag', group: @group %>
-    <% end %>
+        <%= render 'shared/tag', group: @group %>
+      <% end %>
+      <p style="word-spacing: 3px;">»<%= @group.book.description %>...</p>
+      <p class="group-author"><%= "Read more".upcase %></p>
     </div>
   </div>
 
@@ -65,13 +66,13 @@
     <!-- Join/Add Buttons -->
       <div class="member-name">
         <!-- Add Friend -->
-        <% if @group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
+        <% if (@group.memberships.find_by(user_id: current_user.id) || (@group.user_id == current_user.id)) && (@group.memberships.count + 1 < @group.max_members) %>
             <div class="img">
               <p class="add-button avatar-group">+</p>
             </div>
             <p class="no-margin-bottom">Add friend</p>
         <!-- Join -->
-        <% elsif !@group.memberships.find_by(user_id: current_user.id) && @group.memberships.count + 1 < @group.max_members %>
+        <% elsif !@group.memberships.find_by(user_id: current_user.id) && (@group.memberships.count + 1 < @group.max_members) && !(@group.user_id == current_user.id) %>
             <%= link_to memberships_path(id: @group.id), class:"member-name", method: :post do %>
             <div class="img">
               <p class="join-button avatar-group">+</p>

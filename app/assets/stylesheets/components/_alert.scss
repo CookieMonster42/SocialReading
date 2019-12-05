@@ -1,6 +1,11 @@
 .alert {
   position: fixed;
   bottom: 16px;
-  right: 16px;
+  right: 20px;
   z-index: 1000;
+  background-color: #ffffff;
+  color: $dark-blue;
+  border-color: #ffffff;
+  width: 250px;
+  box-shadow: 3px 3px 30px rgba(1,1,1,0.2);
 }

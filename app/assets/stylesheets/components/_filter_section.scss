@@ -1,9 +1,9 @@
 .line {
-  border-bottom: 1.5px solid black;
+  border-bottom: 1px solid $dark-blue-lighter;
 }
 
 .line-filter {
-  border-bottom: 1.5px solid black;
+  border-bottom: 1px solid $dark-blue-lighter;
   width: 230px;
 }
 .filter-dropdown{
@@ -32,4 +32,12 @@
 
 .tags_dropdown {
   width: 114px;
+}
+.custom-range{
+  width: 160px;
+  margin-right: 20px;
+}
+
+.filter-action{
+  margin-top: 20px;
 }
