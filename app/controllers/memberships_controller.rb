@@ -4,7 +4,6 @@ class MembershipsController < ApplicationController
     user_id = current_user.id
     @membership = Membership.create(group_id: group_id, user_id: user_id)
     @group = Group.find(group_id).name
-    message =
     flash[:notice] = "You have successfully joined the group: #{@group}!"
     redirect_to group_path(group_id)
   end

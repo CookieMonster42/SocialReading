@@ -31,6 +31,7 @@ class GroupsController < ApplicationController
     @group.language = Language.find_by(name: params[:language][:name])
     @group.tag_list.add(params[:group][:tags])
     if @group.save!
+      flash[:notice] = "You have successfully created the group: #{@group.name}!"
       redirect_to group_path(@group)
     else
       render "new"
