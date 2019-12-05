@@ -2,13 +2,22 @@
 
 <div class="container mb-5">
   <!-- Title -->
-  <div class="pt-5 text-center">
-    <h1 class="group-title"><%= @group.name %></h1>
-    <p class="group-language"><%= @group.language.name %></p>
+  <div class="pt-5 text-center top-show">
+    <div class="position-back-btn">
+      <div class="mt-0 mb-0">
+        <%= link_to groups_path, class: "back-btn" , :action => 'go' do %>
+        <div><i class="fas fa-arrow-left"></i></div>
+        <% end %>
+      </div>
+      <h1 class="group-title"><%= @group.name %></h1>
+    </div>
+    <div>
+      <p class="group-language"><%= @group.language.name %></p>
+    </div>
   </div>
 
   <!-- Book -->
-  <div class="d-flex flex-row m-5">
+  <div class="d-flex flex-row ml-5 mt-2">
     <div class="img-responsive" width="200">
       <%= image_tag @group.book.photo, class: 'book-image' %>
     </div>
