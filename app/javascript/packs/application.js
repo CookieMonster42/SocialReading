@@ -3,6 +3,7 @@ import "bootstrap";
 // map
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initChoices } from '../plugins/init_choices';
 // flatpickr
 import flatpickr from "flatpickr";
 // Places.JS
@@ -11,6 +12,9 @@ import { initAutocomplete } from '../plugins/init_autocomplete.js'
 initAutocomplete();
 
 initMapbox();
+initChoices();
+
+
 
 
 var request = document.querySelector("#book-request");
