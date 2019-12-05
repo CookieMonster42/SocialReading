@@ -1,4 +1,5 @@
 <div class="cards-row text-center">
+  <% @groups = groups if groups %>
   <% @groups.each do |g| %>
   <div class="" id="card-item">
     <%= link_to group_path(g), class:"link", :action => 'go' do %>
