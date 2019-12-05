@@ -1,21 +1,25 @@
 <div class="reading-cards">
-  <% @memberships.each do |m| %>
-  <!-- <div> -->
-    <div class ="reading-card">
-      <%= link_to group_path(id: m.group.id), class: "book-image" , :action => 'go' do %>
-        <%= image_tag m.group.book.photo, width: '165px', height: '256px' %>
-      <% end %>
-      <div class="resub">
-        <p class="reading-subtitle"> <%= m.group.name %></p>
-        <p class="reading-subtitle">
-          <%= m.group.date.strftime("%a")%>, <%= m.group.date.strftime("%b %d")%>
-        </p>
-      </div>
-      <div class="user-count-down <%= (m.group.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
-        <div id="user-number"><%= (m.group.date.to_date - Date.today.to_date).to_i %></div>
-        <div id="user-subday">days</div>
-      </div>
+  <% if @memberships.empty? %>
+    <div class="nil-groups">
+      <p class="nil-read">No book group joined :(</p>
     </div>
-  <!-- </div> -->
+  <% else %>
+    <% @memberships.each do |m| %>
+      <div class ="reading-card">
+        <%= link_to group_path(id: m.group.id), class: "book-image" , :action => 'go' do %>
+        <%= image_tag m.group.book.photo, width: '165px', height: '256px' %>
+        <% end %>
+        <div class="resub">
+          <p class="reading-subtitle"> <%= m.group.name %></p>
+          <p class="reading-subtitle">
+            <%= m.group.date.strftime("%a")%>, <%= m.group.date.strftime("%b %d")%>
+          </p>
+        </div>
+        <div class="user-count-down <%= (m.group.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
+          <div id="user-number"><%= (m.group.date.to_date - Date.today.to_date).to_i %></div>
+          <div id="user-subday">days</div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
