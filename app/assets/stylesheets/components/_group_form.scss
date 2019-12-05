@@ -1,8 +1,16 @@
-.hole-form {
-  margin: 80px 80px;
+//Whole Form
+.whole-form {
+  margin: 50px auto;
   display: flex;
+  color: $dark-blue;
 }
 
+.createform-container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+// Top Section
 .top-section {
   text-align: center;
 }
@@ -10,21 +18,19 @@
 .question {
   font-family: "Moret Regular";
   font-size: 38px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 .line-bottom {
-  border-bottom: 2px solid $dark-blue-lighter;
+  border-bottom: 1.5px solid $dark-blue-lighter;
   padding-bottom: 10px;
-}
-
-.createform-container {
-  margin: 0 auto;
 }
 
 .book-details{
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 60px;
 }
 
 .form-image {
@@ -34,8 +40,108 @@
 
 .book-form-desc {
   max-width: 450px;
+  font-family: Montserrat;
+  font-weight: 300;
 }
 
 .hidden {
   display: none;
+}
+
+#book-request {
+  font-weight: 500;
+}
+
+#tag-request {
+  font-weight: 500;
+}
+
+//Bottom Part of Form
+.form-bottom-parent {
+  display: flex;
+}
+
+.form-bottom {
+  text-align: center;
+}
+
+.form-bottom h2 {
+  font-family: Moret Regular;
+  font-size: 38px;
+  text-align: center;
+}
+
+#group-name {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+#host_message {
+  margin-top: 25px;
+}
+
+// Language Section
+#language-select {
+  margin-top: 25px;
+}
+
+#language-request {
+  margin-left: 10px;
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+//Location
+.eventlocation-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventlocation {
+  display: flex;
+}
+
+//Time
+.eventtime {
+}
+
+
+//Styling InputField and LabelField
+.input-field {
+  display: flex;
+  // text-align: center;
+  background-color: $custom-grey;
+  overflow: auto;
+  height: 45px;
+  max-height: 135px;
+  width: 600px;
+  border-style: none;
+  border-bottom: 1px solid #d3ccc9;
+}
+
+.input-field::placeholder {
+  color: $turquoise;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.label-field {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+//Button -- border doesn't show
+.btn-flat-create-group {
+  color: $turquoise;
+  border: 1px solid $turquoise;
+  background-color: $creme;
+  padding: 8px 24px;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.btn-flat-group:hover {
+  color: $creme;
+  background-color: $turquoise;
 }

@@ -161,7 +161,7 @@ book7 = Book.create({
 
 
 book8 = Book.create({
-  title: "The Tattooist of Auschwitz ",
+  title: "The Tattooist of Auschwitz",
   author: "Heather Morris",
   description: "In April 1942, Lale Sokolov, a Slovakian Jew, is forcibly transported to the concentration camps at Auschwitz-Birkenau. When his captors discover that he speaks several languages, he is put to work as a Tätowierer (the German word for tattooist), tasked with permanently marking his fellow prisoners.
 

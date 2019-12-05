@@ -26,12 +26,31 @@ var fetchBookInfo = () => {
 
 request.addEventListener("change", fetchBookInfo);
 
+//Date AND Time
+// var element = document.querySelector('.datep')
+// console.log(element)
+// const options = {
+//   enableTime: true,
+//   dateFormat: "Y-m-d H:i",
+// }
+// flatpickr(element, options);
 
-var element = document.querySelector('.datep')
-console.log(element)
+
+//Date
+var date = document.querySelector('.datepicker')
 const options = {
-  enableTime: true,
-  dateFormat: "Y-m-d H:i",
+  altInput: true,
+  altFormat: "F j, Y",
+  dateFormat: "Y-m-d",
 }
-flatpickr(element, options);
+flatpickr(date, options);
+
+//Time
+var time = document.querySelector('.timepicker')
+const options_time = {
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i"
+}
+flatpickr(time, options_time);
 

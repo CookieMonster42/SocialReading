@@ -1,8 +1,9 @@
-<div class="hole-form">
+<div class="whole-form">
   <form action="/groups" method="post" class="createform-container">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <div class="top-section">
 
+<!-- Top Part - Book Details -->
       <h2 class="question">Which book would you like to read?</h2>
       <select name="book[title]" class="select2" id="book-request">
         <% Book.all.each do |book| %>
@@ -12,8 +13,6 @@
       <p class="line-bottom"></p>
     </div>
 
-    <br/>
-    <br/>
     <div class="book-details">
       <div class="book-description">
 
@@ -22,14 +21,13 @@
         </div>
 
         <br/>
-        <br/>
 
         <div class="book-form-desc">
 
         </div>
 
         <br/>
-        <br/>
+
         <div class="book-form-tags hidden">
            <select name="group[tags]" class="select2" id="tag-request">
             <% ActsAsTaggableOn::Tag.all.each do |tag| %>
@@ -44,58 +42,64 @@
       <input type="hidden" name="book[photo]" id="photo-form">
     </div>
 
-    <br/>
-    <br/>
 
-    <h2 class="border-bottom pb-3 mt-5">Tell us more about the group!</h2>
-    <label for="name">Give the group a name: </label>
-    <input type="text" name="group[name]" id="#">
+<!-- Bottom Part - Group Details -->
+    <div class="form-bottom-parent">
+      <div class="form-bottom">
+        <h2>Tell us more about the group!</h2>
 
-    <br/>
-    <br/>
+        <div id="group-name">
+          <label class="label-field"for="name">Give your group a name</label>
+          <input type="text" name="group[name]" id="#" class="input-field" placeholder="  Give it a funny name!">
+        </div>
 
-    <label for="host_message">Why are you creating the group/ want to read the book?: </label>
-    <input type="text" name="group[host_message]" id="#">
+        <div id="host_message">
+          <label class="label-field" for="host_message">Why do you want to read this book?</label>
+          <input type="text" name="group[host_message]" id="#" class="input-field">
+        </div>
 
-    <br/>
-    <br/>
+        <div id="language-select">
+          <label class="label-field" for="language-request">In which language will you discuss the book?</label>
 
-    <label for="language-request">In which language will you discuss the book?: </label>
-    <select name="language[name]" class="select2" id="language-request">
-      <% Language.all.each do |language| %>
-        <option value="<%= language.name %>"><%= language.name.capitalize %></option>
-      <% end %>
-    </select>
+          <select name="language[name]" class="select2" id="language-request">
+            <% Language.all.each do |language| %>
+              <option value="<%= language.name %>"><%= language.name.capitalize %></option>
+            <% end %>
+          </select>
+        </div>
+        <br/>
 
-    <br/>
-    <br/>
+        <div class="eventlocation-parent">
+          <p class="label-field">Where do you want to meet?</p>
+          <div class="eventlocation">
+            <label for="location_name">Name of Location </label>
+            <input type="text" name="group[location]" id="#">
 
-    <p>Where do you want to meet?</p>
-    <label for="location_name">Name of Location: </label>
-    <input type="text" name="group[location]" id="#">
+            <label for="location_name">Address of Location: </label>
+            <input type="text" name="group[location]" id="#">
+          </div>
+        </div>
 
-    <br/>
-    <br/>
+        <br/>
 
-    <label for="location_name">Address of Location: </label>
-    <input type="text" name="group[location]" id="#">
+        <div class="eventtime">
+          <p class="label-field">When do you want to meet?</p>
+          <label class="label-field" for="date">Date</label>
+          <input type="date" class="datepicker" name="group[date]">
 
-    <br/>
-    <br/>
+          <label class="label-field" for="time">Time</label>
+          <input type="time" class="timepicker" name="group[time]">
+        </div>
 
-    <p>When do you want to meet?</p>
-    <label for="date-time">Date</label>
-    <input type="date" class="datep" name="group[date]">
-    <br/>
-    <br/>
+        <br/>
 
+        <label class="label-field" for="max_members">How many people can join: </label>
+        <input type="number" name="group[max_members]" id="#" class="input-field">
 
-    <label for="max_members">How many people can join: </label>
-    <input type="number" name="group[max_members]" id="#">
+        <br/>
 
-    <br/>
-    <br/>
-
-    <input type="submit" value="Create group!">
+        <input class="btn-flat-create-group" type="submit" value="Create this group!">
+      </div>
+    </div>
   </form>
 </div>
