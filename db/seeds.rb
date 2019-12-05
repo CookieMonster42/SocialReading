@@ -319,7 +319,7 @@ group4 = Group.new({
   date: 'Fri, Dec 16 2019, 09:00 am',
   max_members: 9
 })
-group4.user_id = host3.id
+group4.user_id = host4.id
 group4.book = book3
 group4.language = language0
 group4.tag_list.add("NonFicton", "Biography")
@@ -459,7 +459,7 @@ group14 = Group.new({
   date: 'Sun, Dec 27 2019, 01:00 pm',
   max_members: 9
 })
-group14.user_id = host3.id
+group14.user_id = host6.id
 group14.book = book18
 group14.language = language1
 group14.tag_list.add("Biography", "Novel", "Fiction")
@@ -501,7 +501,7 @@ group17 = Group.new({
   date: 'Mon, Dec 29 2019, 05:00 pm',
   max_members: 12
 })
-group17.user_id = host3.id
+group17.user_id = host7.id
 group17.book = book9
 group17.language = language1
 group17.tag_list.add("Thriller", "NonFicton")

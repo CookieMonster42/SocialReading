@@ -1,6 +1,8 @@
 <div class="reading-cards">
-  <% if @hosted_groups.nil? %>
-    <h2 class="reading-title">No book group hosted :(</h2>
+  <% if @hosted_groups.empty? %>
+    <div class="nil-groups">
+      <p class="nil-read">No book group hosted :(</p>
+    </div>
   <% else %>
     <% @hosted_groups.each do |g| %>
       <div class ="reading-card">
@@ -21,6 +23,8 @@
     <% end %>
   <% end %>
 </div>
+
+
 
 
 

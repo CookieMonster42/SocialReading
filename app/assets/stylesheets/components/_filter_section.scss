@@ -11,6 +11,11 @@
     border: none;
    }
 
+select {
+  text-align-last:center;
+  color: $turquoise;
+  }
+
 .filter-container{
   background-color: $creme;
   text-align: center;
@@ -143,3 +148,9 @@ input[type=range]::-moz-range-track {
 }
 
 // [END] Styling the range track ////////////////////////////////
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-overflow: '';
+}
