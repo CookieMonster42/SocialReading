@@ -81,9 +81,11 @@ class GroupsController < ApplicationController
     end
     if @location.present?
       # if more tags than one are given the any should be all in line 28
-      @groups = Group.near(@location, @range).where(language_id: @languages).tagged_with(@tags_given, any: true)
+      @groups = Group.order(date: :asc).near(@location, @range).where(language_id: @language).where('date > ?', Date.today).tagged_with(@tags_given, any: true)
+    elsif @location.nil?
+      @groups = Group.order(date: :asc).where(language_id: @language).where('date > ?', Date.today).tagged_with(@tags_given, any: true)
     else
-      @groups = Group.where(language_id: @languages).tagged_with(@tags_given, any: true)
+      @groups = Group.all.order(date: :asc).where('date > ?', Date.today)
     end
     # @groups = filter_outdated_books(@groups)
     # raise
