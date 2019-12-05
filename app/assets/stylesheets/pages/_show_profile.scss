@@ -54,6 +54,7 @@ body {
   display: flex;
   margin: 50px auto;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .reading-card-box {
@@ -76,12 +77,13 @@ body {
 
 .resub {
   flex: 1;
-  margin-top: 18px;
 }
 
 .reading-subtitle {
   font-size: 0.9rem;
   margin-bottom: 0rem;
+  max-width: fit-content;
+  margin: 5px auto;
 }
 
 .user-count-down {
