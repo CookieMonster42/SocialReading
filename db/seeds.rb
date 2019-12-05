@@ -92,6 +92,50 @@ host8 = User.create({
   photo: "https://unsplash.com/photos/HRZUzoX1e6w"
 })
 
+### For demo
+
+host9 = User.create({
+  name: "Lucas",
+  password: '123456',
+  email: 'lucas@smile.com',
+  bio: "I'm crazy about Fantasy and Sci-fi books. And a fun fact for you: I got into reading because of the Star Wars movies. I am always open for new reading suggestions, pls dm me!",
+  photo: "lucas.jpeg"
+})
+
+host10 = User.create({
+  name: "Mary",
+  password: '123456',
+  email: 'mary@smile.com',
+  bio: "Everything you read fills your head with new bits of information, and you never know when it might come in handy. The more knowledge you have, the better-equipped you are to tackle any challenge you’ll ever face. Additionally, here’s a bit of food for thought: should you ever find yourself in dire circumstances, remember that although you might lose everything else—your job, your possessions, your money, even your health—knowledge can never be taken from you.",
+  photo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F762020%2Fpexels-photo-762020.jpeg%3Fcs%3Dsrgb%26dl%3Dfashion-person-woman-762020.jpg%26fm%3Djpg&f=1&nofb=1"
+})
+
+host11 = User.create({
+  name: "Peter",
+  password: '123456',
+  email: 'peter@smile.com',
+  bio: "Why I read: Reading lots of books in different areas of thought fills my brain with concepts, ideas, and language that stimulate my own creativity. I believe that there are indeed “new things under the sun.” We discover them by taking in as many ideas as possible and letting our mind do the work of finding the connections that lead to original thinking. The easiest (and best) way I know to accomplish this is by reading lots of books.",
+  photo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.A6kwzt0bVipEkCn6QlQMwwHaEK%26pid%3DApi&f=1"
+})
+
+host12 = User.create({
+  name: "Helen",
+  password: '123456',
+  email: 'helen@smile.com',
+  bio: "The biggest difference between reading and watching television is that reading gives you the scope to unleash your creativity. The more you read, the more you learn new things. New thoughts always stretch our minds to rediscover life in new and better ways. We start to see the world in a different way and this way we find new creative solutions.",
+  photo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rd.com%2Fwp-content%2Fuploads%2F2017%2F09%2F01-shutterstock_476340928-Irina-Bg.jpg&f=1&nofb=1"
+})
+
+host13 = User.create({
+  name: "Nicolas",
+  password: '123456',
+  email: 'nicolas@smile.com',
+  bio: 'As a child I was a huge book nerd. Unfortunately I have lost my way and am really excited about Social Reading. It will help me get back my reading habit :)',
+  photo: "https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-8/26756720_10210633231809174_5817922752003500618_o.jpg?_nc_cat=102&_nc_ohc=0VATjE7TC9UAQke2wGLJp-iwyUkKRYHOGA2XLV7TtLsmKe_jTPOXCWxOw&_nc_ht=scontent-amt2-1.xx&oh=77bcaa9256db5b8c5ee7b1e3ee4373c5&oe=5E81701E"
+})
+
+
+
 puts "Users seeded!"
 
 ###########
@@ -262,6 +306,20 @@ book21 = Book.create({
   author: "Chimamanda Ngozi Adichie",
   description: "Ifemelu and Obinze are young and in love when they depart military-ruled Nigeria for the West. Beautiful, self-assured Ifemelu heads for America, where despite her academic success, she is forced to grapple with what it means to be black for the first time. Quiet, thoughtful Obinze had hoped to join her, but with post-9/11 America closed to him, he instead plunges into a dangerous, undocumented life in London. Fifteen years later, they reunite in a newly democratic Nigeria, and reignite their passion—for each other and for their homeland.",
   photo: "Americanah.jpg"
+})
+
+book22 = Book.create({
+  title: "The Fellowship of the Ring",
+  author: "J.R.R. Tolkien",
+  description: "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkeness bind them. In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit.",
+  photo: "the_fellowship_of_the_ring.jpeg"
+})
+
+book23 = Book.create({
+  title: "1984",
+  author: "George Orwell",
+  description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written.",
+  photo: "1984.jpeg"
 })
 
 puts "Books seeded!"
@@ -579,6 +637,19 @@ group22.language = language0
 group22.tag_list.add("NonFicton")
 group22.save
 
+group23 = Group.new({
+  name: "No Orcs allowed",
+  location_name: "Gendarmenmarkt",
+  location: "Mohrenstr. 30, Berlin",
+  host_message: 'A book that every fantasy fan should read. I have not done so yet so it is about time. Join me at the Gendarmenmarkt Christmas Market for some Glühwein, it will be fun!',
+  date: 'Sun, Dec 15 2019, 02:00 pm',
+  max_members: 8
+})
+group23.user_id = host9.id
+group23.book = book22
+group23.language = language0
+group23.tag_list.add("Fantasy")
+group23.save
 
 puts "Groups seeded! #{ Group.count}"
 
@@ -593,21 +664,21 @@ puts "Groups seeded! #{ Group.count}"
 
 
 ### group 1 ###
-Membership.create({user: host3, group: group1})
+Membership.create({user: host1, group: group1})
 Membership.create({user: host6, group: group1})
 ### group 2 ###
-Membership.create({user: host2, group: group2})
-Membership.create({user: host4, group: group2})
+Membership.create({user: host10, group: group2})
+Membership.create({user: host12, group: group2})
 Membership.create({user: host5, group: group2})
 ### group 3 ###
 Membership.create({user: host1, group: group3})
 Membership.create({user: host3, group: group3})
-Membership.create({user: host4, group: group3})
+Membership.create({user: host11, group: group3})
 Membership.create({user: host5, group: group3})
 Membership.create({user: host6, group: group3})
 Membership.create({user: host7, group: group3})
 ### group 4 ###
-Membership.create({user: host1, group: group4})
+Membership.create({user: host11, group: group4})
 Membership.create({user: host2, group: group4})
 Membership.create({user: host6, group: group4})
 Membership.create({user: host7, group: group4})
@@ -615,10 +686,15 @@ Membership.create({user: host7, group: group4})
 Membership.create({user: host3, group: group5})
 Membership.create({user: host5, group: group5})
 ### group 6 ###
-Membership.create({user: host6, group: group6})
+Membership.create({user: host12, group: group6})
 ### group 7 ###
 Membership.create({user: host4, group: group7})
 Membership.create({user: host7, group: group7})
+
+### group 23 ###
+Membership.create({user: host10, group: group23})
+Membership.create({user: host11, group: group23})
+Membership.create({user: host12, group: group23})
 
 puts "Memberships seeded!"
 ###########
