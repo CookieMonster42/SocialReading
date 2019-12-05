@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
     respond_to do |format|
       # p "Hey here we are sending this when the ayax got called!!!"
       book_title = params.keys.first
+      p params
       @book = Book.find_by(title: book_title)
       p @book
       format.js

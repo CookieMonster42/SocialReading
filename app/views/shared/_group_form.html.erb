@@ -7,7 +7,7 @@
       <h2 class="question">Which book would you like to read?</h2>
       <select name="book[title]" class="select2" id="book-request">
         <% Book.all.each do |book| %>
-          <option value="<%= book.title %>"><%= book.title.capitalize %></option>
+          <option value="<%= book.title %>"><%= book.title %></option>
         <% end %>
       </select>
       <p class="line-bottom"></p>
