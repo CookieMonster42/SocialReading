@@ -15,6 +15,24 @@ initMapbox();
 initChoices();
 
 
+// ranger JS starts here
+let range_slider = document.getElementById("range-slider")
+const range_slider_val = document.querySelector(".value-of-range-slider")
+console.log(range_slider)
+// output.innerHTML = range_slider.value;
+
+const change = (event) => {
+    console.log(event.currentTarget.value);
+    range_slider_val.innerHTML = `${event.currentTarget.value} KM`;
+  };
+
+let refresh_search = () => {
+  range_slider.addEventListener('change', change)
+  range_slider.addEventListener('mousemove', change)
+}
+
+refresh_search();
+// here it ends
 
 
 var request = document.querySelector("#book-request");
@@ -30,7 +48,6 @@ var fetchBookInfo = () => {
     data: request.value,
   })
 }
-
 
 request.addEventListener("change", fetchBookInfo);
 
@@ -61,4 +78,6 @@ const options_time = {
   dateFormat: "H:i"
 }
 flatpickr(time, options_time);
+
+
 
