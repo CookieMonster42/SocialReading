@@ -10,7 +10,7 @@
      <%= @location.present? ? @loc : "For all locations" %> there were <strong> <%= @groups.size %></strong> groups found!
     </div>
     <div class="container">
-    <%= render 'shared/group_cards' %>
+      <%= render 'shared/group_cards', groups: @groups %>
     </div>
   </div>
 </div>
