@@ -5,6 +5,10 @@
     <%= render 'shared/search_bar', location: params[:format] %>
   </div>
   <div class="my-4">
+    <div class="display-inline ml-5">
+      <% @loc = "In #{@location}" %>
+     <%= @location.present? ? @loc : "For all locations" %> there were <strong> <%= @groups.size %></strong> groups found!
+    </div>
     <%= render 'shared/group_cards' %>
   </div>
 </div>

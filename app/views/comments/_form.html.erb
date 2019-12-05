@@ -1,23 +1,21 @@
-<div class="container">
-  <div class="form-group">
-    <div class="comment-row">
-        <%= simple_form_for([ group, comment ], remote: true) do |f| %>
-      <div class="form-center">
-        <% if !current_user.photo.nil? %>
-        <%= image_tag(current_user.photo, class: "avatar-large") %>
-        <% else %>
-        <%= image_tag("profile_placeholder", class: "avatar-large") %>
-        <% end %>
+<div class="form-group">
+  <div class="comment-row">
+      <%= simple_form_for([ group, comment ], remote: true) do |f| %>
+    <div class="form-position-start">
+      <% if !current_user.photo.nil? %>
+      <%= image_tag(current_user.photo, class: "avatar-large") %>
+      <% else %>
+      <%= image_tag("profile_placeholder", class: "avatar-large") %>
+      <% end %>
 
-        <div class="comment-container">
-            <%= f.text_area :content, as: :text, placeholder: "Write a comment", class: "form-control border-light no-border-input" %>
-        </div>
-
-        <div class="btn-regular comment-btn">
-          <%= f.button :submit, value: "Comment", method: :post %>
-        </div>
-        <% end %>
+      <div class="comment-container">
+          <%= f.text_area :content, as: :text, placeholder: "Write a comment", class: "form-control border-light no-border-input" %>
       </div>
+
+      <div class="btn-regular comment-btn">
+        <%= f.button :submit, value: "Comment", method: :post %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
