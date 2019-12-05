@@ -51,13 +51,13 @@
 <!-- Group Name -->
         <div id="group-name">
           <label class="label-field"for="name">Give your group a name</label>
-          <input type="text" name="group[name]" id="#" class="input-field" placeholder="  Give it a funny name!">
+          <input type="text" name="group[name]" id="#" class="input-field" placeholder="Choose a funny one!">
         </div>
 
 <!-- Host Message -->
         <div id="host_message">
           <label class="label-field" for="host_message">Why do you want to read this book?</label>
-          <input type="text" name="group[host_message]" id="#" class="input-field">
+          <input type="text" name="group[host_message]" id="#" class="input-field" placeholder="Because...">
         </div>
 
 <!-- Language of Meeting -->
@@ -89,18 +89,21 @@
         </div>
 
 <!-- Date and Time of Groupmeeting -->
-        <div class="eventtime-parent">
+        <div class="eventtime-parent mt-5">
           <div id="label-field-time">
             <p class="label-field">When do you want to meet?</p>
           </div>
-          <div class="eventtime">
-            <div>
-              <label class="label-field" for="date">Date</label>
-              <input type="date" class="datepicker" name="group[date]">
-            </div>
-            <div>
-              <label class="label-field" for="time">Time</label>
-              <input type="time" class="timepicker" name="group[time]">
+          <div class="eventtime container p-0">
+
+            <div class="row justify-content-between no-gutters">
+              <div class="col-6">
+                <label class="label-field mt-3" for="date">Date</label>
+                <input type="date" class="datepicker datepicker-input" name="group[date]">
+              </div>
+              <div class="col-6">
+                <label class="label-field mt-3" for="time">Time</label>
+                <input type="time" class="timepicker" name="group[time]">
+              </div>
             </div>
           </div>
         </div>
@@ -108,7 +111,7 @@
 <!-- Possible Amount of Members -->
         <div id="members">
           <label class="label-field" for="max_members">How many people can join? </label>
-          <input type="number" name="group[max_members]" id="#" class="input-field">
+          <input type="string" name="group[max_members]" id="#" class="input-field">
         </div>
         <br/>
 
