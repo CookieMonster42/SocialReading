@@ -14,11 +14,9 @@ initAutocomplete();
 initMapbox();
 initChoices();
 
-
 // ranger JS starts here
 let range_slider = document.getElementById("range-slider")
 const range_slider_val = document.querySelector(".value-of-range-slider")
-console.log(range_slider)
 // output.innerHTML = range_slider.value;
 
 const change = (event) => {
@@ -31,7 +29,10 @@ let refresh_search = () => {
   range_slider.addEventListener('mousemove', change)
 }
 
-refresh_search();
+if (range_slider) {
+  refresh_search();
+
+}
 // here it ends
 
 
@@ -49,7 +50,9 @@ var fetchBookInfo = () => {
   })
 }
 
-request.addEventListener("change", fetchBookInfo);
+if (request) {
+  request.addEventListener("change", fetchBookInfo);
+}
 
 //Date AND Time
 // var element = document.querySelector('.datep')
