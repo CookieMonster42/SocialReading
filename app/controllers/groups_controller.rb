@@ -18,7 +18,6 @@ class GroupsController < ApplicationController
       # p "Hey here we are sending this when the ayax got called!!!"
       book_title = params.keys.first
       @book = Book.find_by(title: book_title)
-      p @book
       format.js
       format.html { render :new }
     end
