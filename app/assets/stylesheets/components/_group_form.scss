@@ -59,6 +59,9 @@
 //Bottom Part of Form
 .form-bottom-parent {
   display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
 }
 
 .form-bottom {
@@ -75,15 +78,23 @@
   display: flex;
   flex-direction: column;
   margin-top: 40px;
+  align-items: flex-start;
 }
 
 #host_message {
-  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
 }
 
 // Language Section
 #language-select {
-  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 35px;
+
 }
 
 #language-request {
@@ -96,16 +107,45 @@
 .eventlocation-parent {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
+}
+
+#label-field-location {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 8px;
 }
 
 .eventlocation {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
 }
 
 //Time
-.eventtime {
+.eventtime-parent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
 }
 
+#label-field-time {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 8px;
+}
+
+.eventtime {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+#members {
+  margin-top: 30px;
+}
 
 //Styling InputField and LabelField
 .input-field {
@@ -115,7 +155,7 @@
   overflow: auto;
   height: 45px;
   max-height: 135px;
-  width: 600px;
+  width: 100%;
   border-style: none;
   border-bottom: 1px solid #d3ccc9;
 }
@@ -126,9 +166,11 @@
   font-size: 1rem;
 }
 
+
 .label-field {
   font-weight: 400;
   font-size: 1rem;
+  margin: 0 14px 0 8px;
 }
 
 //Button -- border doesn't show
