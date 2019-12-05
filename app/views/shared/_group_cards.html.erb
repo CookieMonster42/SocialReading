@@ -11,10 +11,10 @@
     <div class="detail">
       <p class="title"><strong><%= g.name%></strong></p>
       <% end %>
-      <p class="subtitle mb-4">are meeting on</p>
+      <p class="subtitle mb-2">are meeting on</p>
       <p class="date"><%= g.date.strftime("%a")%>, <%= g.date.strftime("%b %d")%>
         <p class="date"><%= g.date.strftime("%H:%M") %></p>
-        <p class="location mt-4"><%= g.location_name %></p>
+        <p class="location mt-2"><%= g.location_name %></p>
         <p class="address"><%= g.location%></p>
         <% if g.memberships.count + 1 >= g.max_members%>
          <p class="member">Join Waiting List</p>
@@ -26,11 +26,15 @@
             <%#= render 'shared/tag', group: g %>
           </div>
         <%# end %> -->
+        <div>
+          <%=  %>
+        </div>
       </div>
       <div class="count-down <%= (g.date.to_date - Date.today.to_date).to_i <= 7 ? 'bc-red' : 'bc-green' %>">
         <div id="number"><%= (g.date.to_date - Date.today.to_date).to_i %></div>
         <div id="subday">days</div>
       </div>
     </div>
-    <% end %>
+  <% end %>
   </div>
+</div>
