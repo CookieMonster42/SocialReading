@@ -6,13 +6,15 @@
   border: 1px solid $turquoise;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
-  transition: opacity 0.4s ease;
+  font-weight: 500;
+  opacity: 1;
+  transition: 0.2s ease;
 }
 
 .btn-regular:hover {
   opacity: 1;
-  font-size: bold;
+  font-weight: 500;
+  padding: 8px 26px;
 }
 
 .btn-regular:focus {
@@ -48,17 +50,24 @@
 
 // --------
 
-.btn-flat {
-  color: white;
+.btn-flat-landing {
+  color: $creme;
+  background-color: $turquoise;
+  border: none;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #1EDD88;
+  border-radius: 30px;
   transition: background 0.3s ease;
+  font-weight: 500;
 }
 
-.btn-flat:hover {
-  background: #1BCB7F;
-  color: white;
+.btn-flat-landing:hover {
+  color: $turquoise;
+  background-color: $creme;
+  border: none;
+}
+
+.btn-flat-landing:focus {
+  outline: none;
 }
 
 // --------
@@ -92,5 +101,36 @@
   padding: 2px 6px;
   margin-top: 12px;
   margin-left: 30px;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none !important;
+  border: 1px solid;
+  color: $turquoise-lighter;
+  background-color: $creme;
+  width: 46px;
+  font-size: 15px;
+  p {
+    margin: 0;
+    padding: 10px;
+  }
+  border-radius: 25px;
+  position: absolute;
+  top: 12px;
+  left: 48px;
+}
+
+.back-btn:hover {
+  background-color: $turquoise-lighter;
+  color: $creme;
+}
+
+.position-back-btn {
+  column-count: 3;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 

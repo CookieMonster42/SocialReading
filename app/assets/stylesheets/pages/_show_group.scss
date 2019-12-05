@@ -5,6 +5,9 @@
   width: 75%;
 
 }
+.top-show {
+
+}
 
 .bg-grey {
   background-color: $custom-grey;
@@ -43,6 +46,7 @@
 
 .group-title {
   font-family:'Moret Regular';
+  flex: 1;
 }
 
 .group-language {
