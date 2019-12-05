@@ -11,6 +11,11 @@
     border: none;
    }
 
+select {
+  text-align-last:center;
+  color: $turquoise;
+  }
+
 .filter-container{
   background-color: $creme;
   text-align: center;
@@ -40,4 +45,112 @@
 
 .filter-action{
   margin-top: 20px;
+  color: $turquoise;
+  a{
+    margin-top:1px;
+  }
+}
+
+
+// Styling of the range !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#range-slider{
+  width: 151px;
+  border-left: 1px solid $turquoise;
+  border-right: 1px solid $turquoise;
+  height: 16px;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: green;
+  border-color: transparent;
+  color: transparent;
+}
+
+// [START] Styling the range thumb ////////////////////////////////
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid $turquoise;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: $creme;
+  cursor: pointer;
+  margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type=range]::-webkit-slider-thumb:click{
+    background: $turquoise;
+  }
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  border: 1px solid $turquoise;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: $creme;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  border: 1px solid $turquoise;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: $creme;
+  cursor: pointer;
+}
+// [END] Styling the range thumb ////////////////////////////////
+
+// [START] Styling the range track ////////////////////////////////
+input[type=range]::-webkit-slider-runnable-track {
+  width: 50%;
+  height: .1px;
+  cursor: pointer;
+  // box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: $creme;
+  border-radius: 1.3px;
+  border-bottom: 1px solid $turquoise;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+  width: 50%;
+  height: .1px;
+  cursor: pointer;
+  background: $creme;
+  border-radius: 1.3px;
+  border: 0.2px solid $turquoise;
+}
+
+// [END] Styling the range track ////////////////////////////////
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-overflow: '';
 }

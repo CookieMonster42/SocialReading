@@ -1,11 +1,13 @@
 <div class="reading-cards">
-  <% if @hosted_groups.any? %>
+  <% if @hosted_groups.empty? %>
+    <div class="nil-groups">
+      <p class="nil-read">No book group hosted :(</p>
+    </div>
+  <% else %>
     <% @hosted_groups.each do |g| %>
-    <% if g.user_id == current_user.id %>
-    <div>
       <div class ="reading-card">
         <%= link_to group_path(g), class: "book-image" , :action => 'go' do %>
-        <%= image_tag Book.find(g.book_id).photo, width: '165px', height: '256px' %>
+          <%= image_tag Book.find(g.book_id).photo, width: '165px', height: '256px' %>
         <% end %>
         <div class="resub">
           <p class="reading-subtitle"> <%= g.name %></p>
@@ -18,13 +20,11 @@
           <div id="user-subday">days</div>
         </div>
       </div>
-    </div>
     <% end %>
-    <% end %>
-  <% else %>
-    <h2 class="reading-title">No groups yet :(</h2>
   <% end %>
 </div>
+
+
 
 
 
