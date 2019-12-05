@@ -16,7 +16,7 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="pro-con">
         <div class="reading">
-         <h2 class="reading-title"> You is currently reading...</h2>
+         <h2 class="reading-title"> You are currently reading...</h2>
          <div>
           <%= render "shared/current_readings_card" %>
          </div>
@@ -49,8 +49,7 @@
             </div>
           </div>
           <div class="my-account-bottom">
-            <!-- <p class="user-bio"> "<%= @user.bio %>" </p> -->
-            <p class="user-bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, modi sed quia labore expedita dolores. Maxime sed placeat dolores, quia praesentium labore rerum illo, illum impedit, sunt amet dolorem alias.</p>
+            <p class="user-bio"><%= @user.bio %></p>
             <p class="fake-button">update bio</p>
           </div>
         </div>
