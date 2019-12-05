@@ -94,3 +94,5 @@ class GroupsController < ApplicationController
   #   groups.map { |g| g if g.date >= Date.today }
   # end
 end
+
+

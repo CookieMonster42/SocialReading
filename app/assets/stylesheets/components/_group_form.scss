@@ -21,6 +21,27 @@
   padding-bottom: 50px;
 }
 
+.choices {
+  margin-bottom: none!important;
+}
+.choices__inner {
+  border: none!important;
+  background-color: $custom-grey!important;
+  font-size: 20px!important;
+}
+
+.choices__list--dropdown {
+  font-size: 20px!important;
+  border: none!important;
+  background-color: $custom-grey!important;
+}
+
+.choices__list {
+  font-size: 20px!important;
+  border: none!important;
+  background-color: $custom-grey!important;
+}
+
 .line-bottom {
   border-bottom: 1.5px solid $dark-blue-lighter;
   padding-bottom: 10px;
@@ -54,7 +75,17 @@
 
 #tag-request {
   font-weight: 500;
+  color: $dark-blue;
+  border: none!important;
+  background-color:$custom-grey;
+  height: 30px;
+  padding-bottom: none!important;
+  -webkit-appearance: menulist;
+  -moz-appearance: menuList;
+  box-shadow: none!important;
 }
+
+
 
 //Bottom Part of Form
 .form-bottom-parent {
@@ -94,13 +125,21 @@
   flex-direction: row;
   align-items: flex-start;
   margin-top: 35px;
-
 }
 
 #language-request {
   margin-left: 10px;
   font-family: Montserrat;
   font-weight: 500;
+  color: $dark-blue;
+  background-color:$custom-grey;
+  height: 30px;
+  width: 100px;
+  border: none!important;
+  padding-bottom: none!important;
+  -webkit-appearance: menulist;
+  -moz-appearance: menuList;
+  box-shadow: none!important;
 }
 
 //Location
@@ -123,6 +162,8 @@
   flex-direction: row;
 }
 
+.datepicker form-control input
+
 //Time
 .eventtime-parent {
   display: flex;
@@ -143,9 +184,28 @@
   flex-direction: row;
 }
 
+.datepicker-input{
+  background-color: $custom-grey!important;
+  border: none;
+  border-bottom: 1px solid #d3ccc9;
+  padding-left: 10px;
+}
+
+.timepicker{
+  height: 40px;
+  background-color: $custom-grey;
+  border: none;
+  border-bottom: 1px solid #d3ccc9;
+  padding-left: 10px;
+}
+
 #members {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
 
 //Styling InputField and LabelField
 .input-field {
@@ -158,14 +218,16 @@
   width: 100%;
   border-style: none;
   border-bottom: 1px solid #d3ccc9;
+  padding-left: 10px;
+  margin-top: 8px;
+  align-content: flex-end;
 }
 
 .input-field::placeholder {
   color: $turquoise;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1rem;
 }
-
 
 .label-field {
   font-weight: 400;
@@ -173,7 +235,7 @@
   margin: 0 14px 0 8px;
 }
 
-//Button -- border doesn't show
+//Button
 .btn-flat-create-group {
   color: $turquoise;
   border: 1px solid $turquoise;
@@ -181,6 +243,7 @@
   padding: 8px 24px;
   border-radius: 30px;
   transition: background 0.3s ease;
+  margin-top: 30px;
 }
 
 .btn-flat-create-group:hover {
