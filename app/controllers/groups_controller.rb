@@ -39,11 +39,11 @@ class GroupsController < ApplicationController
   end
 
   def index
+    @location = params[:query]
     @languages = Language.all
     @tags_all = ActsAsTaggableOn::Tag.all.map { |instance| instance.name }
     skip_policy_scope
-    search_groups(params)
-    # raise
+    @groups = search_groups(params)
   end
 
   private
@@ -55,13 +55,13 @@ class GroupsController < ApplicationController
   def search_groups(params)
     # raise
     @tags_all = ActsAsTaggableOn::Tag.all.map { |tag| tag.name }
-    @languages_all = Language.all.map { |language| language.id }
+    @languages_all = Language.pluck(:id)
     @range = ""
     @languages = []
     @location = params[:query]
 
-    if @range.present?
-      @range = params[:range] || 50 if params[:range].empty?
+    if params[:range].present? || !params[:range]&.empty?
+      @range = params[:range] #|| 50 if params[:range].empty?
     else
       # params[:range] = 50
       @range = 50
@@ -80,13 +80,12 @@ class GroupsController < ApplicationController
       @tags_given = @tags_all
       # params[:tags] = @tags_given.first
     end
+
     if @location.present?
       # if more tags than one are given the any should be all in line 28
-      @groups = Group.order(date: :asc).near(@location, @range).where(language_id: @language).where('date > ?', Date.today).tagged_with(@tags_given, any: true)
-    elsif @location.nil?
-      @groups = Group.order(date: :asc).where(language_id: @language).where('date > ?', Date.today).tagged_with(@tags_given, any: true)
+      @groups = Group.order(date: :asc).near(@location, @range).where(language: @languages).where('date > ?', Date.today).tagged_with(@tags_given, any: true)
     else
-      @groups = Group.all.order(date: :asc).where('date > ?', Date.today)
+      @groups = Group.all.order(date: :asc).where('date > ?', Date.today).where(language: @languages).tagged_with(@tags_given, any: true)
     end
     # @groups = filter_outdated_books(@groups)
     # raise
