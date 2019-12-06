@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@group.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @group.book.description %>
+<% content_for :meta_image%>
+
 <%= render "shared/navbar_dark" %>
 
 <div class="container mb-5">
