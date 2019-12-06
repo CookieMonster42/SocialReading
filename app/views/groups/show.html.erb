@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @offer.description %>
+<% content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
 <%= render "shared/navbar_dark" %>
 
 <div class="container mb-5">
