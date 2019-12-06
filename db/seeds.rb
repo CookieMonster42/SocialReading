@@ -131,7 +131,7 @@ host13 = User.create({
   password: '123456',
   email: 'nicolas@smile.com',
   bio: 'As a child I was a huge book nerd. Unfortunately I have lost my way and am really excited about Social Reading. It will help me get back my reading habit :)',
-  photo: "https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-8/26756720_10210633231809174_5817922752003500618_o.jpg?_nc_cat=102&_nc_ohc=0VATjE7TC9UAQke2wGLJp-iwyUkKRYHOGA2XLV7TtLsmKe_jTPOXCWxOw&_nc_ht=scontent-amt2-1.xx&oh=77bcaa9256db5b8c5ee7b1e3ee4373c5&oe=5E81701E"
+  photo: "https://avatars3.githubusercontent.com/u/54852601?s=460&v=4"
 })
 
 
