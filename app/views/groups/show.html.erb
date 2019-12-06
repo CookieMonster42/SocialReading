@@ -31,7 +31,7 @@
       <% if @group.tag_list.any? %>
         <%= render 'shared/tag', group: @group %>
       <% end %>
-      <p style="word-spacing: 3px;">»<%= @group.book.description %>...</p>
+      <p style="word-spacing: 4px;"><%= @group.book.description %></p>
       <p class="group-author"><%= "Read more".upcase %></p>
     </div>
   </div>

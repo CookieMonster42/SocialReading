@@ -143,9 +143,9 @@ puts "Users seeded!"
 ###########
 
 book = Book.create({
-  title: "The Amulet of Smarkand",
+  title: "The Amulet of Samarkand",
   author: 'Jonathan Stroud',
-  description: "Brave New World is a dystopian novel by English author Aldous Huxley, written in 1931 and published in 1932. Largely set in a futuristic World State, inhabited by genetically modified citizens and an intelligence-based social hierarchy, the novel anticipates huge scientific advancements in reproductive technology, sleep-learning, psychological manipulation and classical ... ",
+  description: "Brave New World is a dystopian novel by English author Aldous Huxley, written in 1931 and published in 1932. Largely set in a futuristic World State, inhabited by genetically modified citizens and an intelligence-based social hierarchy, the novel anticipates huge scientific advancements in reproductive technology, sleep-learning, psychological manipulation and classical.",
   photo: "bookcover.jpg"
 })
 
@@ -269,7 +269,7 @@ book16 = Book.create({
 
 book17 = Book.create({
   title: "Spark Joy",
-  author: " Marie Kondō",
+  author: "Marie Kondō",
   description: "Spark Joy is an in-depth, line illustrated, room-by-room guide to decluttering and organising your home. It covers every room in the house from bedrooms and kitchens to bathrooms and living rooms as well as a wide range of items in different categories, including clothes, photographs, paperwork, books, cutlery, cosmetics, shoes, bags, wallets and valuables. Charming line drawings explain how to properly organise drawers, wardrobes, cupboards and cabinets. The illustrations also show Ms Kondo's unique folding method, clearly showing how to fold anything from shirts, trousers and jackets to skirts, socks and bras.",
   photo: "SparkJoy.jpg"
 })
