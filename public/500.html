@@ -10,7 +10,7 @@
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
-
+    height: 100vh;
     background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Foccupydemocrats.com%2Fwp-content%2Fuploads%2FTrump-funny-face-meme-blank.jpg&f=1&nofb=1");
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -63,11 +63,28 @@
   }
   </style>
 </head>
+<body class="rails-default-error-page">
+<!-- <audio autoplay>
+  <source src="I_have_the_best_words_trump.mp3" type="audio/mpeg">
+</audio> -->
 <h2>I have the best words!</h2>
+<!-- <audio src="I_have_the_best_words_trump.mp3" autoplay="autoplay" loop="loop"></audio> -->
 <div class="box">
 </div>
 <h2>This is a freaking 500 Server Error</h2>
-<body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
+
+<script type="text/javascript">
+    const body = document.querySelector("body")
+  body.addEventListener("mouseover", function(event) {
+    let played = false;
+    var audio = new Audio('trump_best_words.mp3');
+    if(played == false){
+      audio.play();
+      played = true;
+    }
+
+  });
+</script>
 </body>
 </html>
