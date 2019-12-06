@@ -75,16 +75,12 @@
   <!-- This file lives in public/500.html -->
 
 <script type="text/javascript">
-    const body = document.querySelector("body")
-  body.addEventListener("mouseover", function(event) {
-    let played = false;
-    var audio = new Audio('trump_best_words.mp3');
-    if(played == false){
-      audio.play();
-      played = true;
-    }
-
-  });
+      const body = document.querySelector("body");
+      body.addEventListener("click", function(event) {
+        var audio = new Audio('trump_best_words.mp3');
+        // setTimeout(function(){  }, 5000);
+        audio.play();
+      });
 </script>
 </body>
 </html>
