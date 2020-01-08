@@ -1,0 +1,30 @@
+.form-box {
+  width: 40%;
+  margin: 0px auto;
+}
+
+.sign-submit {
+  color: darkgrey;
+  font-weight: 600;
+  border: 3px solid darkgrey;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.sign-submit:hover {
+  color: $creme;
+  background-color: darkgrey;
+  border-color: darkgrey;
+}
+
+.form-actions {
+  margin-bottom: 2rem;
+}
+
+.sign-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-family: "Moret Regular", "Helvetica", "sans-serif";
+  font-weight: 500;
+  line-height: 1.2;
+}

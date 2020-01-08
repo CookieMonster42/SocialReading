@@ -19,7 +19,7 @@ a.nav-light {
 .nav-item {
   margin-right: 22px;
   font-weight: 400px;
-  color: $dark-blue-lighter
+  color: $dark-blue-lighter;
 }
 
 // links nav-bar light
@@ -49,6 +49,14 @@ a.nav-light {
   right: 16px;
 }
 
+.logo-light {
+  color: $creme;
+  font-family:'Moret Regular';
+  font-size: 2rem;
+}
 
-
-
+.logo-dark {
+  color: $dark-blue;
+  font-family:'Moret Regular';
+  font-size: 2rem;
+}
